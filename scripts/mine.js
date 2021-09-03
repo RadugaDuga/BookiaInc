@@ -9,7 +9,7 @@ gsap.to("#hoursCount", {
 	innerText: 1500,
 	duration: 1.5,
 	snap: {
-		innerText: 1,
+		innerText: 10,
 	},
 });
 
@@ -28,6 +28,7 @@ learnMoreBtn.addEventListener("mouseover", () => {
 learnMoreBtn.addEventListener("mouseleave", () => {
 	gsap.to(".cursor", {
 		scale: 1,
+		borderRadius: "50%"
 	});
 });
 
@@ -64,6 +65,7 @@ window.addEventListener("mousemove", (e) => {
 		stagger: -0.1,
 	});
 });
+
 
 const section_3 = document.getElementById("section_3")
 section_3.addEventListener("mouseover", ()=>{

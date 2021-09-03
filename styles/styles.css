@@ -61,8 +61,8 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   height: 100vh;
-  background-color: #1B1C27;
-  color: #E4E6EC;
+  background-color: #1b1c27;
+  color: #e4e6ec;
 }
 
 .main-content_container .content {
@@ -90,11 +90,11 @@ body {
   font-size: clamp(2vw, 4.3rem, 10vw);
   margin-bottom: 25px;
   font-family: "GreyHeavy";
-  color: #E4E6EC;
+  color: #e4e6ec;
 }
 
 .main-content_container .content h1 span {
-  background: linear-gradient(45deg, white, #E4E6EC);
+  background: linear-gradient(45deg, white, #e4e6ec);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -162,11 +162,11 @@ body {
   color: #ffffff;
   -webkit-box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
           box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
-  background-color: #6798FF;
-  letter-spacing: .5px;
+  background-color: #6798ff;
+  letter-spacing: 0.5px;
   cursor: none;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .main-content_container .content button:hover {
@@ -239,7 +239,7 @@ body {
 
 .main-content_container__2 .content p {
   font-size: 19px;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   line-height: 30px;
   font-family: "GreyRegular";
   margin-bottom: 80px;
@@ -273,7 +273,7 @@ body {
 
 .main-content_container__3 {
   height: 100vh;
-  background-color: #2128BD;
+  background-color: #11121a;
   position: relative;
   overflow: hidden;
   cursor: none;
@@ -312,28 +312,28 @@ body {
 }
 
 .main-content_container__3 .content .shapes .shape.shape-1 {
-  background: #005FFE;
-  width: 650px;
-  height: 650px;
-  margin: -325px 0 0 -325px;
+  background: #00aefe;
+  width: 750px;
+  height: 750px;
+  margin: -375px 0 0 -375px;
 }
 
 .main-content_container__3 .content .shapes .shape.shape-2 {
-  background: #FFE5E3;
-  width: 440px;
-  height: 440px;
-  margin: -220px 0 0 -220px;
+  background: #46c4ff;
+  width: 540px;
+  height: 540px;
+  margin: -270px 0 0 -270px;
 }
 
 .main-content_container__3 .content .shapes .shape.shape-3 {
-  background: #FFCC57;
-  width: 270px;
-  height: 270px;
-  margin: -135px 0 0 -135px;
+  background: #01d9ff;
+  width: 370px;
+  height: 370px;
+  margin: -185px 0 0 -185px;
 }
 
 .main-content_container__4 {
-  background-color: #1B1C27;
+  background-color: #1b1c27;
   position: relative;
   cursor: none;
 }
@@ -352,13 +352,32 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-width: 400px;
-  padding-top: 16vh;
-  padding-bottom: 16vw;
+  padding-top: 12vh;
+  padding-bottom: 12vh;
 }
 
 .main-content_container__4 .content .info-container .col1 {
   width: 584px;
-  margin-right: 50px;
+  margin-right: 55px;
+}
+
+.main-content_container__4 .content .info-container .col1 .card #intro_h1 {
+  max-width: 100%;
+  margin-bottom: 50px;
+}
+
+.main-content_container__4 .content .info-container .col1 .card #intro_p {
+  max-width: 100%;
+  font-size: 1.25rem;
+}
+
+.main-content_container__4 .content .info-container .col1 .card:first-child {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: #1b1c27;
 }
 
 .main-content_container__4 .content .info-container .col2 {
@@ -371,15 +390,23 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-color: #252638;
-  margin-top: 50px;
+  margin-top: 55px;
   border-radius: 15px;
   -webkit-box-shadow: 0px 50px 60px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 50px 60px rgba(0, 0, 0, 0.2);
 }
 
+.main-content_container__4 .content .info-container .card h2 {
+  font-size: 1.25rem;
+  font-family: "GreyBold";
+  color: white;
+  margin-bottom: 11px;
+  letter-spacing: 2px;
+}
+
 .main-content_container__4 .content .info-container .card h1 {
   max-width: 280px;
-  color: #5fe2ff;
+  color: #ffffff;
   font-size: 2.65rem;
   font-family: "GreyHeavy";
   margin-bottom: 15px;
@@ -389,9 +416,9 @@ body {
   color: white;
   font-size: 1.125rem;
   max-width: 280px;
-  font-family: "GreyMedium";
-  line-height: 1.5em;
-  letter-spacing: .6px;
+  font-family: "GreyRegular";
+  line-height: 1.6em;
+  letter-spacing: 0.6px;
   margin-bottom: 30px;
 }
 
@@ -407,12 +434,12 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 4px dotted #50527A;
+  border-bottom: 4px dotted #50527a;
 }
 
 .main-content_container__4 .content .info-container .card ul li span {
   font-size: 1.125rem;
-  letter-spacing: .6px;
+  letter-spacing: 0.6px;
   font-family: "GreyMedium";
   color: white;
   padding: 12px 0px 14px;
