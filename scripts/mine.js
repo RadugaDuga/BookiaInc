@@ -20,15 +20,13 @@ learnMoreBtn.addEventListener("click", () => {
 	section_2.scrollIntoView({ behavior: "smooth" });
 });
 learnMoreBtn.addEventListener("mouseover", () => {
-	gsap.to(".cursor", {
-		scale: 0.5,
-		borderRadius:0
+	gsap.set(".cursor", {
+		scale: 0,
 	});
 });
 learnMoreBtn.addEventListener("mouseleave", () => {
-	gsap.to(".cursor", {
+	gsap.set(".cursor", {
 		scale: 1,
-		borderRadius: "50%"
 	});
 });
 

@@ -18,6 +18,23 @@
     src: url(../fonts/Greycliff/GreycliffCF-Medium.otf); /* Путь к файлу со шрифтом */
 }
 
+
+
+
+html::-webkit-scrollbar {
+width:  12px;
+}
+html::-webkit-scrollbar-thumb {
+
+}
+html::-webkit-scrollbar-track {
+
+}
+
+
+
+
+
 $titleColor: #e4e6ec;
 $subTitleColor: #d1d1d1;
 $textColor: #9293a0;
@@ -41,8 +58,6 @@ body {
     mix-blend-mode: difference;
     z-index: 9999;
 }
-
-
 
 // ? ________________________________ SECTION 1 _______________________________________ ? //
 
@@ -69,12 +84,6 @@ body {
             margin-bottom: 25px;
             font-family: "GreyHeavy";
             color: $titleColor;
-
-            span {
-                background: linear-gradient(45deg, rgb(255, 255, 255), #e4e6ec);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
         }
 
         a {
@@ -126,21 +135,53 @@ body {
 
         button {
             border: none;
-            width: max-content;
+            width: max-content ;
             font-size: 20px;
             font-family: "GreyBold";
             border-radius: 100px;
-            padding: 22px 60px 24px;
+            padding: 25px;
             color: #ffffff;
             box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
-            background-color: #6798ff;
+            background: linear-gradient(30deg, #3d84ff, #00d0ff);
             letter-spacing: 0.5px;
             cursor: none;
-            transition: 0.3s;
+            overflow: hidden;
+            transition: .2s;
+
+            span {
+                position: relative;
+                display: inline-block;
+                padding: 2px 0;
+ 
+                padding: 0 25px;
+                animation: marquee 2.5s linear infinite;
+
+                &::after {
+                    display: inline-block;
+                    position: absolute;
+                    content: "Learnmore";
+                    left: 100%;
+                    padding: 0 25px;
+
+                }
+
+                @keyframes marquee {
+                    
+                    100% {
+
+                        transform: translateX(-100%)
+                    }
+                }
+            }
+            
+
 
             &:hover {
                 box-shadow: none;
-                box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.296);
+                background: white;
+                color: black;
+                padding: 26px 27px;
+                margin:-1px -2px;
             }
         }
     }
@@ -153,8 +194,6 @@ body {
         box-sizing: border-box;
     }
 }
-
-
 
 // ? ________________________________ SECTION 2 _______________________________________ ? //
 
@@ -172,17 +211,13 @@ body {
         max-width: 900px;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         box-sizing: border-box;
-        justify-content: center;
         flex: 1;
-        height: 100%;
         padding: 0px clamp(1vw, 8vw, 8vw) 0px;
-        margin: 0 auto;
 
         h1 {
             font-size: clamp(2vw, 3.2rem, 10vw);
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             font-family: "GreyHeavy";
             text-align: center;
         }
@@ -207,11 +242,11 @@ body {
         }
 
         h2 {
-            font-size: 40px;
+            font-size: 30px;
             font-family: "GreyHeavy";
             text-align: center;
             span {
-                font-size: 90px;
+                font-size: 70px;
             }
         }
     }
@@ -222,13 +257,11 @@ body {
     }
 }
 
-
-
 // ? ________________________________ SECTION 3 _______________________________________ ? //
 
 .main-content_container__3 {
     height: 100vh;
-    background-color: #11121a;
+    background-color: #11121A;
     position: relative;
     overflow: hidden;
     cursor: none;
@@ -239,6 +272,7 @@ body {
             top: 0;
             left: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -247,9 +281,15 @@ body {
             mix-blend-mode: screen;
             z-index: 1;
 
+            h1 {
+                font-size:50px;
+                font-family: "GreyRegular";
+                margin-bottom: 40px;
+            }
+
             h3 {
                 font-size: 90px;
-                font-family: "GreyHeavy";
+                font-family: "GreyBold";
                 text-align: center;
             }
         }
@@ -261,13 +301,13 @@ body {
                 border-radius: 50%;
 
                 $shapes: (
-                    #00aefe: 750px,
-                    #46c4ff: 540px,
-                    #01d9ff: 370px,
+                    #004687: 850px,
+                    #0091ff: 580px,
+                    #00bbff: 380px,
                 );
                 @each $color, $size in $shapes {
                     &.shape-#{index($shapes, ($color $size))} {
-                        background: $color;
+                        background:  $color;
                         width: $size;
                         height: $size;
                         margin: (-$size/2) 0 0 (-$size/2);
@@ -277,8 +317,6 @@ body {
         }
     }
 }
-
-
 
 // ? ________________________________ SECTION 4 _______________________________________ ? //
 
@@ -335,8 +373,8 @@ body {
                 border-radius: 15px;
                 box-shadow: 0px 50px 60px rgba(0, 0, 0, 0.2);
                 h2 {
-                    font-size: 1.25rem;
-                    font-family: "GreyBold";
+                    font-size: 1.45rem;
+                    font-family: "GreyHeavy";
                     color: white;
                     margin-bottom: 11px;
                     letter-spacing: 2px;
@@ -346,7 +384,20 @@ body {
                     color: #ffffff;
                     font-size: 2.65rem;
                     font-family: "GreyHeavy";
-                    margin-bottom: 15px;
+                    margin-bottom: 15px;  
+                }
+
+                .yellow {
+                    color:#FDF986;                                  
+                }
+                .blue {
+                    color:#44BFE5;
+                }
+                .purple {
+                    color:#CE79F0;                                
+                }
+                .green {
+                    color:#7BC37A;
                 }
 
                 p {
@@ -356,13 +407,14 @@ body {
                     font-family: "GreyRegular";
                     line-height: 1.6em;
                     letter-spacing: 0.6px;
-                    margin-bottom: 30px;
+                    margin-bottom: 40px;
                 }
 
                 ul {
                     li {
                         display: flex;
                         flex-direction: row;
+                        align-items: center;
                         width: 100%;
                         justify-content: space-between;
                         border-bottom: 4px dotted #50527a;
@@ -371,7 +423,7 @@ body {
                             letter-spacing: 0.6px;
                             font-family: "GreyMedium";
                             color: white;
-                            padding: 12px 0px 14px;
+                            padding: 13px 0px 15px;
 
                             &:nth-child(2) {
                                 flex: 1;
@@ -380,6 +432,7 @@ body {
 
                             &:last-child {
                                 color: rgba(255, 255, 255, 0.761);
+                                font-size: 1rem;
                             }
                         }
                     }

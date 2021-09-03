@@ -27,6 +27,10 @@
   /* Путь к файлу со шрифтом */
 }
 
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
 body {
   background-color: white;
   cursor: none;
@@ -93,12 +97,6 @@ body {
   color: #e4e6ec;
 }
 
-.main-content_container .content h1 span {
-  background: linear-gradient(45deg, white, #e4e6ec);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .main-content_container .content a {
   height: 50px;
   display: -webkit-box;
@@ -158,22 +156,56 @@ body {
   font-size: 20px;
   font-family: "GreyBold";
   border-radius: 100px;
-  padding: 22px 60px 24px;
+  padding: 25px;
   color: #ffffff;
   -webkit-box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
           box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
-  background-color: #6798ff;
+  background: linear-gradient(30deg, #3d84ff, #00d0ff);
   letter-spacing: 0.5px;
   cursor: none;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  overflow: hidden;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.main-content_container .content button span {
+  position: relative;
+  display: inline-block;
+  padding: 2px 0;
+  padding: 0 25px;
+  -webkit-animation: marquee 2.5s linear infinite;
+          animation: marquee 2.5s linear infinite;
+}
+
+.main-content_container .content button span::after {
+  display: inline-block;
+  position: absolute;
+  content: "Learnmore";
+  left: 100%;
+  padding: 0 25px;
+}
+
+@-webkit-keyframes marquee {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee {
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
 }
 
 .main-content_container .content button:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
-  -webkit-box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.296);
-          box-shadow: inset 0px 0px 20px rgba(255, 255, 255, 0.296);
+  background: white;
+  color: black;
+  padding: 26px 27px;
+  margin: -1px -2px;
 }
 
 .main-content_container .main-image {
@@ -216,23 +248,17 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  justify-content: center;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 100%;
   padding: 0px clamp(1vw, 8vw, 8vw) 0px;
-  margin: 0 auto;
 }
 
 .main-content_container__2 .content h1 {
   font-size: clamp(2vw, 3.2rem, 10vw);
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-family: "GreyHeavy";
   text-align: center;
 }
@@ -257,13 +283,13 @@ body {
 }
 
 .main-content_container__2 .content h2 {
-  font-size: 40px;
+  font-size: 30px;
   font-family: "GreyHeavy";
   text-align: center;
 }
 
 .main-content_container__2 .content h2 span {
-  font-size: 90px;
+  font-size: 70px;
 }
 
 .main-content_container__2 iframe {
@@ -273,7 +299,7 @@ body {
 
 .main-content_container__3 {
   height: 100vh;
-  background-color: #11121a;
+  background-color: #11121A;
   position: relative;
   overflow: hidden;
   cursor: none;
@@ -286,6 +312,10 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -299,9 +329,15 @@ body {
   z-index: 1;
 }
 
+.main-content_container__3 .content .text-box h1 {
+  font-size: 50px;
+  font-family: "GreyRegular";
+  margin-bottom: 40px;
+}
+
 .main-content_container__3 .content .text-box h3 {
   font-size: 90px;
-  font-family: "GreyHeavy";
+  font-family: "GreyBold";
   text-align: center;
 }
 
@@ -312,24 +348,24 @@ body {
 }
 
 .main-content_container__3 .content .shapes .shape.shape-1 {
-  background: #00aefe;
-  width: 750px;
-  height: 750px;
-  margin: -375px 0 0 -375px;
+  background: #004687;
+  width: 850px;
+  height: 850px;
+  margin: -425px 0 0 -425px;
 }
 
 .main-content_container__3 .content .shapes .shape.shape-2 {
-  background: #46c4ff;
-  width: 540px;
-  height: 540px;
-  margin: -270px 0 0 -270px;
+  background: #0091ff;
+  width: 580px;
+  height: 580px;
+  margin: -290px 0 0 -290px;
 }
 
 .main-content_container__3 .content .shapes .shape.shape-3 {
-  background: #01d9ff;
-  width: 370px;
-  height: 370px;
-  margin: -185px 0 0 -185px;
+  background: #00bbff;
+  width: 380px;
+  height: 380px;
+  margin: -190px 0 0 -190px;
 }
 
 .main-content_container__4 {
@@ -397,8 +433,8 @@ body {
 }
 
 .main-content_container__4 .content .info-container .card h2 {
-  font-size: 1.25rem;
-  font-family: "GreyBold";
+  font-size: 1.45rem;
+  font-family: "GreyHeavy";
   color: white;
   margin-bottom: 11px;
   letter-spacing: 2px;
@@ -412,6 +448,22 @@ body {
   margin-bottom: 15px;
 }
 
+.main-content_container__4 .content .info-container .card .yellow {
+  color: #FDF986;
+}
+
+.main-content_container__4 .content .info-container .card .blue {
+  color: #44BFE5;
+}
+
+.main-content_container__4 .content .info-container .card .purple {
+  color: #CE79F0;
+}
+
+.main-content_container__4 .content .info-container .card .green {
+  color: #7BC37A;
+}
+
 .main-content_container__4 .content .info-container .card p {
   color: white;
   font-size: 1.125rem;
@@ -419,7 +471,7 @@ body {
   font-family: "GreyRegular";
   line-height: 1.6em;
   letter-spacing: 0.6px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .main-content_container__4 .content .info-container .card ul li {
@@ -430,6 +482,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -442,7 +497,7 @@ body {
   letter-spacing: 0.6px;
   font-family: "GreyMedium";
   color: white;
-  padding: 12px 0px 14px;
+  padding: 13px 0px 15px;
 }
 
 .main-content_container__4 .content .info-container .card ul li span:nth-child(2) {
@@ -454,6 +509,7 @@ body {
 
 .main-content_container__4 .content .info-container .card ul li span:last-child {
   color: rgba(255, 255, 255, 0.761);
+  font-size: 1rem;
 }
 
 .main-content_container__4 .content .info-container .card img {
