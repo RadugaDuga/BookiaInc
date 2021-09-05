@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: "GreyHeavy"; /* Гарнитура шрифта */
-    src: url(../fonts/Greycliff/GreycliffCF-Heavy.otf); /* Путь к файлу со шрифтом */
+    font-family: "GreyHeavy"; 
+    src: url(../fonts/Greycliff/GreycliffCF-Heavy.otf); 
 }
 
 @font-face {
@@ -19,29 +19,30 @@
 }
 
 
-
+// ? ________________________________ CUSROM SCROLL THUMB_______________________________________ ? //
 
 html::-webkit-scrollbar {
-width:  12px;
+    width:10px;
 }
 html::-webkit-scrollbar-thumb {
-
+    background-color: rgb(255, 255, 255);
 }
 html::-webkit-scrollbar-track {
-
+    background-color:#11121A ;
 }
 
 
+// ? ________________________________ VARIABLES _______________________________________ ? //
 
-
-
-$titleColor: #e4e6ec;
+$titleColor: #eeeeee;
 $subTitleColor: #d1d1d1;
 $textColor: #9293a0;
+
 
 body {
     background-color: white;
     cursor: none;
+
 }
 
 .cursor {
@@ -59,11 +60,16 @@ body {
     z-index: 9999;
 }
 
+
+#global-wrapper {
+    background-color: rgb(7, 7, 7);
+}
+
+
 // ? ________________________________ SECTION 1 _______________________________________ ? //
 
 .main-content_container {
     display: flex;
-    width: 100%;
     flex-direction: row;
     height: 100vh;
     background-color: #1b1c27;
@@ -72,12 +78,10 @@ body {
     .content {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         box-sizing: border-box;
         justify-content: center;
         flex: 1;
-        height: 100%;
-        padding: clamp(1vw, 8vw, 8vw);
+        padding: 0px clamp(1vw, 8vw, 8vw) 0px;
 
         h1 {
             font-size: clamp(2vw, 4.3rem, 10vw);
@@ -133,55 +137,74 @@ body {
             }
         }
 
-        button {
-            border: none;
-            width: max-content ;
-            font-size: 20px;
-            font-family: "GreyBold";
-            border-radius: 100px;
-            padding: 25px;
-            color: #ffffff;
-            box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
-            background: linear-gradient(30deg, #3d84ff, #00d0ff);
-            letter-spacing: 0.5px;
-            cursor: none;
-            overflow: hidden;
-            transition: .2s;
+        #container {
+            width: max-content;
+            display: flex;
+            padding: 30px 50px;
+            margin: -30px -50px;
 
-            span {
+            button {
+                border: none;
+                width: max-content;
                 position: relative;
-                display: inline-block;
-                padding: 2px 0;
- 
-                padding: 0 25px;
-                animation: marquee 2.5s linear infinite;
+                font-size: 20px;
+                font-family: "GreyBold";
+                border-radius: 100px;
+                padding: 20px 25px;
+                display: flex;
+                align-items: center;
+                color: #ffffff;
+                border: 3px solid white;
+                background-color: transparent;
+                letter-spacing: 0.5px;
+                cursor: none;
+                overflow: hidden;
+                transition: 0.2s;
+                cursor: none;
 
-                &::after {
-                    display: inline-block;
-                    position: absolute;
-                    content: "Learnmore";
-                    left: 100%;
-                    padding: 0 25px;
-
+                &:hover {
+                    box-shadow: inset 0px 0px 0px 2px white;
+                    color: black;
                 }
 
-                @keyframes marquee {
-                    
-                    100% {
+                &:hover::before {
+                    width: 100%;
+                    left:0;
+                }
 
-                        transform: translateX(-100%)
+                &::before {
+                    transition: .4s;
+                    position: absolute;                                                                                                                                                                                                                                                                                                         t:0;
+                    width: 0%;
+                    height: 100%;
+                    right:0;
+                    background-color: white;
+                    content: "";
+                    border-radius: 100px;
+                }
+
+                div {
+                    position: relative;
+                    display: inline-block;
+                    padding: 2px 0;
+
+                    padding: 0 25px;
+                    animation: sliding 2.5s linear infinite;
+
+                    &::after {
+                        position: absolute;
+                        width: max-content;
+                        content: "Learn more";
+                        left: 100%;
+                        padding: 0 25px;
+                    }
+
+                    @keyframes sliding {
+                        100% {
+                            transform: translateX(-100%);
+                        }
                     }
                 }
-            }
-            
-
-
-            &:hover {
-                box-shadow: none;
-                background: white;
-                color: black;
-                padding: 26px 27px;
-                margin:-1px -2px;
             }
         }
     }
@@ -261,7 +284,7 @@ body {
 
 .main-content_container__3 {
     height: 100vh;
-    background-color: #11121A;
+    background-color: #11121a;
     position: relative;
     overflow: hidden;
     cursor: none;
@@ -282,7 +305,7 @@ body {
             z-index: 1;
 
             h1 {
-                font-size:50px;
+                font-size: 50px;
                 font-family: "GreyRegular";
                 margin-bottom: 40px;
             }
@@ -307,7 +330,7 @@ body {
                 );
                 @each $color, $size in $shapes {
                     &.shape-#{index($shapes, ($color $size))} {
-                        background:  $color;
+                        background: $color;
                         width: $size;
                         height: $size;
                         margin: (-$size/2) 0 0 (-$size/2);
@@ -384,20 +407,20 @@ body {
                     color: #ffffff;
                     font-size: 2.65rem;
                     font-family: "GreyHeavy";
-                    margin-bottom: 15px;  
+                    margin-bottom: 15px;
                 }
 
                 .yellow {
-                    color:#FDF986;                                  
+                    color: #fdf986;
                 }
                 .blue {
-                    color:#44BFE5;
+                    color: #44bfe5;
                 }
                 .purple {
-                    color:#CE79F0;                                
+                    color: #ce79f0;
                 }
                 .green {
-                    color:#7BC37A;
+                    color: #7bc37a;
                 }
 
                 p {
@@ -423,6 +446,7 @@ body {
                             letter-spacing: 0.6px;
                             font-family: "GreyMedium";
                             color: white;
+                            width: 20px;
                             padding: 13px 0px 15px;
 
                             &:nth-child(2) {
@@ -449,4 +473,12 @@ body {
             }
         }
     }
+}
+
+
+// ? ________________________________ SECTION 5 _______________________________________ ? //
+
+.main-content_container__5{
+    height: 100vh;
+    background-color: #ff0000;
 }

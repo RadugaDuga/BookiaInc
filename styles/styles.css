@@ -8,9 +8,7 @@
 
 @font-face {
   font-family: "GreyHeavy";
-  /* Гарнитура шрифта */
   src: url(../fonts/Greycliff/GreycliffCF-Heavy.otf);
-  /* Путь к файлу со шрифтом */
 }
 
 @font-face {
@@ -28,7 +26,15 @@
 }
 
 html::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #11121A;
 }
 
 body {
@@ -55,11 +61,14 @@ body {
   z-index: 9999;
 }
 
+#global-wrapper {
+  background-color: #070707;
+}
+
 .main-content_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -77,24 +86,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  justify-content: center;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  height: 100%;
-  padding: clamp(1vw, 8vw, 8vw);
+  padding: 0px clamp(1vw, 8vw, 8vw) 0px;
 }
 
 .main-content_container .content h1 {
   font-size: clamp(2vw, 4.3rem, 10vw);
   margin-bottom: 25px;
   font-family: "GreyHeavy";
-  color: #e4e6ec;
+  color: #eeeeee;
 }
 
 .main-content_container .content a {
@@ -148,64 +155,99 @@ body {
   margin-top: 22px;
 }
 
-.main-content_container .content button {
+.main-content_container .content #container {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px 50px;
+  margin: -30px -50px;
+}
+
+.main-content_container .content #container button {
   border: none;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  position: relative;
   font-size: 20px;
   font-family: "GreyBold";
   border-radius: 100px;
-  padding: 25px;
+  padding: 20px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #ffffff;
-  -webkit-box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
-          box-shadow: -5px 13px 40px 16px rgba(0, 0, 0, 0.207);
-  background: linear-gradient(30deg, #3d84ff, #00d0ff);
+  border: 3px solid white;
+  background-color: transparent;
   letter-spacing: 0.5px;
   cursor: none;
   overflow: hidden;
-  -webkit-transition: .2s;
-  transition: .2s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: none;
 }
 
-.main-content_container .content button span {
+.main-content_container .content #container button:hover {
+  -webkit-box-shadow: inset 0px 0px 0px 2px white;
+          box-shadow: inset 0px 0px 0px 2px white;
+  color: black;
+}
+
+.main-content_container .content #container button:hover::before {
+  width: 100%;
+  left: 0;
+}
+
+.main-content_container .content #container button::before {
+  -webkit-transition: .4s;
+  transition: .4s;
+  position: absolute;
+  t: 0;
+  width: 0%;
+  height: 100%;
+  right: 0;
+  background-color: white;
+  content: "";
+  border-radius: 100px;
+}
+
+.main-content_container .content #container button div {
   position: relative;
   display: inline-block;
   padding: 2px 0;
   padding: 0 25px;
-  -webkit-animation: marquee 2.5s linear infinite;
-          animation: marquee 2.5s linear infinite;
+  -webkit-animation: sliding 2.5s linear infinite;
+          animation: sliding 2.5s linear infinite;
 }
 
-.main-content_container .content button span::after {
-  display: inline-block;
+.main-content_container .content #container button div::after {
   position: absolute;
-  content: "Learnmore";
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  content: "Learn more";
   left: 100%;
   padding: 0 25px;
 }
 
-@-webkit-keyframes marquee {
+@-webkit-keyframes sliding {
   100% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
 }
 
-@keyframes marquee {
+@keyframes sliding {
   100% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
-}
-
-.main-content_container .content button:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  background: white;
-  color: black;
-  padding: 26px 27px;
-  margin: -1px -2px;
 }
 
 .main-content_container .main-image {
@@ -299,7 +341,7 @@ body {
 
 .main-content_container__3 {
   height: 100vh;
-  background-color: #11121A;
+  background-color: #11121a;
   position: relative;
   overflow: hidden;
   cursor: none;
@@ -449,19 +491,19 @@ body {
 }
 
 .main-content_container__4 .content .info-container .card .yellow {
-  color: #FDF986;
+  color: #fdf986;
 }
 
 .main-content_container__4 .content .info-container .card .blue {
-  color: #44BFE5;
+  color: #44bfe5;
 }
 
 .main-content_container__4 .content .info-container .card .purple {
-  color: #CE79F0;
+  color: #ce79f0;
 }
 
 .main-content_container__4 .content .info-container .card .green {
-  color: #7BC37A;
+  color: #7bc37a;
 }
 
 .main-content_container__4 .content .info-container .card p {
@@ -497,6 +539,7 @@ body {
   letter-spacing: 0.6px;
   font-family: "GreyMedium";
   color: white;
+  width: 20px;
   padding: 13px 0px 15px;
 }
 
@@ -520,5 +563,10 @@ body {
   height: 300px;
   -webkit-transform: translate(10%, -12%);
           transform: translate(10%, -12%);
+}
+
+.main-content_container__5 {
+  height: 100vh;
+  background-color: #ff0000;
 }
 /*# sourceMappingURL=styles.css.map */
