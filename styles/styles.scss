@@ -42,7 +42,7 @@ $textColor: #9293a0;
 body {
     background-color: white;
     cursor: none;
-
+    user-select: none;
 }
 
 .cursor {
@@ -63,6 +63,7 @@ body {
 
 #global-wrapper {
     background-color: rgb(7, 7, 7);
+                                   
 }
 
 
@@ -174,7 +175,7 @@ body {
 
                 &::before {
                     transition: .4s;
-                    position: absolute;                                                                                                                                                                                                                                                                                                         t:0;
+                    position: absolute;                                                                                                                                                                                                                                                                                                        
                     width: 0%;
                     height: 100%;
                     right:0;
@@ -218,7 +219,7 @@ body {
     }
 }
 
-// ? ________________________________ SECTION 2 _______________________________________ ? //
+// ? ________________________________ S E C T I O N   2 _______________________________________ ? //
 
 .main-content_container__2 {
     display: flex;

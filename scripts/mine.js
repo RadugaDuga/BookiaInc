@@ -2,29 +2,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-
-
-gsap.to("#hoursCount", {
-	scrollTrigger: {
-		trigger: "#hoursCount",
-		
-		toggleActions: "restart pause resume none",
-		markers: true,
-	},
-	innerText: 1500,
-	duration: 1.5,
-	snap: {
-		innerText: 10,
-	},
-});
-
-
-
 const section_2 = document.getElementById("section2");
 const learnMoreBtn = document.getElementById("learnMore");
-learnMoreBtn.addEventListener("click", () => {
-	section_2.scrollIntoView({ behavior: "smooth" });
-});
+
 learnMoreBtn.addEventListener("mouseover", (e) => {
 	gsap.set(".cursor", {
 		scale: 0,
@@ -98,8 +78,6 @@ $("#container").mousemove(function (e) {
 	callParallax(e);
 });
 
-
-
 function callParallax(e) {
 	parallaxIt(e, ".btn", 50);
 }
@@ -117,51 +95,86 @@ function parallaxIt(e, target, movement) {
 
 
 
+// ? __________________ L O K O M O T I V E   S C R O L L ____________________
+
+const locoScroll = new LocomotiveScroll({
+    el: document.querySelector('#global-wrapper'),
+    smooth: true,
+    lerp: 0.07,
+    getDirection: true,
+    smoothMobile: false,
+    scrollFromAnywhere: false,
+});
+
+locoScroll.on("scroll", ScrollTrigger.update);
+
+ScrollTrigger.scrollerProxy('#global-wrapper', {
+    scrollTop(value) {
+        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y
+    },
+    getBoundingClientRect() {
+        return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight }
+    },
+});
+
+
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+ScrollTrigger.refresh();
+
+
+
+
+// ? __________________ S K E W   A D D I N G  ____________________
+
 var skewSetter = gsap.quickSetter(".section", "skewY", "deg");
 var proxy = { skew: 0 };
 
 ScrollTrigger.create({
+	scroller:"#global-wrapper",
+	trigger: '.root',
 	onUpdate: (self) => {
-		const skew = self.getVelocity() / -2000;
+		const skew = self.getVelocity() / -300;
 		console.log(skew);
-		if(Math.abs(skew) > Math.abs(proxy.skew)){
+		if (Math.abs(skew) > Math.abs(proxy.skew)) {
 			proxy.skew = skew;
 			gsap.to(proxy, {
-				skew:0,
-				duration:1, 
-				ease: "power3", overwrite:true, onUpdate:()=> {skewSetter(proxy.skew)}
-			})
+				skew: 0,
+				duration: 1,
+				ease: "power3",
+				overwrite: true,
+				onUpdate: () => {
+					skewSetter(proxy.skew);
+				},
+			});
 		}
+	}
+	
+});
+
+gsap.set(".section", { transformOrigin: "center center", force3D: true });
+
+
+
+
+// ? __________________ C U S T O M   A N I M A T I O N S  ____________________
+
+const tl = gsap.timeline({ defaults: { ease: "none" } }).to("#hoursCount", {
+	innerText: 1500,
+	duration: 1.5,
+	snap: {
+		innerText: 10,
 	},
 });
 
-
-gsap.set(".section", {transformOrigin:"center center", force3D:true})
-
-
-
-
-
-const locoScroll = new LocomotiveScroll({
-	el: document.querySelector("body"),
-	smooth: true,
-	scrollFromAnywhere: true
-})
-
-
-locoScroll.on("scroll", ScrollTrigger.update);
-
-// tell ScrollTrigger to use these proxy methods for the ".smooth-scroll" element since Locomotive Scroll is hijacking things
-ScrollTrigger.scrollerProxy(".global-wrapper", {
-	scrollTop(value) {
-	  return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-	}, // we don't have to define a scrollLeft because we're only scrolling vertically.
-	getBoundingClientRect() {
-	  return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-	},
-	// LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-	pinType: document.querySelector(".global-wrapper").style.transform ? "transform" : "fixed"
-  });
+ScrollTrigger.create({
+	trigger: "#section2",
+	toggleActions: "restart pause resume none",
+	markers: true,
+	start: 0,
+	end: 0,
+	scroller: "#global-wrapper",
+	animation: tl,
+});
 
 
 
@@ -169,8 +182,6 @@ ScrollTrigger.scrollerProxy(".global-wrapper", {
 
 
 
-// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
-// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-ScrollTrigger.refresh();
+
+
