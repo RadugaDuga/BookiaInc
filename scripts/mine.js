@@ -133,13 +133,13 @@ ScrollTrigger.create({
 	scroller:"#global-wrapper",
 	trigger: '.root',
 	onUpdate: (self) => {
-		const skew = self.getVelocity() / -300;
+		const skew = self.getVelocity() / -1000;
 		console.log(skew);
 		if (Math.abs(skew) > Math.abs(proxy.skew)) {
 			proxy.skew = skew;
 			gsap.to(proxy, {
 				skew: 0,
-				duration: 1,
+				duration: 0.5,
 				ease: "power3",
 				overwrite: true,
 				onUpdate: () => {
@@ -158,7 +158,7 @@ gsap.set(".section", { transformOrigin: "center center", force3D: true });
 
 // ? __________________ C U S T O M   A N I M A T I O N S  ____________________
 
-const tl = gsap.timeline({ defaults: { ease: "none" } }).to("#hoursCount", {
+const counterAnimation = gsap.timeline({ defaults: { ease: "none" } }).to("#hoursCount", {
 	innerText: 1500,
 	duration: 1.5,
 	snap: {
@@ -170,10 +170,10 @@ ScrollTrigger.create({
 	trigger: "#section2",
 	toggleActions: "restart pause resume none",
 	markers: true,
-	start: 0,
+	start: 300,
 	end: 0,
 	scroller: "#global-wrapper",
-	animation: tl,
+	animation: counterAnimation,
 });
 
 

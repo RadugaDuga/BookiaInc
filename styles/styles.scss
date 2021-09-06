@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: "GreyHeavy"; 
-    src: url(../fonts/Greycliff/GreycliffCF-Heavy.otf); 
+    font-family: "GreyHeavy";
+    src: url(../fonts/Greycliff/GreycliffCF-Heavy.otf);
 }
 
 @font-face {
@@ -18,26 +18,23 @@
     src: url(../fonts/Greycliff/GreycliffCF-Medium.otf); /* Путь к файлу со шрифтом */
 }
 
-
 // ? ________________________________ CUSROM SCROLL THUMB_______________________________________ ? //
 
 html::-webkit-scrollbar {
-    width:10px;
+    width: 10px;
 }
 html::-webkit-scrollbar-thumb {
     background-color: rgb(255, 255, 255);
 }
 html::-webkit-scrollbar-track {
-    background-color:#11121A ;
+    background-color: #11121a;
 }
-
 
 // ? ________________________________ VARIABLES _______________________________________ ? //
 
 $titleColor: #eeeeee;
 $subTitleColor: #d1d1d1;
 $textColor: #9293a0;
-
 
 body {
     background-color: white;
@@ -47,7 +44,6 @@ body {
 
 .cursor {
     position: fixed;
-    background-color: white;
     border-radius: 50%;
     transform-origin: center;
     height: 20px;
@@ -58,16 +54,14 @@ body {
     pointer-events: none;
     mix-blend-mode: difference;
     z-index: 9999;
+    background-color: rgb(255, 255, 255);
 }
-
 
 #global-wrapper {
-    background-color: rgb(7, 7, 7);
-                                   
+    background-color: rgb(255, 0, 0);
 }
 
-
-// ? ________________________________ SECTION 1 _______________________________________ ? //
+// ? ________________________________ S E C T I O N   1 ____________________________________ ? //
 
 .main-content_container {
     display: flex;
@@ -170,15 +164,15 @@ body {
 
                 &:hover::before {
                     width: 100%;
-                    left:0;
+                    left: 0;
                 }
 
                 &::before {
-                    transition: .4s;
-                    position: absolute;                                                                                                                                                                                                                                                                                                        
+                    transition: 0.4s;
+                    position: absolute;
                     width: 0%;
                     height: 100%;
-                    right:0;
+                    right: 0;
                     background-color: white;
                     content: "";
                     border-radius: 100px;
@@ -219,7 +213,7 @@ body {
     }
 }
 
-// ? ________________________________ S E C T I O N   2 _______________________________________ ? //
+// ? ________________________________ S E C T I O N   2 ____________________________________ ? //
 
 .main-content_container__2 {
     display: flex;
@@ -228,7 +222,7 @@ body {
     width: 100%;
     min-height: 800px;
     color: white;
-    background: #11121a;
+    background: #1b1c27;
 
     .content {
         display: flex;
@@ -269,6 +263,7 @@ body {
             font-size: 30px;
             font-family: "GreyHeavy";
             text-align: center;
+            line-height: 1.5;
             span {
                 font-size: 70px;
             }
@@ -281,7 +276,7 @@ body {
     }
 }
 
-// ? ________________________________ SECTION 3 _______________________________________ ? //
+// ? ________________________________ S E C T I O N   3 ____________________________________ ? //
 
 .main-content_container__3 {
     height: 100vh;
@@ -342,7 +337,7 @@ body {
     }
 }
 
-// ? ________________________________ SECTION 4 _______________________________________ ? //
+// ? ________________________________ S E C T I O N   4 ____________________________________ ? //
 
 .main-content_container__4 {
     background-color: #1b1c27;
@@ -476,10 +471,47 @@ body {
     }
 }
 
+// ? ________________________________ S E C T I O N   5 ____________________________________ ? //
 
-// ? ________________________________ SECTION 5 _______________________________________ ? //
+.main-content_container__5 {
+    background-color: #ffffff;
 
-.main-content_container__5{
-    height: 100vh;
-    background-color: #ff0000;
+    h1 {
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .special-container {
+        position: relative;
+
+        .content-block {
+            height:90px;
+            max-width: 1000px;
+            padding:  clamp(0vw, 4.2vw, 10vw) clamp(0vw, 6.3vw, 10vw);
+            margin: 0 auto;
+            border-radius:25px;
+            background-color: #252638;
+            color: white;
+            font-size: 70px;
+            font-family: "GreyBold";
+            text-align: center;
+
+        }
+        .background {
+            position: absolute;
+            height:100px;
+            width:100%;
+            background-color: #1b1c27;
+            bottom:0;
+            z-index: -1;
+            border-radius: 25px 25px 0px 0px ;
+            
+        }
+    }
+    footer {
+        height: 300px;
+        background: #1b1c27;
+    }
 }

@@ -34,7 +34,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 html::-webkit-scrollbar-track {
-  background-color: #11121A;
+  background-color: #11121a;
 }
 
 body {
@@ -48,7 +48,6 @@ body {
 
 .cursor {
   position: fixed;
-  background-color: white;
   border-radius: 50%;
   -webkit-transform-origin: center;
           transform-origin: center;
@@ -63,10 +62,11 @@ body {
   pointer-events: none;
   mix-blend-mode: difference;
   z-index: 9999;
+  background-color: white;
 }
 
 #global-wrapper {
-  background-color: #070707;
+  background-color: red;
 }
 
 .main-content_container {
@@ -209,8 +209,8 @@ body {
 }
 
 .main-content_container .content #container button::before {
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   position: absolute;
   width: 0%;
   height: 100%;
@@ -278,7 +278,7 @@ body {
   width: 100%;
   min-height: 800px;
   color: white;
-  background: #11121a;
+  background: #1b1c27;
 }
 
 .main-content_container__2 .content {
@@ -331,6 +331,7 @@ body {
   font-size: 30px;
   font-family: "GreyHeavy";
   text-align: center;
+  line-height: 1.5;
 }
 
 .main-content_container__2 .content h2 span {
@@ -569,7 +570,51 @@ body {
 }
 
 .main-content_container__5 {
-  height: 100vh;
-  background-color: #ff0000;
+  background-color: #ffffff;
+}
+
+.main-content_container__5 h1 {
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-content_container__5 .special-container {
+  position: relative;
+}
+
+.main-content_container__5 .special-container .content-block {
+  height: 90px;
+  max-width: 1000px;
+  padding: clamp(0vw, 4.2vw, 10vw) clamp(0vw, 6.3vw, 10vw);
+  margin: 0 auto;
+  border-radius: 25px;
+  background-color: #252638;
+  color: white;
+  font-size: 70px;
+  font-family: "GreyBold";
+  text-align: center;
+}
+
+.main-content_container__5 .special-container .background {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  background-color: #1b1c27;
+  bottom: 0;
+  z-index: -1;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.main-content_container__5 footer {
+  height: 300px;
+  background: #1b1c27;
 }
 /*# sourceMappingURL=styles.css.map */
