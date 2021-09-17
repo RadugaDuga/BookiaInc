@@ -17,19 +17,18 @@ learnMoreBtn.addEventListener("mouseleave", () => {
 });
 
 
-
+const contentBlock = document.querySelector(".content-block")
 const titles = document.querySelectorAll("h1");
-titles.forEach(function (title) {
-	title.addEventListener("mouseover", () => {
+const arr = [...titles, contentBlock]
+arr.forEach( (each) => {
+	each.addEventListener("mouseover", () => {
 		gsap.to(".cursor", {
-			width: 70,
-			height: 70,
+			scale: 1.5,
 		});
 	});
-	title.addEventListener("mouseleave", () => {
+	each.addEventListener("mouseleave", () => {
 		gsap.to(".cursor", {
-			width: 20,
-			height: 20,
+			scale:1
 		});
 	});
 });
@@ -46,23 +45,46 @@ window.addEventListener("mousemove", (e) => {
 	gsap.to(".shape", {
 		x: mouseXpos,
 		y: mouseYpos,
-		stagger: -0.01,
+		stagger: -0.03,
 	});
 });
+
+
 
 
 
 const section_3 = document.getElementById("section_3");
-section_3.addEventListener("mouseover", () => {
-	gsap.set(".cursor", {
-		scale: 0,
+const section5 = document.getElementById("section5");
+const massiv = [section_3, section5]
+massiv.forEach( (el) => {
+	el.addEventListener("mouseover", () => {
+		gsap.to(".cursor", {
+			visibility:"hidden"
+		});
+	});
+	el.addEventListener("mouseleave", () => {
+		gsap.to(".cursor", {
+			visibility:"visible"
+		});
 	});
 });
-section_3.addEventListener("mouseleave", () => {
+
+
+
+
+
+
+const author = document.querySelector(".author")
+author.addEventListener("mousemove",()=>{
 	gsap.set(".cursor", {
-		scale: 1,
-	});
-});
+		scale:0.5
+	})
+})
+author.addEventListener("mouseleave",()=>{
+	gsap.set(".cursor", {
+		scale:1
+	})
+})
 
 
 
@@ -133,13 +155,13 @@ ScrollTrigger.create({
 	scroller:"#global-wrapper",
 	trigger: '.root',
 	onUpdate: (self) => {
-		const skew = self.getVelocity() / -1000;
-		console.log(skew);
+		const skew = self.getVelocity() / -600;
+
 		if (Math.abs(skew) > Math.abs(proxy.skew)) {
 			proxy.skew = skew;
 			gsap.to(proxy, {
 				skew: 0,
-				duration: 0.5,
+				duration: 1,
 				ease: "power3",
 				overwrite: true,
 				onUpdate: () => {
@@ -158,18 +180,18 @@ gsap.set(".section", { transformOrigin: "center center", force3D: true });
 
 // ? __________________ C U S T O M   A N I M A T I O N S  ____________________
 
-const counterAnimation = gsap.timeline({ defaults: { ease: "none" } }).to("#hoursCount", {
+const counterAnimation = gsap.timeline({ defaults: { ease: Expo.easeOut } }).to("#hoursCount", {
 	innerText: 1500,
-	duration: 1.5,
+	duration: 4,
 	snap: {
 		innerText: 10,
 	},
+
 });
 
 ScrollTrigger.create({
 	trigger: "#section2",
 	toggleActions: "restart pause resume none",
-	markers: true,
 	start: 300,
 	end: 0,
 	scroller: "#global-wrapper",
@@ -178,10 +200,6 @@ ScrollTrigger.create({
 
 
 
-
-
-
-
-
+// ? __________________  P I N N I N G  ____________________
 
 
