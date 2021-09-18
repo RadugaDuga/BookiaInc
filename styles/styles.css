@@ -300,7 +300,7 @@ body {
 }
 
 .main-content_container .main-image {
-  background: center no-repeat url(/images/ReactRedux.png);
+  background: center no-repeat url(images/ReactRedux.png);
   background-size: cover;
   -webkit-box-flex: 2.3;
       -ms-flex: 2.3;
