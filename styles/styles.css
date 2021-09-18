@@ -733,6 +733,11 @@ body {
   background: #101118;
 }
 
+.swiper {
+  width: 90%;
+  margin: 0 auto;
+}
+
 .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -751,6 +756,7 @@ body {
 
 .swiper-pagination-bullet-active {
   background-color: white;
+  border-radius: 0;
 }
 
 .swiper-slide:nth-child(4n) {
