@@ -252,7 +252,9 @@ body {
     }
 
     .main-image {
-        background: center no-repeat url(images/ReactRedux.png);
+        background-image: url(../images/ReactRedux.png);
+        background-position: center;
+        background-repeat: no-repeat;
         background-size: cover;
         flex: 2.3;
         margin: 30px;
@@ -626,8 +628,7 @@ body {
 
 
 .swiper {
-  width:90%;
-  margin: 0 auto;
+  
 }
 
 .swiper-slide {
@@ -660,5 +661,7 @@ body {
 
 @media screen and (min-width: 1600px) {
     .swiper {
+        width:90%;
+        margin: 0 auto;
     }
 }
