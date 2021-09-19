@@ -93,7 +93,7 @@ $("#container").mouseleave(function (e) {
 });
 
 $("#container").mouseenter(function (e) {
-	TweenMax.to(".btn", 0.3, { scale: 1.05 });
+	TweenMax.to(".btn", 0.3, { scale: 1.03 });
 });
 
 $("#container").mousemove(function (e) {
