@@ -66,6 +66,8 @@ body {
 .main-content_container {
     display: flex;
     flex-direction: row;
+
+    min-height: 100vh;
     background-color: $darkBackground;
     color: #e4e6ec;
 
@@ -85,9 +87,9 @@ body {
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+        justify-content: center;
         flex: 1;
         padding: 0px clamp(1vw, 7vw, 7vw) 0px;
-        margin-top: 185px;
 
         h1 {
             font-size: clamp(3vw, 4rem, 4rem);
@@ -618,26 +620,29 @@ body {
     .special-container {
         position: relative;
 
-        .content-block {
-            height: 90px;
-            max-width: 1000px;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            padding: clamp(0vw, 4.2vw, 10vw);
-            margin: 0 auto;
-            border-radius: 25px;
-            background: #28293d;
-            background-size: 200% 200%;
-            color: white;
-            font-size: 3rem;
-            letter-spacing: 1px;
-            font-family: "GreyBold";
-            text-align: center;
+        .content-wrapper {
 
-            img {
-                width: 120px;
-                margin-right: 40px;
+            .content-block {
+                height: 90px;
+                max-width: 1000px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: clamp(0vw, 4.2vw, 10vw);
+                margin: 0 auto;
+                border-radius: 25px;
+                background: #28293d;
+                background-size: 200% 200%;
+                color: white;
+                font-size: 3rem;
+                letter-spacing: 1px;
+                font-family: "GreyBold";
+                text-align: center;
+    
+                img {
+                    width: 120px;
+                    margin-right: 40px;
+                }
             }
         }
         .background {
