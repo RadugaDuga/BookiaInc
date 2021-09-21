@@ -17,10 +17,9 @@ learnMoreBtn.addEventListener("mouseleave", () => {
 });
 
 
-const contentBlock = document.querySelector(".content-block")
+
 const titles = document.querySelectorAll("h1");
-const arr = [...titles, contentBlock]
-arr.forEach( (each) => {
+titles.forEach( (each) => {
 	each.addEventListener("mouseover", () => {
 		gsap.to(".cursor", {
 			scale: 1.5,
@@ -53,10 +52,11 @@ window.addEventListener("mousemove", (e) => {
 
 
 
-const section_3 = document.getElementById("section_3");
-const section5 = document.getElementById("section5");
-const massiv = [section_3, section5]
-massiv.forEach( (el) => {
+const section_3 = document.querySelector("#section_3");
+const swipe = document.querySelector("#swipe");
+
+const arrayItems = [section_3, swipe]
+arrayItems.forEach( (el) => {
 	el.addEventListener("mouseover", () => {
 		gsap.to(".cursor", {
 			visibility:"hidden"
@@ -101,7 +101,7 @@ $("#container").mousemove(function (e) {
 });
 
 function callParallax(e) {
-	parallaxIt(e, ".btn", 50);
+	parallaxIt(e, ".btn", 30);
 }
 
 function parallaxIt(e, target, movement) {
@@ -180,23 +180,7 @@ gsap.set(".section", { transformOrigin: "center center", force3D: true });
 
 // ? __________________ C U S T O M   A N I M A T I O N S  ____________________
 
-const counterAnimation = gsap.timeline({ defaults: { ease: Expo.easeOut } }).to("#hoursCount", {
-	innerText: 1500,
-	duration: 4,
-	snap: {
-		innerText: 10,
-	},
 
-});
-
-ScrollTrigger.create({
-	trigger: "#section2",
-	toggleActions: "restart pause resume none",
-	start: 300,
-	end: 0,
-	scroller: "#global-wrapper",
-	animation: counterAnimation,
-});
 
 
 
