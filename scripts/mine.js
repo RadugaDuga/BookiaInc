@@ -43,7 +43,7 @@ window.addEventListener("mousemove", (e) => {
 	});
 	gsap.to(".shape", {
 		x: mouseXpos,
-		y: mouseYpos,
+		y: mouseYpos ,
 		stagger: -0.03,
 	});
 });
