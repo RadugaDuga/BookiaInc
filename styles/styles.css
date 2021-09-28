@@ -474,26 +474,6 @@ body {
   padding-bottom: 40px;
 }
 
-.main-content_container__3 .content .text-box h3::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 15px;
-  background-color: #2128bd;
-}
-
-.main-content_container__3 .content .text-box h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 15px;
-  background-color: #2128bd;
-}
-
 .main-content_container__3 .content .shapes .shape {
   will-change: transform;
   position: absolute;
