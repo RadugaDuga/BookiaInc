@@ -1,15 +1,24 @@
 .cursor {
 	position: fixed;
-	border-radius: 50%;
-	height: 20px;
-	width: 20px;
-	will-change: transform;
-	-webkit-user-select: none;
-	-moz-user-select: none;
+	top: -3px;
+	left: -6px;
+	width: 50px;
+	height: 51px;
 	user-select: none;
 	pointer-events: none;
-	mix-blend-mode: difference;
-	z-index: 9999;
-	background-color: rgb(255, 255, 255);
-	transform: translate(-50%, -50%);
+	z-index: 3;
+	background-size: cover;
+	background-image: url("../../assets/cursor/paw.png");
+}
+.hover {
+	position: fixed;
+	top: -3px;
+	left: -6px;
+	width: 50px;
+	height: 51px;
+	user-select: none;
+	pointer-events: none;
+	z-index: 3;
+	background-size: cover;
+	background-image: url("../../assets/cursor/paw-hover.png");
 }

@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 import gsap from "gsap";
-import cursorStyles from "./components/CustomCursor/CustomCursor.module.css";
 
 function MagneticGSAProvider({ children }) {
 	const magnetMultiplier = 1;
@@ -10,7 +9,6 @@ function MagneticGSAProvider({ children }) {
 	const [magneticRadiusY, setMagneticRadiusY] = useState(150);
 
 	const magnetRef = useRef();
-	const cursor = document.querySelector(`.${cursorStyles.cursor}`);
 
 	useEffect(() => {
 		const currentEl = magnetRef.current;
@@ -43,14 +41,6 @@ function MagneticGSAProvider({ children }) {
 					duration: 0.6,
 					ease: "power2.out",
 				});
-
-				gsap.to(cursor, {
-					width: 200,
-					height: 200,
-					ease: "power3.out",
-					duration: 0.5,
-					overwrite: "auto",
-				});
 			} else {
 				setMagneticRadiusX(200);
 				setMagneticRadiusY(150);
@@ -60,14 +50,6 @@ function MagneticGSAProvider({ children }) {
 					y: 0,
 					duration: 0.8,
 					ease: "elastic.out(1, 0.5)",
-				});
-
-				gsap.to(cursor, {
-					width: 20,
-					height: 20,
-					ease: "power3.out",
-					duration: 0.5,
-					overwrite: "auto",
 				});
 			}
 		};
@@ -91,7 +73,7 @@ function MagneticGSAProvider({ children }) {
 			window.removeEventListener("mousemove", onMouseMove);
 			currentEl.removeEventListener("mouseleave", onMouseLeave);
 		};
-	}, [magneticRadiusX, magneticRadiusY, cursor]);
+	}, [magneticRadiusX, magneticRadiusY]);
 
 	return <div ref={magnetRef}>{children}</div>;
 }
