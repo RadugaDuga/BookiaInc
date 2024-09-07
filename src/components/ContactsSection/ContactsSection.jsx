@@ -22,7 +22,11 @@ export default function ContactsSection() {
 
 				<div className={styles.footerInner}>
 					<div className={styles.footerColumn}>
-						<img src={Favicon} className={styles.logo} />
+						<img
+							src={Favicon}
+							alt="BookiaInc Logo"
+							className={styles.logo}
+						/>
 
 						<div>
 							<span>Bookia.Inc</span>

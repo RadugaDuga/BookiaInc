@@ -44,22 +44,22 @@ export default function ArtsSection() {
 				onSwiper={() => {}}
 			>
 				<SwiperSlide>
-					<img src={Foodtruck} alt="" />
+					<img src={Foodtruck} alt="Foodtruck" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={Extrasense} alt="" />
+					<img src={Extrasense} alt="Extrasense" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={MaskotArt} alt="" />
+					<img src={MaskotArt} alt="MaskotArt" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={Safe} alt="" />
+					<img src={Safe} alt="Safe" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={Cafe} alt="" />
+					<img src={Cafe} alt="Cafe" />
 				</SwiperSlide>
 				<SwiperSlide>
-					<img src={University} alt="" />
+					<img src={University} alt="University" />
 				</SwiperSlide>
 			</Swiper>
 			<div className={styles.content}>
