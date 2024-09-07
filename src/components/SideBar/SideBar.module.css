@@ -1,0 +1,35 @@
+/* SideBar.css */
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.overlay button {
+	width: 62px;
+	height: 62px;
+	border: none;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: 700;
+	box-sizing: border-box;
+	background-color: transparent;
+	background-color: var(--secondary-background-color);
+	color: var(--primary-text-color);
+	box-shadow: 20px 20px 50px var(--card-shadow-color);
+}
+
+.line {
+	position: absolute;
+	width: 6px; /* Ширина палочки */
+	top: 0;
+	color: black;
+	right: 0; /* Отступ влево, чтобы линия была рядом с кнопками */
+	height: 50px; /* Начальная высота */
+	transition: all 0.3s ease; /* Плавный переход */
+	clip-path: inset(0px 0px 0px -2000px);
+}

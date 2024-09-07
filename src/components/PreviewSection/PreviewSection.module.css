@@ -1,0 +1,79 @@
+.wrapper {
+	height: 100vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 30px;
+	background-color: var(--primary-background-color);
+}
+
+.author_link {
+	display: flex;
+	gap: 20px;
+	height: 55px;
+	text-decoration: none;
+	align-items: center;
+	color: var(--primary-text-color);
+	font-size: 20px;
+	max-width: 100%;
+}
+
+.author_link img {
+	height: 100%;
+}
+.author_link svg {
+	fill: var(--primary-text-color);
+}
+
+video {
+	object-fit: cover !important;
+	width: 100%;
+	height: 100%;
+	min-width: 100px;
+}
+
+.author_link::before {
+	height: 55px;
+	padding-right: 15px;
+}
+
+.title {
+	font-size: 60px;
+	font-weight: 900;
+	color: var(--primary-text-color);
+}
+
+.content {
+	max-width: max-content;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 0 7vw;
+	gap: 40px;
+}
+
+.text_container {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.video_container {
+	flex: 2;
+}
+
+.text {
+	font-size: 20px;
+	line-height: 1.5;
+	color: var(--primary-text-color);
+}
+
+.hero_image {
+	flex: 2;
+	background: url(../../assets/optimized/maskot.webp);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}

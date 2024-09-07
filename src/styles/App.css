@@ -1,0 +1,43 @@
+:root {
+	--primary-text-color: rgb(39, 63, 83); /* Значение по умолчанию */
+	--primary-text-color-inverted: rgb(255, 255, 255);
+	--secondary-text-color: #595959;
+	--primary-background-color: #e6edf4;
+	--primary-background-color-inverted: #020202;
+	--secondary-background-color: #ffffff;
+	--card-dots-color: #d7d7d7;
+	--card-shadow-color: rgba(0, 0, 0, 0.062);
+}
+
+.body-dark {
+	--primary-text-color: white;
+	--primary-text-color-inverted: rgb(0, 0, 0);
+	--secondary-text-color: #adadad;
+	--primary-background-color: #171822;
+	--primary-background-color-inverted: #ffffff;
+	--secondary-background-color: #252638;
+	--card-dots-color: #50527a;
+	--card-shadow-color: rgba(0, 0, 0, 0.141);
+}
+
+.body-light {
+	--primary-text-color: rgb(39, 63, 83);
+	--primary-text-color-inverted: rgb(255, 255, 255);
+	--secondary-text-color: #595959;
+	--primary-background-color: #ebf5ff;
+	--primary-background-color-inverted: #020202;
+	--secondary-background-color: #ffffff;
+	--card-dots-color: #d7d7d7;
+	--card-shadow-color: rgba(26, 53, 100, 0.062);
+}
+
+body {
+	transition: background-color 0.3s ease, color 0.3s ease;
+	/* Плавные переходы для фона, текста и границы */
+	background: var(--primary-background-color);
+	font-smooth: antialiased;
+}
+
+.section {
+	transform: translateZ(0); /* Активирует аппаратное ускорение */
+}

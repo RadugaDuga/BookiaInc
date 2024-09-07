@@ -1,0 +1,15 @@
+export { default as Avatar } from "./avatar.png";
+export { default as Cafe } from "./cafe.webp";
+export { default as Safe } from "./safe.webp";
+export { default as Extrasense } from "./extrasense.webp";
+export { default as Foodtruck } from "./foodtruck.webp";
+export { default as Youtube } from "./youtube.png";
+export { default as AnimatedMaskot } from "./animated-maskot.mp4";
+export { default as Maskot } from "./maskot.webp";
+export { default as MaskotArt } from "./maskot-art.webp";
+export { default as JsInFlask } from "./js-in-flask.webp";
+export { default as ReactInFlask } from "./react-in-flask.webp";
+export { default as ReduxInFlask } from "./redux-in-flask.webp";
+export { default as SagaInFlask } from "./saga-in-flask.webp";
+export { default as University } from "./university.webp";
+export { default as Favicon } from "./favicon.ico";

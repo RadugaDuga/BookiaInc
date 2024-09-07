@@ -1,0 +1,60 @@
+.container {
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+	cursor: none;
+	padding: 40px 0;
+	background-color: rgb(255, 245, 106);
+}
+
+.text_box {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: flex-end;
+	mix-blend-mode: screen;
+	z-index: 1;
+	margin: 0 auto;
+	background-color: white;
+}
+
+.text_box h3 {
+	font-size: 10rem;
+	text-align: center;
+	font-weight: 900;
+}
+
+.shapes div {
+	will-change: transform;
+	position: absolute;
+	border-radius: 50%;
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+}
+
+.shape_1 {
+	background: #d865ff;
+	width: 1180px;
+	height: 1180px;
+	left: 300px !important;
+}
+
+.shape_2 {
+	background: #82e84b;
+	width: 680px;
+	height: 680px;
+}
+
+.shape_3 {
+	background: #62e3f7;
+	width: 480px;
+	height: 480px;
+	top: 300px !important;
+}

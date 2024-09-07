@@ -1,0 +1,58 @@
+.button {
+	border: 2px solid var(--primary-text-color);
+	position: relative;
+	padding: 20px 20px;
+	align-items: center;
+	color: var(--primary-text-color);
+	background-color: transparent;
+	overflow: hidden;
+	font-size: inherit;
+	font-weight: 600;
+}
+
+.button a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.button:hover {
+	color: var(--primary-text-color-inverted);
+}
+
+.button:hover::before {
+	width: 101%;
+	left: 0;
+	top: 0;
+}
+
+.button::before {
+	transition: 0.4s;
+	position: absolute;
+	width: 0%;
+	height: 100%;
+	right: 0;
+	top: 0;
+	background-color: var(--primary-text-color);
+	content: "";
+}
+
+.button_text {
+	font-size: inherit;
+	padding: 0 25px;
+	animation: 2.5s linear infinite sliding;
+}
+
+.button_text::after {
+	position: absolute;
+	width: -moz-max-content;
+	width: max-content;
+	content: var(--btn-text);
+	left: 100%;
+	padding: 0 25px;
+}
+
+@keyframes sliding {
+	100% {
+		transform: translateX(-100%);
+	}
+}

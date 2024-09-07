@@ -1,0 +1,15 @@
+.cursor {
+	position: fixed;
+	border-radius: 50%;
+	height: 20px;
+	width: 20px;
+	will-change: transform;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	mix-blend-mode: difference;
+	z-index: 9999;
+	background-color: rgb(255, 255, 255);
+	transform: translate(-50%, -50%);
+}

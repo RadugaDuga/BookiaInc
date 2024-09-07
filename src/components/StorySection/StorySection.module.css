@@ -1,0 +1,87 @@
+.container {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--primary-text-color);
+	background: var(--primary-background-color);
+	height: 100vh;
+	overflow: hidden;
+}
+
+.content p {
+	font-size: 18px;
+	line-height: 1.6em;
+}
+
+.content p a {
+	text-decoration: underline;
+	margin: 0 10px;
+	color: inherit;
+	font-weight: 800;
+}
+
+.content {
+	display: flex;
+	gap: 60px;
+	flex-direction: row;
+	justify-content: center;
+	backdrop-filter: blur(5px);
+	max-width: 1100px;
+	padding: 55px;
+}
+
+.title {
+	font-size: 45px;
+	font-weight: 900;
+	margin-bottom: 30px;
+}
+
+.image {
+	width: 100%;
+}
+
+.image_wrapper {
+	flex: 1;
+	display: flex;
+	align-items: center;
+}
+
+.text_wrapper {
+	flex: 2;
+}
+
+.youtubeS {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	transform: rotateZ(30deg);
+	background: url("../../assets/optimized/youtube.svg");
+	background-size: cover;
+	opacity: 0.4;
+}
+
+.youtubeM {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	transform: rotateZ(-10deg);
+	background: url("../../assets/optimized/youtube.svg");
+	background-size: cover;
+	opacity: 0.6;
+}
+.youtubeL {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 70px;
+	height: 70px;
+	transform: rotateZ(10deg);
+	background: url("../../assets/optimized/youtube.svg");
+	background-size: cover;
+	opacity: 0.8;
+}
