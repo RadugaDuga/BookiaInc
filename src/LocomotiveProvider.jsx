@@ -92,7 +92,7 @@ const SkewAnimation = () => {
 	return null;
 };
 
-const ScrollProvider = ({ children }) => {
+const LocomotiveProvider = ({ children }) => {
 	const containerRef = useRef(null); // Используем useRef для контейнера
 
 	return (
@@ -116,8 +116,8 @@ const ScrollProvider = ({ children }) => {
 	);
 };
 
-ScrollProvider.propTypes = {
+LocomotiveProvider.propTypes = {
 	children: PropTypes.node,
 };
 
-export default ScrollProvider;
+export default LocomotiveProvider;

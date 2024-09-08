@@ -10,15 +10,15 @@ import App from "./App";
 
 import CustomCursor from "./components/CustomCursor";
 import { ThemeProvider } from "./ThemeProvider";
-import ScrollProvider from "./Scrollprovider";
+import LocomotiveProvider from "./LocomotiveProvider";
 
 createRoot(document.getElementById("root")).render(
 	<>
 		<CustomCursor />
-		<ScrollProvider>
+		<LocomotiveProvider>
 			<ThemeProvider>
 				<App />
 			</ThemeProvider>
-		</ScrollProvider>
+		</LocomotiveProvider>
 	</>
 );
