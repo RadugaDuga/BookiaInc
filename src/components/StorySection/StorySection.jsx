@@ -35,7 +35,7 @@ function StorySection() {
 
 			<div className={styles.content}>
 				<div className={styles.image_wrapper}>
-					<img src={Youtube} alt="" className={styles.image} />
+					<img src={Youtube} alt="Youtube logo" className={styles.image} />
 				</div>
 				<div className={styles.text_wrapper}>
 					<h1 className={styles.title}>

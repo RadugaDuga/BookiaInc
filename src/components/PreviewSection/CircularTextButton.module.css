@@ -1,18 +1,15 @@
 .button {
+	display: flex;
 	border: 2px solid var(--primary-text-color);
 	position: relative;
-	padding: 20px 20px;
 	align-items: center;
 	color: var(--primary-text-color);
 	background-color: transparent;
 	overflow: hidden;
 	font-size: inherit;
+	padding: 20px;
 	font-weight: 600;
-}
-
-.button a {
 	text-decoration: none;
-	color: inherit;
 }
 
 .button:hover {
@@ -39,6 +36,7 @@
 .button_text {
 	font-size: inherit;
 	padding: 0 25px;
+	pointer-events: none;
 	animation: 2.5s linear infinite sliding;
 }
 

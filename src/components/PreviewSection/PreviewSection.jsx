@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import TwitterIcon from "../../assets/icons/TwitterIcon";
 import styles from "./PreviewSection.module.css";
 import CircularTextButton from "./CircularTextButton";
-import MagneticGSAProvider from "../../MagneticGSAProvider";
+import MagneticGSAProvider from "../../MagneticProvider";
 import { AnimatedMaskot, Avatar } from "../../assets/optimized";
 
 function PreviewSection() {
@@ -32,7 +32,7 @@ function PreviewSection() {
 						target="blank_"
 						className={styles.author_link}
 					>
-						<img src={Avatar} alt="" />
+						<img src={Avatar} alt="Avatar" />
 						Frontend Developer
 						<TwitterIcon />
 					</a>

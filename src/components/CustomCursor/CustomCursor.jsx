@@ -8,7 +8,7 @@ function CustomCursor() {
 
 	useEffect(() => {
 		const cursor = cursorRef.current;
-		const cursorHover = cursorHoverRef.current; // Исправлено
+		const cursorHover = cursorHoverRef.current;
 
 		const onMouseMove = (e) => {
 			gsap.to(cursor, {
@@ -29,24 +29,32 @@ function CustomCursor() {
 
 		const onMouseOut = (e) => {
 			if (!e.relatedTarget || e.relatedTarget.nodeName === "HTML") {
-				gsap.to(cursor, { autoAlpha: 0, duration: 0.2 }); // Скрываем основной курсор
-				gsap.to(cursorHover, { autoAlpha: 0, duration: 0.2 }); // Скрываем hover курсор
+				gsap.to(cursor, { autoAlpha: 0, duration: 0 }); // Скрываем основной курсор
+				gsap.to(cursorHover, { autoAlpha: 0, duration: 0 }); // Скрываем hover курсор
 			}
 		};
 
 		const onMouseOver = () => {
-			gsap.to(cursor, { autoAlpha: 1, duration: 0.2 }); // Показываем основной курсор
-			gsap.to(cursorHover, { autoAlpha: 0, duration: 0.2 }); // Скрываем hover курсор
+			gsap.to(cursor, { autoAlpha: 1, duration: 0 }); // Показываем основной курсор
+			gsap.to(cursorHover, { autoAlpha: 0, duration: 0 }); // Скрываем hover курсор
 		};
 
-		const onLinkHover = () => {
-			gsap.to(cursor, { autoAlpha: 0, duration: 0.2 }); // Скрываем основной курсор
-			gsap.to(cursorHover, { autoAlpha: 1, duration: 0.2 }); // Показываем hover курсор
+		const onElementHover = () => {
+			gsap.to(cursor, { autoAlpha: 0, duration: 0, overwrite: true }); // Скрываем основной курсор мгновенно
+			gsap.to(cursorHover, {
+				autoAlpha: 1,
+				duration: 0,
+				overwrite: true,
+			}); // Показываем hover курсор мгновенно
 		};
 
-		const onLinkOut = () => {
-			gsap.to(cursor, { autoAlpha: 1, duration: 0.2 }); // Показываем основной курсор
-			gsap.to(cursorHover, { autoAlpha: 0, duration: 0.2 }); // Скрываем hover курсор
+		const onElementOut = () => {
+			gsap.to(cursor, { autoAlpha: 1, duration: 0, overwrite: true }); // Показываем основной курсор мгновенно
+			gsap.to(cursorHover, {
+				autoAlpha: 0,
+				duration: 0,
+				overwrite: true,
+			}); // Скрываем hover курсор мгновенно
 		};
 
 		document.addEventListener("mousemove", onMouseMove);
@@ -54,10 +62,10 @@ function CustomCursor() {
 		document.addEventListener("mouseover", onMouseOver);
 
 		// Добавляем обработчики наведения для всех ссылок
-		const links = document.querySelectorAll("a");
-		links.forEach((link) => {
-			link.addEventListener("mouseenter", onLinkHover);
-			link.addEventListener("mouseleave", onLinkOut);
+		const elements = document.querySelectorAll("a, button");
+		elements.forEach((element) => {
+			element.addEventListener("mouseenter", onElementHover);
+			element.addEventListener("mouseleave", onElementOut);
 		});
 
 		return () => {
@@ -65,10 +73,10 @@ function CustomCursor() {
 			document.removeEventListener("mouseout", onMouseOut);
 			document.removeEventListener("mouseover", onMouseOver);
 
-			// Удаляем обработчики наведения для всех ссылок
-			links.forEach((link) => {
-				link.removeEventListener("mouseenter", onLinkHover);
-				link.removeEventListener("mouseleave", onLinkOut);
+			// Удаляем обработчики наведения для всех ссылок и кнопок
+			elements.forEach((element) => {
+				element.removeEventListener("mouseenter", onElementHover);
+				element.removeEventListener("mouseleave", onElementOut);
 			});
 		};
 	}, []);

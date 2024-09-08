@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { PropTypes } from "prop-types";
 import gsap from "gsap";
 
-function MagneticGSAProvider({ children }) {
+function MagneticProvider({ children }) {
 	const magnetMultiplier = 1;
 
 	const [magneticRadiusX, setMagneticRadiusX] = useState(200);
@@ -75,10 +75,10 @@ function MagneticGSAProvider({ children }) {
 		};
 	}, [magneticRadiusX, magneticRadiusY]);
 
-	return <div ref={magnetRef}>{children}</div>;
+	return <span ref={magnetRef}>{children}</span>;
 }
 
-MagneticGSAProvider.propTypes = {
+MagneticProvider.propTypes = {
 	children: PropTypes.node,
 };
-export default MagneticGSAProvider;
+export default MagneticProvider;

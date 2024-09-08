@@ -22,7 +22,7 @@ function SkillCard({
 					<p>{text}</p>
 				</div>
 				<div className={styles.image}>
-					<img src={imgSrc} alt="" />
+					<img src={imgSrc} alt="Object Img" />
 				</div>
 			</div>
 			<ul>
