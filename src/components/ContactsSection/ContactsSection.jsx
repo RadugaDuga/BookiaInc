@@ -3,7 +3,6 @@ import {
 	GithubIcon,
 	GmailIcon,
 	LinkedInIcon,
-	TwitterIcon,
 } from "../../assets/icons";
 import { Favicon } from "../../assets/optimized";
 import styles from "./ContactsSection.module.css";
@@ -64,16 +63,6 @@ export default function ContactsSection() {
 									rel="noopener noreferrer"
 								>
 									giorg.ibukia@geolab.edu.ge
-								</a>
-							</li>
-							<li>
-								<TwitterIcon />
-								<a
-									href="https://twitter.com/Bukija"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									Georgi Bukia
 								</a>
 							</li>
 							<li>

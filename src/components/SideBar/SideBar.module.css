@@ -3,8 +3,9 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	bottom: 0;
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 }
@@ -30,6 +31,6 @@
 	color: black;
 	right: 0; /* Отступ влево, чтобы линия была рядом с кнопками */
 	height: 50px; /* Начальная высота */
-	transition: all 0.3s ease; /* Плавный переход */
+	transition: all 0.2s ease; /* Плавный переход */
 	clip-path: inset(0px 0px 0px -2000px);
 }

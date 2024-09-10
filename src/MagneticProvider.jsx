@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import gsap from "gsap";
 
 function MagneticProvider({ children }) {
-	const magnetMultiplier = 1;
-
-	const [magneticRadiusX, setMagneticRadiusX] = useState(200);
-	const [magneticRadiusY, setMagneticRadiusY] = useState(150);
-
-	const magnetRef = useRef();
+	const magnetMultiplier = 1; // Установите множитель магнита
+	const [magneticRadiusX, setMagneticRadiusX] = useState(200); // Радиус по оси X
+	const [magneticRadiusY, setMagneticRadiusY] = useState(150); // Радиус по оси Y
+	const magnetRef = useRef(); // Реф для магнита
 
 	useEffect(() => {
 		const currentEl = magnetRef.current;
@@ -21,6 +19,7 @@ function MagneticProvider({ children }) {
 			const distanceX = e.clientX - buttonCenterX;
 			const distanceY = e.clientY - buttonCenterY;
 
+			// Нормализуем расстояние в пределах радиуса
 			const normalizedDistanceX = distanceX / magneticRadiusX;
 			const normalizedDistanceY = distanceY / magneticRadiusY;
 
@@ -29,12 +28,13 @@ function MagneticProvider({ children }) {
 			);
 
 			if (distance < 1) {
-				setMagneticRadiusX(300);
+				setMagneticRadiusX(300); // Увеличиваем радиус, когда курсор находится в зоне магнита
 				setMagneticRadiusY(250);
 
 				const magnetStrength =
 					Math.pow(1 - distance, 2) * magnetMultiplier;
 
+				// Изменено: используем 'x' и 'y' для корректного движения к курсору
 				gsap.to(currentEl, {
 					x: distanceX * magnetStrength,
 					y: distanceY * magnetStrength,
@@ -42,7 +42,7 @@ function MagneticProvider({ children }) {
 					ease: "power2.out",
 				});
 			} else {
-				setMagneticRadiusX(200);
+				setMagneticRadiusX(200); // Восстанавливаем радиус, когда курсор выходит из зоны магнита
 				setMagneticRadiusY(150);
 
 				gsap.to(currentEl, {
@@ -55,6 +55,7 @@ function MagneticProvider({ children }) {
 		};
 
 		const onMouseLeave = () => {
+			// Восстанавливаем радиус и возвращаем элемент в исходное положение
 			setMagneticRadiusX(300);
 			setMagneticRadiusY(300);
 
@@ -81,4 +82,5 @@ function MagneticProvider({ children }) {
 MagneticProvider.propTypes = {
 	children: PropTypes.node,
 };
+
 export default MagneticProvider;
