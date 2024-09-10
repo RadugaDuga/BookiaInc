@@ -1,24 +1,17 @@
-.cursor {
+.cursor,
+.hover {
 	position: fixed;
 	top: -3px;
 	left: -6px;
-	width: 50px;
-	height: 51px;
+	width: 55px;
+	height: 57px;
 	user-select: none;
 	pointer-events: none;
 	z-index: 3;
 	background-size: cover;
 	background-image: url("../../assets/cursor/paw.png");
 }
+
 .hover {
-	position: fixed;
-	top: -3px;
-	left: -6px;
-	width: 50px;
-	height: 51px;
-	user-select: none;
-	pointer-events: none;
-	z-index: 3;
-	background-size: cover;
 	background-image: url("../../assets/cursor/paw-hover.png");
 }

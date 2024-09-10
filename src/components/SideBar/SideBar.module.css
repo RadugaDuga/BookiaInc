@@ -24,6 +24,28 @@
 	box-shadow: 20px 20px 50px var(--card-shadow-color);
 }
 
+.overlay button:nth-child(2) {
+	color: rgb(76, 255, 76);
+}
+.overlay button:hover {
+	color: rgb(76, 139, 255);
+}
+.overlay button:hover {
+	color: rgb(76, 139, 255);
+}
+.overlay button:hover {
+	color: rgb(76, 139, 255);
+}
+.overlay button:hover {
+	color: rgb(76, 139, 255);
+}
+.overlay button:hover {
+	color: rgb(76, 139, 255);
+}
+.overlay button:hover {
+	color: rgb(76, 139, 255);
+}
+
 .line {
 	position: absolute;
 	width: 6px; /* Ширина палочки */
