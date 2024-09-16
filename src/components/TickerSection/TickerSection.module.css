@@ -1,0 +1,9 @@
+.item {
+	display: inline-block;
+	color: white;
+	font-size: 36px;
+	font-weight: 600;
+	padding: 30px;
+	background-color: var(--secondary-background-color);
+	margin-right: 4px;
+}

@@ -10,27 +10,11 @@
 	padding: 20px;
 	font-weight: 600;
 	text-decoration: none;
+	cursor: pointer; /* Добавляем курсор для интерактивности */
 }
 
 .button:hover {
 	color: var(--primary-text-color-inverted);
-}
-
-.button:hover::before {
-	width: 101%;
-	left: 0;
-	top: 0;
-}
-
-.button::before {
-	transition: 0.4s;
-	position: absolute;
-	width: 0%;
-	height: 100%;
-	right: 0;
-	top: 0;
-	background-color: var(--primary-text-color);
-	content: "";
 }
 
 .button_text {
@@ -38,6 +22,9 @@
 	padding: 0 25px;
 	pointer-events: none;
 	animation: 2.5s linear infinite sliding;
+	position: relative; /* Добавлено для позиционирования анимации текста */
+	z-index: 1; /* Текст должен быть выше анимации */
+	transition: 0.4s;
 }
 
 .button_text::after {
@@ -53,4 +40,19 @@
 	100% {
 		transform: translateX(-125%);
 	}
+}
+
+/* Добавляем новые стили для элемента круга */
+.fillCircle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 200px;
+	height: 200px;
+	background-color: var(--primary-text-color);
+	border-radius: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none; /* не позволяет кругу захватывать события мыши */
+	z-index: 0; /* Круг под текстом */
+	transition: transform 0.1s linear; /* Плавное изменение размера круга */
 }

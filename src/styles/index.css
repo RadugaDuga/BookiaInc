@@ -54,7 +54,5 @@ html {
 
 * {
 	box-sizing: border-box;
-	cursor: none;
-	user-select: none;
 	transition: background 0.3s ease-in;
 }

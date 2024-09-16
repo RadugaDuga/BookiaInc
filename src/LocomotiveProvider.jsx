@@ -61,7 +61,7 @@ const SkewAnimation = () => {
 			force3D: true, // Включает аппаратное ускорение
 			onUpdate: (self) => {
 				const velocity = self.getVelocity();
-				const skewTarget = -(velocity / 600);
+				const skewTarget = -(velocity / 800);
 
 				// Плавная анимация skew во время прокрутки
 				gsap.to(proxy, {

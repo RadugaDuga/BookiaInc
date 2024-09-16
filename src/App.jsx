@@ -3,11 +3,11 @@ import "./styles/locomotive.css";
 import "./styles/App.css";
 import PreviewSection from "./components/PreviewSection";
 import StorySection from "./components/StorySection";
-import GradientSection from "./components/GradientSection";
 import SkillsSection from "./components/SkillsSection";
 import ArtsSection from "./components/ArtsSection";
 import ContactsSection from "./components/ContactsSection";
 import { SideBar } from "./components/SideBar";
+import NewTicker from "./components/TickerSection";
 
 function App() {
 	return (
@@ -15,7 +15,7 @@ function App() {
 			<SideBar />
 			<PreviewSection />
 			<StorySection />
-			<GradientSection />
+			<NewTicker />
 			<SkillsSection />
 			<ArtsSection />
 			<ContactsSection />

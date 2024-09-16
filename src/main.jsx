@@ -8,13 +8,12 @@ import "swiper/css/scrollbar";
 
 import App from "./App";
 
-import CustomCursor from "./components/CustomCursor";
 import { ThemeProvider } from "./ThemeProvider";
 import LocomotiveProvider from "./LocomotiveProvider";
 
 createRoot(document.getElementById("root")).render(
 	<>
-		<CustomCursor />
+		{/* <CustomCursor /> */}
 		<LocomotiveProvider>
 			<ThemeProvider>
 				<App />

@@ -36,6 +36,7 @@
 .columnTitle {
 	font-size: 1.125rem;
 	margin-bottom: 1em;
+	font-weight: 600;
 }
 
 .footerColumn:first-child {
