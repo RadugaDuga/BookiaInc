@@ -1,0 +1,46 @@
+.stock-ticker {
+	font-size: 15px;
+	padding-block: 8px;
+	overflow: hidden;
+	user-select: none;
+	--gap: 50px;
+	display: flex;
+	gap: var(--gap);
+	color: var(--primary-text-color);
+	font-size: 30px;
+	font-weight: 900;
+}
+
+.stock-ticker ul {
+	list-style: none;
+	flex-shrink: 0;
+	min-width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: var(--gap);
+
+	animation: scroll 20s linear infinite;
+}
+.stock-ticker ul li {
+	background-color: var(--secondary-background-color);
+	padding: 20px;
+}
+
+.stock-ticker:hover ul {
+	animation-play-state: paused;
+}
+
+@keyframes scroll {
+	to {
+		transform: translateX(calc(-100% - var(--gap)));
+	}
+}
+
+.stock-ticker ul:first-child {
+	/* background-color: yellow; */
+}
+
+.stock-ticker ul:last-child {
+	/* background-color: pink; */
+}
