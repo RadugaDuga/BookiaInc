@@ -51,7 +51,7 @@
 	height: 200px;
 	background-color: var(--primary-text-color);
 	border-radius: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(0);
 	pointer-events: none; /* не позволяет кругу захватывать события мыши */
 	z-index: 0; /* Круг под текстом */
 	transition: transform 0.1s linear; /* Плавное изменение размера круга */
