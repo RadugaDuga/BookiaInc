@@ -1,66 +1,6 @@
-/* Стили движения влево  */
-
-.stock-ticker {
+.stock-ticker-right,
+.stock-ticker-left {
 	font-size: 15px;
-	padding-block: 8px;
-	overflow: hidden;
-	user-select: none;
-	--gap: 20px;
-	display: flex;
-	gap: var(--gap);
-	color: var(--primary-text-color);
-	font-size: 30px;
-	font-weight: 900;
-}
-
-.stock-ticker ul {
-	list-style: none;
-	flex-shrink: 0;
-	min-width: 100%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	gap: var(--gap);
-
-	animation: scroll 20s linear infinite;
-}
-.stock-ticker ul li {
-	background-color: var(--secondary-background-color);
-	padding: 20px 50px;
-}
-
-.stock-ticker:hover ul {
-	animation-play-state: paused;
-}
-
-@keyframes scroll {
-	to {
-		transform: translateX(calc(-100% - var(--gap)));
-	}
-}
-
-.stock-ticker ul:first-child {
-	/* background-color: yellow; */
-}
-
-.stock-ticker ul:last-child {
-	/* background-color: pink; */
-}
-
-
-
-
-
-
-
-
-
-/* Стили для движения вправо  */
-
-/* 
-.stock-ticker {
-	font-size: 15px;
-	padding-block: 8px;
 	overflow: hidden;
 	user-select: none;
 	--gap: 10px;
@@ -69,9 +9,10 @@
 	color: var(--primary-text-color);
 	font-size: 30px;
 	font-weight: 900;
+	margin-bottom: var(--gap);
 }
 
-.stock-ticker ul {
+.stock-ticker-right ul {
 	list-style: none;
 	flex-shrink: 0;
 	min-width: 100%;
@@ -80,15 +21,32 @@
 	align-items: center;
 	gap: var(--gap);
 	transform: translateX(calc(-100% - var(--gap)));
-	animation: scroll-right 20s linear infinite;
+	animation: scroll-right 40s linear infinite;
 }
 
-.stock-ticker ul li {
+.stock-ticker-left ul {
+	list-style: none;
+	flex-shrink: 0;
+	min-width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	gap: var(--gap);
+	animation: scroll-left 40s linear infinite;
+}
+
+.stock-ticker-right ul li,
+.stock-ticker-left ul li {
 	background-color: var(--secondary-background-color);
+	text-align: center;
 	padding: 20px 40px;
+	flex: 1;
+	border-radius: 5px;
+	white-space: nowrap;
 }
 
-.stock-ticker:hover ul {
+.stock-ticker-right:hover ul,
+.stock-ticker-left:hover ul {
 	animation-play-state: paused;
 }
 
@@ -99,5 +57,10 @@
 	to {
 		transform: translateX(0);
 	}
-} 
- */
+}
+
+@keyframes scroll-left {
+	to {
+		transform: translateX(calc(-100% - var(--gap)));
+	}
+}
