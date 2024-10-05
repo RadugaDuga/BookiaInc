@@ -1,3 +1,5 @@
+/* Стили движения влево  */
+
 .stock-ticker {
 	font-size: 15px;
 	padding-block: 8px;
@@ -53,7 +55,7 @@
 
 
 
-
+/* Стили для движения вправо  */
 
 /* 
 .stock-ticker {
@@ -97,4 +99,5 @@
 	to {
 		transform: translateX(0);
 	}
-} */
+} 
+ */
