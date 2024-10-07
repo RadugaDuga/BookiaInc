@@ -12,7 +12,7 @@ function SkillsSection() {
 		<section className={styles.container} id="skills-section">
 			<div className={styles.content}>
 				<div className={styles.col1}>
-					<div className={styles.card}>
+					<div className={`${styles.card} ${styles.card_first}`}>
 						<h1>My hard skills</h1>
 						<p>
 							These cards contain a short description of the

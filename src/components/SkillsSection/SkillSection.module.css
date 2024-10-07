@@ -54,9 +54,9 @@
 	padding: 60px;
 	box-sizing: border-box;
 	background-color: var(--secondary-background-color);
-	box-shadow: 20px 20px 30px var(--card-shadow-color);
 	color: var(--primary-text-color);
-	transition: border-color 0.5s ease; /* Переход для плавной смены цвета */
+	transition: border-color 0.5s ease;
+	border: 1px solid var(--border-color);
 }
 
 .card::before {
@@ -65,9 +65,28 @@
 	border: 30px solid rgba(0, 0, 0, 0); /* Используем полупрозрачный цвет, вместо `transparent` */
 	border-top: 30px solid var(--primary-background-color);
 	border-left: 30px solid var(--primary-background-color);
-	left: 0;
-	top: 0;
+	left: -1px;
+	top: -2px;
 	transition: border-color 0.5s ease; /* Переход для плавной смены цвета */
+}
+
+.card::after {
+	content: "";
+	position: absolute;
+	top: 28px;
+	left: -12px;
+	transform: rotate(-45deg);
+	width: 82px;
+	background-color: var(--border-color);
+	height: 1px;
+}
+
+.card_first {
+	border: none;
+}
+
+.card_first::after {
+	background-color: transparent;
 }
 
 .card h2 {

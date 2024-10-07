@@ -27,19 +27,14 @@ function PreviewSection() {
 						Spartakovich
 					</h1>
 
-					<a
-						href="https://twitter.com/Bukija"
-						target="blank_"
-						className={styles.author_link}
-					>
+					<span className={styles.author_link}>
 						<img src={Avatar} alt="Avatar" />
 						Frontend Developer
-						<TwitterIcon />
-					</a>
+					</span>
 
 					<p className={styles.text}>
-						My main programming language is js. In my work, I use{" "}
-						<b>React</b> in conjunction with a state manager -{" "}
+						My main programming language is js. In my work, I use
+						<b>React</b> in conjunction with a state manager -
 						<b>Redux</b>
 					</p>
 

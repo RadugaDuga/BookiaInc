@@ -7,6 +7,7 @@
 	--secondary-background-color: #252638;
 	--card-dots-color: #50527a;
 	--card-shadow-color: rgba(0, 0, 0, 0.141);
+	--border-color: #3b3d5b;
 }
 
 .body-light {
@@ -18,15 +19,15 @@
 	--secondary-background-color: #ffffff;
 	--card-dots-color: #d7d7d7;
 	--card-shadow-color: rgba(26, 53, 100, 0.062);
+	--border-color: #cfe6ff;
 }
 
 body {
 	transition: background-color 0.3s ease, color 0.3s ease;
-	/* Плавные переходы для фона, текста и границы */
 	background: var(--primary-background-color);
 	font-smooth: antialiased;
 }
 
 .section {
-	transform: translateZ(0); /* Активирует аппаратное ускорение */
+	transform: translateZ(0); 
 }
