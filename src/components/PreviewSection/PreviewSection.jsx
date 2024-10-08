@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import TwitterIcon from "../../assets/icons/TwitterIcon";
 import styles from "./PreviewSection.module.css";
 import CircularTextButton from "./CircularTextButton";
 import MagneticGSAProvider from "../../MagneticProvider";

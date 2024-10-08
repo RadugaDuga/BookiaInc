@@ -17,7 +17,7 @@ function CircularTextButton({ text }) {
 		isHovering.current = false; // Сбрасываем флаг наведения
 		gsap.to(circleRef.current, {
 			scale: 0,
-			duration: 0.2, // Ускоряем исчезновение круга
+			duration: 0.1, // Ускоряем исчезновение круга
 			ease: "linear",
 		});
 	};
@@ -33,7 +33,7 @@ function CircularTextButton({ text }) {
 		gsap.set(circle, { x: mouseX, y: mouseY });
 		if (isHovering.current) {
 			gsap.to(circle, {
-				scale: 2,
+				scale: 5,
 				duration: 0.1, // Ускоряем появление круга
 				ease: "linear", // Быстрый выход для более резкого эффекта
 			});
@@ -47,7 +47,7 @@ function CircularTextButton({ text }) {
 
 	return (
 		<a
-			href="https://t.me/iBukia"
+			href="https://t.me/GeorgiBukia"
 			target="_blank"
 			className={styles.button}
 			ref={buttonRef}
