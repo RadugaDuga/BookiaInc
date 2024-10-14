@@ -7,9 +7,9 @@
 	background-color: transparent;
 	overflow: hidden;
 	font-size: inherit;
-	padding: 20px;
+	padding: 1.25rem;
 	font-weight: 1000;
-	font-size: 18px;
+	font-size: 1.125rem;
 	text-decoration: none;
 	cursor: pointer; /* Добавляем курсор для интерактивности */
 }
@@ -20,7 +20,7 @@
 
 .button_text {
 	font-size: inherit;
-	padding: 0 25px;
+	padding: 0 1.56rem;
 	pointer-events: none;
 	animation: 2.5s linear infinite sliding;
 	position: relative; /* Добавлено для позиционирования анимации текста */
@@ -34,7 +34,7 @@
 	width: max-content;
 	content: var(--btn-text);
 	left: 125%;
-	padding: 0 25px;
+	padding: 0 1.56rem;
 }
 
 @keyframes sliding {

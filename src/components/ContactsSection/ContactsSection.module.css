@@ -24,9 +24,11 @@
 	font-size: 4rem;
 	font-weight: 600;
 }
+
 .footer {
 	align-self: flex-end;
 }
+
 .footerInner {
 	display: flex;
 	flex-direction: row;
@@ -54,6 +56,7 @@
 	line-height: 2em;
 	color: var(--secondary-text-color);
 }
+
 .footerColumn ul li svg {
 	fill: var(--secondary-text-color);
 }
@@ -62,6 +65,7 @@
 	text-decoration: underline;
 	color: var(--primary-text-color);
 }
+
 .footerColumn ul li:hover svg {
 	fill: var(--primary-text-color);
 }
