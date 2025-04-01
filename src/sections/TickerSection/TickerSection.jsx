@@ -1,4 +1,5 @@
-import Ticker from "./Ticker";
+import Ticker from "../../components/Ticker";
+import styles from "./TickerSection.module.css";
 
 const items = [
 	{ name: "Effector" },
@@ -53,6 +54,7 @@ function TickerSection() {
 			<Ticker items={items} direction="right" />
 			<Ticker items={items2} direction="left" />
 			<Ticker items={items3} direction="right" />
+			<span className={styles.log}></span>
 		</>
 	);
 }

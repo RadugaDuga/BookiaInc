@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import styles from "./PreviewSection.module.css";
-import CircularTextButton from "./CircularTextButton";
 import MagneticGSAProvider from "../../MagneticProvider";
 import { AnimatedMaskot, Avatar } from "../../assets/optimized";
+import CircularTextButton from "../../components/CircularTextButton";
 
 function PreviewSection() {
 	const videoRef = useRef(null);

@@ -1,0 +1,7 @@
+.char {
+	transform: translateY(115px);
+	transition: 0.5s;
+	color: white;
+	font-size: 8rem;
+	font-weight: bold;
+}

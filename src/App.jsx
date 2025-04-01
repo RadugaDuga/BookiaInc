@@ -1,13 +1,14 @@
 import "reset-css";
 import "./styles/locomotive.css";
 import "./styles/App.css";
-import PreviewSection from "./components/PreviewSection";
-import StorySection from "./components/StorySection";
-import SkillsSection from "./components/SkillsSection";
-import ArtsSection from "./components/ArtsSection";
-import ContactsSection from "./components/ContactsSection";
-import { SideBar } from "./components/SideBar";
-import NewTicker from "./components/TickerSection";
+import PreviewSection from "./sections/PreviewSection";
+import StorySection from "./sections/StorySection";
+import SkillsSection from "./sections/SkillsSection";
+import ArtsSection from "./sections/ArtsSection";
+import ContactsSection from "./sections/ContactsSection";
+import { SideBar } from "./sections/SideBar";
+import NewTicker from "./sections/TickerSection";
+import AnimatedText from "./components/AnimatedText";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 			<SkillsSection />
 			<ArtsSection />
 			<ContactsSection />
+			<AnimatedText />
 		</div>
 	);
 }

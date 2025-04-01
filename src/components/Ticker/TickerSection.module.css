@@ -1,5 +1,5 @@
-.stock-ticker-right,
-.stock-ticker-left {
+.stock_ticker_right,
+.stock_ticker_left {
 	overflow: hidden;
 	user-select: none;
 	--gap: 20px;
@@ -12,7 +12,7 @@
 	margin-bottom: var(--gap);
 }
 
-.stock-ticker-right ul {
+.stock_ticker_right ul {
 	list-style: none;
 	flex-shrink: 0;
 	min-width: 100%;
@@ -24,7 +24,7 @@
 	animation: scroll-right 40s linear infinite;
 }
 
-.stock-ticker-left ul {
+.stock_ticker_left ul {
 	list-style: none;
 	flex-shrink: 0;
 	min-width: 100%;
@@ -35,8 +35,8 @@
 	animation: scroll-left 40s linear infinite;
 }
 
-.stock-ticker-right ul li,
-.stock-ticker-left ul li {
+.stock_ticker_right ul li,
+.stock_ticker_left ul li {
 	background-color: var(--secondary-background-color);
 	text-align: center;
 	padding: 20px 40px;
@@ -46,8 +46,8 @@
 	border-radius: 5px;
 }
 
-.stock-ticker-right ul li:hover,
-.stock-ticker-left ul li:hover {
+.stock_ticker_right ul li:hover,
+.stock_ticker_left ul li:hover {
 	box-shadow: inset 0px 0px 0px 3px var(--border-color);
 }
 
