@@ -93,7 +93,7 @@ const SkewAnimation = () => {
 };
 
 const LocomotiveProvider = ({ children }) => {
-	const containerRef = useRef(null); // Используем useRef для контейнера
+	const containerRef = useRef(null); 
 
 	return (
 		<LocomotiveScrollProvider
@@ -105,10 +105,10 @@ const LocomotiveProvider = ({ children }) => {
 				scrollFromAnywhere: false,
 			}}
 			watch={[]}
-			containerRef={containerRef} // Передаем ссылку в провайдер
+			containerRef={containerRef} 
 		>
 			<SkewAnimation />
-			{/* Убедимся, что ref привязан к контейнеру */}
+
 			<main data-scroll-container ref={containerRef}>
 				{children}
 			</main>

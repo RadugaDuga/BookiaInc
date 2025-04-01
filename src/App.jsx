@@ -8,7 +8,6 @@ import ArtsSection from "./sections/ArtsSection";
 import ContactsSection from "./sections/ContactsSection";
 import { SideBar } from "./sections/SideBar";
 import NewTicker from "./sections/TickerSection";
-import AnimatedText from "./components/AnimatedText";
 
 function App() {
 	return (
@@ -20,7 +19,6 @@ function App() {
 			<SkillsSection />
 			<ArtsSection />
 			<ContactsSection />
-			<AnimatedText />
 		</div>
 	);
 }

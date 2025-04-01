@@ -13,7 +13,6 @@ import LocomotiveProvider from "./LocomotiveProvider";
 
 createRoot(document.getElementById("root")).render(
 	<>
-		{/* <CustomCursor /> */}
 		<LocomotiveProvider>
 			<ThemeProvider>
 				<App />

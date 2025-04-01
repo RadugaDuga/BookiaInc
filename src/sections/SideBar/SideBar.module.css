@@ -19,3 +19,9 @@
 	background-color: var(--secondary-background-color);
 	color: var(--primary-text-color);
 }
+
+@media screen and (max-width: 1024px) {
+	.sidebar {
+		display: none;
+	}
+}
