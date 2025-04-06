@@ -13,4 +13,4 @@ export { default as ReactInFlask } from "./react-in-flask.webp";
 export { default as ReduxInFlask } from "./redux-in-flask.webp";
 export { default as SagaInFlask } from "./saga-in-flask.webp";
 export { default as University } from "./university.webp";
-export { default as Bookia } from "./Bookia.svg";
+export { default as Bookia } from "./bookia.svg";
