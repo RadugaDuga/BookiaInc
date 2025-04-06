@@ -2,8 +2,10 @@ import styles from "./StorySection.module.css";
 import { Youtube } from "../../assets/optimized";
 import useParticleAnimation from "../../hooks/UseParticles/useParticles";
 import { useRef } from "react";
+import { useTranslation } from 'react-i18next';
 
 function StorySection() {
+	const { t } = useTranslation();
 	const containerRef = useRef(null); // Реф для контейнера
 	const youtubeS = useRef(null);
 	const youtubeSx2 = useRef(null);
@@ -39,20 +41,10 @@ function StorySection() {
 				</div>
 				<div className={styles.text_wrapper}>
 					<h1 className={styles.title}>
-						A long time ago in a galaxy far, far away...
+						{t('story.title')}
 					</h1>
 					<p>
-						My journey into the world of frontend development began
-						in 2019. With the support of GeoLab, I mastered HTML and
-						CSS, and then ventured into learning JavaScript on my
-						own. Eventually, I stumbled upon a YouTube video titled
-						<a
-							href="https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8"
-							target="_blank"
-						>
-							React: Way of the Samurai
-						</a>
-						and the rest is history.
+						{t('story.description')}
 					</p>
 				</div>
 			</div>

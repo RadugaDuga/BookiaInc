@@ -45,6 +45,13 @@ const SkewAnimation = () => {
 		const skewSetter = gsap.quickSetter(".section", "skewY", "deg");
 		const proxy = { skew: 0 };
 
+		// Проверяем наличие элементов с классом section
+		const sections = document.querySelectorAll(".section");
+		if (!sections.length) {
+			console.warn('No elements with class "section" found');
+			return;
+		}
+
 		// Функция для плавного округления skew к целому числу после остановки прокрутки
 		const roundSkew = debounce(() => {
 			gsap.to(proxy, {
@@ -53,7 +60,7 @@ const SkewAnimation = () => {
 				ease: "power3",
 				onUpdate: () => skewSetter(proxy.skew),
 			});
-		}, 90); // Задержка в 150 мс перед округлением
+		}, 90); // Задержка в 90 мс перед округлением
 
 		const skewAnimation = ScrollTrigger.create({
 			scroller: scroll.el,
@@ -93,7 +100,7 @@ const SkewAnimation = () => {
 };
 
 const LocomotiveProvider = ({ children }) => {
-	const containerRef = useRef(null); 
+	const containerRef = useRef(null);
 
 	return (
 		<LocomotiveScrollProvider
@@ -105,11 +112,11 @@ const LocomotiveProvider = ({ children }) => {
 				scrollFromAnywhere: false,
 			}}
 			watch={[]}
-			containerRef={containerRef} 
+			containerRef={containerRef}
 		>
 			<SkewAnimation />
 
-			<main data-scroll-container ref={containerRef}>
+			<main id="loco" data-scroll-container ref={containerRef}>
 				{children}
 			</main>
 		</LocomotiveScrollProvider>

@@ -1,0 +1,13 @@
+.languageSwitcher {
+	padding: 0;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	fill: var(--primary-text-color);
+}
+
+.languageSwitcher svg {
+	height: 35px;
+	width: 35px;
+}

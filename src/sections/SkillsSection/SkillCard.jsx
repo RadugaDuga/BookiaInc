@@ -1,46 +1,83 @@
 import styles from "./SkillSection.module.css";
 import { PropTypes } from "prop-types";
-
+import StackElements from "../../components/StackElements/StackElements";
 function SkillCard({
-	list,
-	position,
-	text,
 	skill,
-	orderNumber,
 	imgSrc,
 	textColor,
+	experienceData,
 }) {
 	return (
 		<div
-			className={styles.card}
+			className={styles["skill-card"]}
 			style={{ "--textColor": `${textColor}` }}
 		>
-			<div className={styles.card_header}>
-				<div className={styles.description}>
-					<h2>{orderNumber}</h2>
-					<h1>{skill}</h1>
-					<p>{text}</p>
+			<div className={styles["skill-card__header"]}>
+				<div className={styles["skill-card__description"]}>
+					<h1 className={styles["skill-card__title"]}>{skill}</h1>
+					<div className={styles["skill-card__role-period"]}>
+						<h3 className={styles["skill-card__role"]}>
+							{experienceData.role}
+						</h3>
+						<span className={styles["skill-card__period"]}>
+							{experienceData.period}
+						</span>
+					</div>
 				</div>
-				<div className={styles.image}>
-					<img src={imgSrc} alt="Object Img" />
+				<div className={styles["skill-card__image"]}>
+					{typeof imgSrc === "string" ? (
+						<img src={imgSrc} alt="Object Img" />
+					) : (
+						imgSrc
+					)}
 				</div>
 			</div>
-			<ul>
-				{list.map((text, index) => {
-					const globalNumber = position + index;
-					const localNumber =
-						index < 10 ? `0${index + 1}` : `${index + 1}`;
-					return (
-						<li key={text}>
-							<span className={styles.marker}>
-								{globalNumber}
-							</span>
-							<span>{text}</span>
-							<span>{localNumber}</span>
-						</li>
-					);
-				})}
-			</ul>
+
+			<div className={styles["skill-card__experience-content"]}>
+				{experienceData.stack && (
+					<div className={styles["skill-card__section"]}>
+						<h4 className={styles["skill-card__section-title"]}>
+							Стек
+						</h4>
+						<p className={styles["skill-card__section-text"]}>
+							<StackElements string={experienceData.stack} />
+						</p>
+					</div>
+				)}
+
+				{experienceData.projects && (
+					<div className={styles["skill-card__section"]}>
+						<h4 className={styles["skill-card__section-title"]}>
+							Проекты
+						</h4>
+						<p className={styles["skill-card__section-text"]}>
+							{experienceData.projects}
+						</p>
+					</div>
+				)}
+
+				{experienceData.responsibilities && (
+					<div className={styles["skill-card__section"]}>
+						<h4 className={styles["skill-card__section-title"]}>
+							Роль
+						</h4>
+						<p className={styles["skill-card__section-text"]}>
+							{experienceData.responsibilities}
+						</p>
+					</div>
+				)}
+
+				{experienceData.achievements && (
+					<div className={styles["skill-card__section"]}>
+						<h4 className={styles["skill-card__section-title"]}>
+							Основные достижения
+						</h4>
+						<p className={styles["skill-card__section-text"]}>
+							{experienceData.achievements}
+						</p>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 }
@@ -51,8 +88,16 @@ SkillCard.propTypes = {
 	position: PropTypes.number,
 	skill: PropTypes.string,
 	orderNumber: PropTypes.string,
-	imgSrc: PropTypes.string,
+	imgSrc: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 	textColor: PropTypes.string,
+	experienceData: PropTypes.shape({
+		role: PropTypes.string,
+		period: PropTypes.string,
+		stack: PropTypes.string,
+		projects: PropTypes.string,
+		achievements: PropTypes.string,
+		responsibilities: PropTypes.string,
+	}),
 };
 
 export default SkillCard;

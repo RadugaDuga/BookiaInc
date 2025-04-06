@@ -21,8 +21,11 @@ import {
 	Safe,
 	University,
 } from "../../assets/optimized";
+import { useTranslation } from 'react-i18next';
 
 export default function ArtsSection() {
+	const { t } = useTranslation();
+	
 	return (
 		<section className={styles.container} id="arts-section">
 			<Swiper
@@ -65,12 +68,10 @@ export default function ArtsSection() {
 			<div className={styles.content}>
 				<div className={styles.text}>
 					<h1 className={styles.title}>
-						Creating 3D Scenes is My Passion
+						{t('arts.title')}
 					</h1>
 					<p className={styles.subtitle}>
-						I began exploring Blender and was captivated by its
-						intuitive interface and ease of use. That is how
-						modeling became my favorite hobby.
+						{t('arts.description')}
 					</p>
 				</div>
 			</div>

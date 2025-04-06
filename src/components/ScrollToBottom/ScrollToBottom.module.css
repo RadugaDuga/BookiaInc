@@ -1,0 +1,50 @@
+.scrollToBottom {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 8vw;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	cursor: pointer;
+}
+
+.scrollToBottom:hover {
+	background-color: var(--secondary-background-color);
+}
+
+.scrollToBottom:hover .arrowContainer {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.scrollToBottom:hover .arrowContainerRotated {
+	transform: translateY(0) rotate(180deg);
+	opacity: 1;
+}
+
+.arrowContainer {
+	display: flex;
+	width: 60px;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary-text-color);
+	transition: 0.2s ease-out;
+	transform: translateY(-20px);
+	opacity: 0;
+}
+
+.arrowContainerRotated {
+	display: flex;
+	width: 60px;
+	justify-content: center;
+	align-items: center;
+	color: var(--primary-text-color);
+	transition: 0.2s ease-out;
+	transform: translateY(20px) rotate(180deg);
+	opacity: 0;
+}
+
+/* Удаляем старые стили для .arrow, так как теперь используем компонент Arrow */

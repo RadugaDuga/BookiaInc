@@ -1,0 +1,114 @@
+{
+  "common": {
+    "welcome": "Welcome",
+    "about": "About",
+    "contact": "Contact",
+    "services": "Services",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "home": {
+    "title": "Home Page",
+    "description": "Home page description"
+  },
+  "preview": {
+    "title": "Bukia Georgiy \n Spartakovich",
+    "subtitle": "Creative Agency",
+    "description": "My main programming language is JavaScript. In my work, I use React together with Redux state manager",
+    "cta": "Telegram Link",
+    "role": "Frontend Developer"
+  },
+  "story": {
+    "title": "A long time ago in a galaxy far, far away...",
+    "description": "My journey into the world of frontend development began in 2019. With the support of GeoLab, I mastered HTML and CSS, and then ventured into learning JavaScript on my own. Eventually, I stumbled upon a YouTube video titled ",
+    "videoTitle": "React: Way of the Samurai",
+    "ending": "and the rest is history."
+  },
+  "skills": {
+    "title": "Our Skills",
+    "web": "Web Development",
+    "mobile": "Mobile Development",
+    "design": "Design",
+    "marketing": "Marketing",
+    "description": "We use cutting-edge technologies and methodologies",
+    "experience": "My experience",
+    "experienceDescription": "These cards contain a short description of the topics I studied for each tool. I studied these tools not separately, but in conjunction with each other.",
+    "javascript": "JavaScript",
+    "jsDescription": "I chose JavaScript because it is universal, you can write anything on it. I took most of the information from learn javascript.",
+    "jsTopics": {
+      "variables": "Variables",
+      "dataTypes": "Data Types",
+      "conditionalBranching": "Conditional branching",
+      "arrowFunctions": "Arrow functions, the basics",
+      "debugging": "Debugging in the browser",
+      "arrays": "Arrays",
+      "objects": "Objects",
+      "objectMethods": "Object methods, this",
+      "promise": "Promise",
+      "generators": "Generators",
+      "typescript": "Typescript"
+    },
+    "react": "React",
+    "reactDescription": "Today applications are written on frameworks, so for myself I choose React.",
+    "reactTopics": {
+      "introducingJSX": "Introducing JSX",
+      "componentsAndProps": "Components and Props",
+      "stateAndLifecycles": "State and Lifecycles",
+      "conditionalRendering": "Conditional Rendering",
+      "formsListsAndKeys": "Forms Lists and Keys",
+      "context": "Context",
+      "higherOrderComponents": "Higher-Order Components",
+      "hooks": "Hooks",
+      "virtualDOM": "Virtual DOM conception"
+    },
+    "redux": "Redux",
+    "reduxDescription": "In large applications, developers use state managers. Today one of the most popular is Redux, so I choose it.",
+    "reduxTopics": {
+      "actions": "Actions",
+      "reducers": "Reducers",
+      "store": "Store",
+      "dataFlow": "Data flow",
+      "dispatch": "Dispatch",
+      "reduxThunk": "Redux thunk",
+      "reduxForm": "Redux Form",
+      "reduxToolkit": "Redux Toolkit"
+    },
+    "reduxSaga": "Redux-Saga",
+    "sagaDescription": "Saga makes application side effects easier to manage, more efficient to execute, easy to test, and better at handling failures.",
+    "sagaTopics": {
+      "generator": "Generator",
+      "watchersAndWorkers": "Watchers and Workers",
+      "effectCreators": "Effect Creators",
+      "effectCombinators": "Effect combinators",
+      "helpers": "Helpers"
+    }
+  },
+  "arts": {
+    "title": "Creating 3D Scenes is My Passion",
+    "description": "I began exploring Blender and was captivated by its intuitive interface and ease of use. That is how modeling became my favorite hobby.",
+    "viewAll": "View All",
+    "viewProject": "View Project",
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "branding": "Branding"
+    }
+  },
+  "contacts": {
+    "title": "Contact Us",
+    "address": "Address",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "success": "Message sent successfully",
+    "error": "An error occurred while sending"
+  },
+  "ticker": {
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "clients": "Clients"
+  }
+}

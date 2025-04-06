@@ -1,3 +1,13 @@
+:root {
+	/* Base font sizes */
+	--font-size-xs: 0.875rem; /* 14px */
+	--font-size-s: 1rem; /* 16px */
+	--font-size-m: 1.125rem; /* 18px */
+	--font-size-l: 1.25rem; /* 20px */
+	--font-size-xl: 2.5rem; /* 40px */
+	--font-size-xxl: 3.75rem; /* 60px */
+}
+
 .body-dark {
 	--primary-text-color: white;
 	--primary-text-color-inverted: rgb(0, 0, 0);
@@ -17,6 +27,7 @@
 	--primary-background-color: #ebf5ff;
 	--primary-background-color-inverted: #020202;
 	--secondary-background-color: #ffffff;
+	--secondary-background-color-inverted: #252638;
 	--card-dots-color: #d7d7d7;
 	--card-shadow-color: rgba(26, 53, 100, 0.062);
 	--border-color: #cfe6ff;
@@ -28,6 +39,10 @@ body {
 	font-smooth: antialiased;
 }
 
+b {
+	font-weight: 700;
+}
+
 .section {
-	transform: translateZ(0); 
+	transform: translateZ(0);
 }

@@ -1,27 +1,5 @@
 .sidebar {
-	position: fixed;
-	top: 30px;
-	left: 30px;
 	display: flex;
-	width: max-content;
-	flex-direction: column;
-	border: 1px solid var(--border-color);
-}
-.sidebar button {
-	width: 62px;
-	height: 62px;
-	border: none;
-	padding: 10px;
-	font-size: 18px;
-	font-weight: 700;
-	box-sizing: border-box;
-	background-color: transparent;
-	background-color: var(--secondary-background-color);
-	color: var(--primary-text-color);
+	justify-content: flex-start;
 }
 
-@media screen and (max-width: 1024px) {
-	.sidebar {
-		display: none;
-	}
-}

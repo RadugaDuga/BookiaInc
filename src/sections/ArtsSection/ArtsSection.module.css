@@ -20,14 +20,14 @@
 }
 
 .title {
-	font-size: 2.8125rem;
+	font-size: var(--font-size-xl);
 	font-weight: 900;
 	margin-bottom: 30px;
 	max-width: 450px;
 }
 
 .subtitle {
-	font-size: 1.125rem;
+	font-size: var(--font-size-m);
 	max-width: 400px;
 	line-height: 1.5;
 }

@@ -2,11 +2,11 @@
 .stock_ticker_left {
 	overflow: hidden;
 	user-select: none;
-	--gap: 20px;
+	--gap: 40px;
 	display: flex;
 	gap: var(--gap);
 	color: var(--primary-text-color);
-	font-size: 1.875rem;
+	font-size: var(--font-size-l);
 	font-weight: 1000;
 	letter-spacing: 1px;
 	margin-bottom: var(--gap);

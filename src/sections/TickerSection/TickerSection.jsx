@@ -1,62 +1,64 @@
 import Ticker from "../../components/Ticker";
 import styles from "./TickerSection.module.css";
+import { useTranslation } from 'react-i18next';
 
-const items = [
-	{ name: "Effector" },
-	{ name: "Redux" },
-	{ name: "React" },
-	{ name: "Axios" },
-	{ name: "WebPack" },
-	{ name: "NPM" },
-	{ name: "Lodash" },
-	{ name: "Vite" },
-	{ name: "Yarn" },
-	{ name: "Javascript" },
-	{ name: "Jinja" },
-	{ name: "RabbitMQ" },
-];
+const TickerSection = () => {
+	const { t } = useTranslation();
+	
+	const items = [
+		"Effector",
+		"Redux",
+		"React",
+		"Axios",
+		"WebPack",
+		"NPM",
+		"Lodash",
+		"Vite",
+		"Yarn",
+		"Javascript",
+		"Jinja",
+		"RabbitMQ",
+	];
 
-const items2 = [
-	{ name: "HTML5" },
-	{ name: "CSS3" },
-	{ name: "ThreeJS" },
-	{ name: "Gsap" },
-	{ name: "Locomotive" },
-	{ name: "Keykloak" },
-	{ name: "Jest" },
-	{ name: "Docker" },
-	{ name: "NodeJs" },
-	{ name: "Yarn" },
-	{ name: "jQuery" },
-	{ name: "SASS" },
-	{ name: "SCSS" },
-];
+	const items2 = [
+		"HTML5",
+		"CSS3",
+		"ThreeJS",
+		"Gsap",
+		"Locomotive",
+		"Keykloak",
+		"Jest",
+		"Docker",
+		"NodeJs",
+		"Yarn",
+		"jQuery",
+		"SASS",
+		"SCSS",
+	];
 
-const items3 = [
-	{ name: "Redux-Thunk" },
-	{ name: "Vue" },
-	{ name: "Redux-Saga" },
-	{ name: "RxJs" },
-	{ name: "Formik" },
-	{ name: "Typescript" },
-	{ name: "MaterialUI" },
-	{ name: "Tailwind" },
-	{ name: "ReactVirtualized" },
-	{ name: "Enzyme" },
-	{ name: "React-PropTypes" },
-	{ name: "Swagger" },
-	{ name: "Postman" },
-];
+	const items3 = [
+		"Redux-Thunk",
+		"Vue",
+		"Redux-Saga",
+		"RxJs",
+		"Formik",
+		"Typescript",
+		"MaterialUI",
+		"Tailwind",
+		"ReactVirtualized",
+		"Enzyme",
+		"React-PropTypes",
+		"Swagger",
+		"Postman",
+	];
 
-function TickerSection() {
 	return (
 		<>
 			<Ticker items={items} direction="right" />
 			<Ticker items={items2} direction="left" />
 			<Ticker items={items3} direction="right" />
-			<span className={styles.log}></span>
 		</>
 	);
-}
+};
 
 export default TickerSection;

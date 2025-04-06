@@ -1,10 +1,14 @@
 import { useEffect, useRef } from "react";
 import styles from "./PreviewSection.module.css";
-import MagneticGSAProvider from "../../MagneticProvider";
+import MagneticGSAProvider from "../../providers/MagneticProvider";
 import { AnimatedMaskot, Avatar } from "../../assets/optimized";
 import CircularTextButton from "../../components/CircularTextButton";
+import { useTranslation } from "react-i18next";
+import SideBar from "../SideBar/SideBar";
+import StackElements from "../../components/StackElements/StackElements";
 
 function PreviewSection() {
+	const { t } = useTranslation();
 	const videoRef = useRef(null);
 
 	const handleMouseEnter = () => {
@@ -17,28 +21,28 @@ function PreviewSection() {
 		videoRef.current.play();
 	}, []);
 
+	const stackEls = ["React", "Effector", "Typescript", "Vite"];
+
 	return (
 		<section className={styles.wrapper} id="preview-section">
 			<div className={styles.text_container}>
+				<SideBar />
 				<div className={styles.content}>
-					<h1 className={styles.title}>
-						Bukia Georgi <br />
-						Spartakovich
-					</h1>
+					<h1 className={styles.title}>{t("preview.title")}</h1>
 
 					<span className={styles.author_link}>
 						<img src={Avatar} alt="Avatar" />
-						Frontend Developer
+						{t("preview.role")}
 					</span>
 
-					<p className={styles.text}>
-						My main programming language is js. In my work, I use
-						<b>React</b> in conjunction with a state manager -
-						<b>Redux</b>
-					</p>
+					<div className={styles.text}>
+						{t("preview.description")}
+
+						<StackElements string="React, Effector, Typescript, Vite" />
+					</div>
 
 					<MagneticGSAProvider>
-						<CircularTextButton text={"Telegram Link"} />
+						<CircularTextButton text={t("preview.cta")} />
 					</MagneticGSAProvider>
 				</div>
 			</div>

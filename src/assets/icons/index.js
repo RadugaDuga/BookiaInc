@@ -5,4 +5,7 @@ export { default as LinkedInIcon } from "./LinkedInIcon";
 export { default as ReactLogoIcon } from "./ReactLogoIcon";
 export { default as TwitterIcon } from "./TwitterIcon";
 export { default as TelegramIcon } from "./TelegramIcon";
-
+export { default as LanguageIcon } from "./Language";
+export { default as Evraz } from "./Evraz";
+export { default as OneTwoTrip } from "./OneTwoTrip";
+export { default as TwoGis } from "./TwoGis";
