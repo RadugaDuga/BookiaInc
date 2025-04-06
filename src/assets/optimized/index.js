@@ -1,5 +1,5 @@
-export { default as Avatar } from "./Avatar.jpg";
-export { default as PixelAvatar } from "./Avatar.png";
+export { default as Avatar } from "./avatar.jpg";
+export { default as PixelAvatar } from "./avatar-pixel.png";
 export { default as Cafe } from "./cafe.webp";
 export { default as Safe } from "./safe.webp";
 export { default as Extrasense } from "./extrasense.webp";
