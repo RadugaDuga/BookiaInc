@@ -1,3 +1,4 @@
+export { default as University } from "./university.webp";
 export { default as Avatar } from "./avatar.jpg";
 export { default as PixelAvatar } from "./avatar-pixel.png";
 export { default as Cafe } from "./cafe.webp";
@@ -8,9 +9,4 @@ export { default as Youtube } from "./youtube.png";
 export { default as AnimatedMaskot } from "./animated-maskot.mp4";
 export { default as Maskot } from "./maskot.webp";
 export { default as MaskotArt } from "./maskot-art.webp";
-export { default as JsInFlask } from "./js-in-flask.webp";
-export { default as ReactInFlask } from "./react-in-flask.webp";
-export { default as ReduxInFlask } from "./redux-in-flask.webp";
-export { default as SagaInFlask } from "./saga-in-flask.webp";
-export { default as University } from "./university.webp";
 export { default as Bookia } from "./bookia.svg";
