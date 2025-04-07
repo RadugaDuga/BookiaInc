@@ -12,6 +12,8 @@ function SkillCard({
 			className={styles["skill-card"]}
 			style={{ "--textColor": `${textColor}` }}
 		>
+			<div className={styles["skill-card__gradient-before"]}></div>
+			<div className={styles["skill-card__gradient-after"]}></div>
 			<div className={styles["skill-card__header"]}>
 				<div className={styles["skill-card__description"]}>
 					<h1 className={styles["skill-card__title"]}>{skill}</h1>

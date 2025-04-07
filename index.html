@@ -6,9 +6,193 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>BookiaInc ©</title>
+		
+		<!-- Предзагрузка для лоадера -->
+		<link
+			rel="preload"
+			href="./src/assets/optimized/avatar-pixel.webp"
+			as="image"
+		/>
+
+		<style>
+			/* Стили для встроенного лоадера */
+			#initial-loader {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: var(--primary-background-color, #fff);
+				z-index: 10000;
+			}
+			.initial-loader-content {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 150px;
+			}
+			.initial-loader-wrapper {
+				position: relative;
+				width: 100%;
+				height: auto;
+				transform-origin: center center;
+			}
+			.initial-loader-image {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			.initial-bw-container {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				clip-path: inset(0 0 0 0);
+				animation: revealColor 1.0s cubic-bezier(0.65, 0, 0.35, 1)
+					forwards;
+				animation-delay: 0.5s;
+			}
+			.initial-grayscale-image {
+				position: absolute;
+				top: 0;
+				left: 0;
+				filter: grayscale(1);
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+			}
+			@keyframes revealColor {
+				0% {
+					clip-path: inset(0 0 0 0);
+				}
+				100% {
+					clip-path: inset(0 100% 0 0);
+				}
+			}
+			#initial-loader.hide {
+				opacity: 0;
+				transition: opacity 0.5s ease;
+				visibility: hidden;
+				pointer-events: none;
+			}
+			
+			@keyframes bobbing {
+				0%, 100% { transform: translateY(0); }
+				50% { transform: translateY(5px); }
+			}
+		</style>
+
 		<script type="module" src="./src/main.jsx" async></script>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Блокируем прокрутку страницы
+				document.body.style.overflow = 'hidden';
+				
+				// Переменные для работы с лоадером
+				const initialLoader = document.getElementById('initial-loader');
+				const loaderWrapper = document.querySelector('.initial-loader-wrapper');
+				const startTime = performance.now(); // Сохраняем время начала загрузки
+				
+				// Проверка загрузки изображения
+				checkImageLoaded('./src/assets/optimized/avatar-pixel.webp')
+					.then(function(loaded) {
+						setTimeout(function() {
+							startAnimation();
+						}, loaded ? 1000 : 500);
+					});
+				
+
+				window.addEventListener('load', function() {
+
+					const loadTime = performance.now();
+					const minLoadTime = 1500; // 1.5 секунды минимального отображения
+					
+					const timeElapsed = loadTime - startTime;
+					const remainingTime = Math.max(0, minLoadTime - timeElapsed);
+					
+					console.log('Время загрузки: ' + timeElapsed + 'мс, ожидание: ' + remainingTime + 'мс');
+
+					setTimeout(hideLoader, remainingTime);
+				});
+				
+				// Функция проверки загрузки изображения
+				function checkImageLoaded(src) {
+					return new Promise(function(resolve) {
+						const img = new Image();
+						img.onload = function() { resolve(true); };
+						img.onerror = function() { resolve(false); };
+						img.src = src;
+					});
+				}
+				
+				// Запуск анимации лоадера
+				function startAnimation() {
+					if (!loaderWrapper) return;
+					
+					loaderWrapper.style.transition = 'transform 0.4s cubic-bezier(0.65, 0, 0.35, 1)';
+					loaderWrapper.style.transform = 'scale(1.1)';
+					
+					setTimeout(function() {
+						loaderWrapper.style.transition = 'transform 0.6s cubic-bezier(0.36, 1.57, 0.3, 0.98)';
+						loaderWrapper.style.transform = 'scale(1)';
+						
+						setTimeout(function() {
+							loaderWrapper.style.animation = 'bobbing 2.4s infinite ease-in-out';
+						}, 600);
+					}, 400);
+				}
+				
+				// Функция скрытия лоадера
+				function hideLoader() {
+					if (initialLoader) {
+
+						initialLoader.classList.add('hide');
+						
+						document.body.style.overflow = '';
+
+						setTimeout(function() {
+							if (initialLoader.parentNode) {
+								initialLoader.remove();
+							}
+						}, 600);
+					}
+				}
+				
+				window.hideInitialLoader = hideLoader;
+			});
+		</script>
+
 	</head>
 	<body>
+		<!-- Начальный лоадер -->
+		<div id="initial-loader">
+			<div class="initial-loader-content">
+				<div class="initial-loader-wrapper">
+					<!-- Цветное изображение (нижний слой) -->
+					<img
+						src="./src/assets/optimized/avatar-pixel.webp"
+						alt="Loading..."
+						class="initial-loader-image"
+					/>
+
+					<!-- Черно-белое изображение (верхний слой) -->
+					<div class="initial-bw-container">
+						<img
+							src="./src/assets/optimized/avatar-pixel.webp"
+							alt="Loading..."
+							class="initial-loader-image initial-grayscale-image"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="root"></div>
 	</body>
 </html>

@@ -7,7 +7,7 @@ export default function Evraz(props) {
 			viewBox="0 0  58 58"
 			fill="none"
 		>
-			<g clip-path="url(#clip0_17373_11)">
+			<g clipPath="url(#clip0_17373_11)">
 				<path
 					d="M60.1 21.7002H0V36.2002H60.1V21.7002Z"
 					fill="#EF7622"

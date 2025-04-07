@@ -36,14 +36,14 @@ function SkillsSection() {
 							),
 						}}
 						imgSrc={<OneTwoTrip />}
-						textColor={"yellow"}
+						textColor={"#92C4FF"}
 					/>
 				</div>
 				<div
 					className={`${styles["skills-section__column-2"]} ${styles["skills-section__desktop"]}`}
 				>
 					<SkillCard
-						skill="EVRAZ"
+						skill="EvrazTech"
 						experienceData={{
 							role: t("skills.Evraz.role"),
 							period: t("skills.Evraz.period"),
@@ -61,13 +61,13 @@ function SkillsSection() {
 					<SkillCard
 						skill="2GIS"
 						experienceData={{
-							role: t("skills.Evraz.role"),
-							period: t("skills.Evraz.period"),
-							stack: t("skills.Evraz.stack"),
-							projects: t("skills.Evraz.projects"),
-							achievements: t("skills.Evraz.achievements"),
+							role: t("skills.TwoGis.role"),
+							period: t("skills.TwoGis.period"),
+							stack: t("skills.TwoGis.stack"),
+							projects: t("skills.TwoGis.projects"),
+							achievements: t("skills.TwoGis.achievements"),
 							responsibilities: t(
-								"skills.Evraz.responsibilities"
+								"skills.TwoGis.responsibilities"
 							),
 						}}
 						imgSrc={<TwoGis />}

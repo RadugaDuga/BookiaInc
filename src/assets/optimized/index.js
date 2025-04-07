@@ -1,6 +1,6 @@
 export { default as University } from "./university.webp";
 export { default as Avatar } from "./avatar.jpg";
-export { default as PixelAvatar } from "./avatar-pixel.png";
+export { default as PixelAvatar } from "./avatar-pixel.webp";
 export { default as Cafe } from "./cafe.webp";
 export { default as Safe } from "./safe.webp";
 export { default as Extrasense } from "./extrasense.webp";

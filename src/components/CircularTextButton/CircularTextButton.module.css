@@ -33,13 +33,13 @@
 	width: -moz-max-content;
 	width: max-content;
 	content: var(--btn-text);
-	left: 125%;
+	left: 100%;
 	padding: 0 1.56rem;
 }
 
 @keyframes sliding {
 	100% {
-		transform: translateX(-125%);
+		transform: translateX(-100%);
 	}
 }
 

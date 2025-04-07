@@ -4,7 +4,7 @@ const StackElements = ({ string }) => {
 	const list = string.split(",");
 
 	return (
-		<div className={styles.stackElements}>
+		<span className={styles.stackElements}>
 			{list.map((text, index) => {
 				return (
 					<span key={index} className={styles.stackEl}>
@@ -12,7 +12,7 @@ const StackElements = ({ string }) => {
 					</span>
 				);
 			})}
-		</div>
+		</span>
 	);
 };
 

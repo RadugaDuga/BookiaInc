@@ -8,6 +8,13 @@
 .stackEl {
 	color: var(--primary-background-color);
 	background: var(--primary-text-color);
-	padding: 5px 10px;
+	padding: 3px 7px;
 	font-weight: bold;
-} 
+	transition: 0.1s;
+	cursor: default;
+}
+
+.stackEl:hover {
+	background: var(--primary-background-color);
+	color: var(--primary-text-color);
+}

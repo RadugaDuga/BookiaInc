@@ -11,7 +11,7 @@
 .body-dark {
 	--primary-text-color: white;
 	--primary-text-color-inverted: rgb(0, 0, 0);
-	--secondary-text-color: #adadad;
+	--secondary-text-color: rgba(255, 255, 255, 0.838);
 	--primary-background-color: #171822;
 	--primary-background-color-inverted: #ffffff;
 	--secondary-background-color: #252638;
@@ -23,7 +23,7 @@
 .body-light {
 	--primary-text-color: rgb(31, 52, 70);
 	--primary-text-color-inverted: rgb(255, 255, 255);
-	--secondary-text-color: #595959;
+	--secondary-text-color: rgba(31, 52, 70, 0.853);
 	--primary-background-color: #ebf5ff;
 	--primary-background-color-inverted: #020202;
 	--secondary-background-color: #ffffff;
@@ -41,8 +41,4 @@ body {
 
 b {
 	font-weight: 700;
-}
-
-.section {
-	transform: translateZ(0);
 }

@@ -11,15 +11,17 @@ import ScrollToBottom from "./components/ScrollToBottom";
 
 function App() {
 	return (
-		<div className="section">
-			<PreviewSection />
-			<StorySection />
-			<NewTicker />
-			<SkillsSection />
-			<ArtsSection />
-			<ContactsSection />
-			<ScrollToBottom />
-		</div>
+		<>
+			<div className="section">
+				<PreviewSection />
+				<StorySection />
+				<NewTicker />
+				<SkillsSection />
+				<ArtsSection />
+				<ContactsSection />
+				<ScrollToBottom />
+			</div>
+		</>
 	);
 }
 
