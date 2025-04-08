@@ -2,11 +2,12 @@ import { useRef, useCallback } from "react";
 import { gsap } from "gsap";
 import { PropTypes } from "prop-types";
 import styles from "./CircularTextButton.module.css"; // Импортируем модуль CSS
+import { Telegram } from "../../assets/icons";
 
-function CircularTextButton({ 
-	text, 
+function CircularTextButton({
+	text,
 	href = "https://t.me/GeorgiBukia",
-	target = "_blank"
+	target = "_blank",
 }) {
 	const buttonRef = useRef(null);
 	const circleRef = useRef(null);
@@ -30,17 +31,20 @@ function CircularTextButton({
 		});
 	}, []);
 
-	const handleMouseEnter = useCallback((e) => {
-		isHovering.current = true;
-		isMagneticActive.current = true;
-		animateCircle(e);
-	}, [animateCircle]);
+	const handleMouseEnter = useCallback(
+		(e) => {
+			isHovering.current = true;
+			isMagneticActive.current = true;
+			animateCircle(e);
+		},
+		[animateCircle]
+	);
 
 	const handleMouseLeave = useCallback(() => {
 		isHovering.current = false;
 		isMagneticActive.current = false;
 		if (!circleRef.current) return;
-		
+
 		gsap.to(circleRef.current, {
 			scale: 0,
 			duration: 0.1,
@@ -48,10 +52,19 @@ function CircularTextButton({
 		});
 	}, []);
 
-	const handleMouseMove = useCallback((e) => {
-		if (!isHovering.current || !isMagneticActive.current || !buttonRef.current || !circleRef.current) return;
-		animateCircle(e);
-	}, [animateCircle]);
+	const handleMouseMove = useCallback(
+		(e) => {
+			if (
+				!isHovering.current ||
+				!isMagneticActive.current ||
+				!buttonRef.current ||
+				!circleRef.current
+			)
+				return;
+			animateCircle(e);
+		},
+		[animateCircle]
+	);
 
 	return (
 		<a
@@ -65,14 +78,15 @@ function CircularTextButton({
 			onMouseLeave={handleMouseLeave}
 			aria-label={text}
 		>
-			<div
-				className={styles.button_text}
-				style={{ "--btn-text": `"${text}"` }}
-			>
-				{text}
+			<div className={styles.text_container}>
+				<div
+					className={styles.button_text}
+					style={{ "--btn-text": `"${text}"` }}
+				>
+					{/* <Telegram /> */}
+					{text}
+				</div>
 			</div>
-			<span ref={circleRef} className={styles.fillCircle} />{" "}
-			{/* Элемент круга для анимации */}
 		</a>
 	);
 }

@@ -17,15 +17,16 @@
 .header {
 	display: flex;
 	align-items: center;
-	gap: 60px;
+	gap: 70px;
 	padding: 40px 0;
 	flex-wrap: wrap;
 }
 
 .avatarWrapper {
-	flex: 1 1 250px;
+	flex: 1 1 180px;
 	position: relative;
 	aspect-ratio: 1/1;
+	transition: 0.2s;
 }
 
 .avatar {
@@ -55,7 +56,6 @@
 
 .logo {
 	width: 120px;
-	
 }
 
 .copyright {

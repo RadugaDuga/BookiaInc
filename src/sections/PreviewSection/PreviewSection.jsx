@@ -1,15 +1,16 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./PreviewSection.module.css";
-import MagneticGSAProvider from "../../providers/MagneticProvider";
 import { AnimatedMaskot, Avatar } from "../../assets/optimized";
 import CircularTextButton from "../../components/CircularTextButton";
 import { useTranslation } from "react-i18next";
 import SideBar from "../SideBar/SideBar";
 import StackElements from "../../components/StackElements/StackElements";
+import { QrCode } from "../../assets/icons";
 
 function PreviewSection() {
 	const { t } = useTranslation();
 	const videoRef = useRef(null);
+	const [isHovered, setIsHovered] = useState(false);
 
 	const handleMouseEnter = () => {
 		if (videoRef.current) {
@@ -21,14 +22,18 @@ function PreviewSection() {
 		videoRef.current.play();
 	}, []);
 
-	const stackEls = ["React", "Effector", "Typescript", "Vite"];
-
 	return (
 		<section className={styles.wrapper} id="preview-section">
 			<div className={styles.text_container}>
 				<SideBar />
 				<div className={styles.content}>
-					<h1 className={styles.title}>{t("preview.title")}</h1>
+					<h1
+						className={
+							isHovered ? styles.titleHovered : styles.title
+						}
+					>
+						{t("preview.title")}
+					</h1>
 
 					<span className={styles.author_link}>
 						<img src={Avatar} alt="Avatar" />
@@ -41,9 +46,21 @@ function PreviewSection() {
 						<StackElements string="React, Effector, Typescript, Vite" />
 					</div>
 
-					<MagneticGSAProvider>
-						<CircularTextButton text={t("preview.cta")} />
-					</MagneticGSAProvider>
+					<div className={styles.buttonAndQr}>
+						<span
+							onMouseEnter={() => {
+								setIsHovered(true);
+							}}
+							onMouseLeave={() => {
+								setIsHovered(false);
+							}}
+						>
+							<CircularTextButton text={t("preview.cta")} />
+						</span>
+						<span className={styles.qrCode}>
+							<QrCode />
+						</span>
+					</div>
 				</div>
 			</div>
 

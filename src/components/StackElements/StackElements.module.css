@@ -10,11 +10,11 @@
 	background: var(--primary-text-color);
 	padding: 3px 7px;
 	font-weight: bold;
-	transition: 0.1s;
+	transition: 0.0001s;
 	cursor: default;
 }
 
 .stackEl:hover {
-	background: var(--primary-background-color);
+	background: transparent;
 	color: var(--primary-text-color);
 }

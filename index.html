@@ -6,7 +6,7 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>BookiaInc ©</title>
-		
+
 		<!-- Предзагрузка для лоадера -->
 		<link
 			rel="preload"
@@ -54,7 +54,7 @@
 				height: 100%;
 				z-index: 2;
 				clip-path: inset(0 0 0 0);
-				animation: revealColor 1.0s cubic-bezier(0.65, 0, 0.35, 1)
+				animation: revealColor 1s cubic-bezier(0.65, 0, 0.35, 1)
 					forwards;
 				animation-delay: 0.5s;
 			}
@@ -81,96 +81,136 @@
 				visibility: hidden;
 				pointer-events: none;
 			}
-			
+
 			@keyframes bobbing {
-				0%, 100% { transform: translateY(0); }
-				50% { transform: translateY(5px); }
+				0%,
+				100% {
+					transform: translateY(0);
+				}
+				50% {
+					transform: translateY(5px);
+				}
 			}
 		</style>
 
 		<script type="module" src="./src/main.jsx" async></script>
 
 		<script>
-			document.addEventListener('DOMContentLoaded', function() {
+			document.addEventListener("DOMContentLoaded", function () {
 				// Блокируем прокрутку страницы
-				document.body.style.overflow = 'hidden';
-				
+				document.body.style.overflow = "hidden";
+
 				// Переменные для работы с лоадером
-				const initialLoader = document.getElementById('initial-loader');
-				const loaderWrapper = document.querySelector('.initial-loader-wrapper');
+				const initialLoader = document.getElementById("initial-loader");
+				const loaderWrapper = document.querySelector(
+					".initial-loader-wrapper"
+				);
 				const startTime = performance.now(); // Сохраняем время начала загрузки
-				
+
 				// Проверка загрузки изображения
-				checkImageLoaded('./src/assets/optimized/avatar-pixel.webp')
-					.then(function(loaded) {
-						setTimeout(function() {
+				checkImageLoaded(
+					"./src/assets/optimized/avatar-pixel.webp"
+				).then(function (loaded) {
+					setTimeout(
+						function () {
 							startAnimation();
-						}, loaded ? 1000 : 500);
-					});
-				
+						},
+						loaded ? 1000 : 500
+					);
+				});
 
-				window.addEventListener('load', function() {
-
+				window.addEventListener("load", function () {
 					const loadTime = performance.now();
 					const minLoadTime = 1500; // 1.5 секунды минимального отображения
-					
+
 					const timeElapsed = loadTime - startTime;
-					const remainingTime = Math.max(0, minLoadTime - timeElapsed);
-					
-					console.log('Время загрузки: ' + timeElapsed + 'мс, ожидание: ' + remainingTime + 'мс');
+					const remainingTime = Math.max(
+						0,
+						minLoadTime - timeElapsed
+					);
+
+					console.log(
+						"Время загрузки: " +
+							timeElapsed +
+							"мс, ожидание: " +
+							remainingTime +
+							"мс"
+					);
 
 					setTimeout(hideLoader, remainingTime);
 				});
-				
+
 				// Функция проверки загрузки изображения
 				function checkImageLoaded(src) {
-					return new Promise(function(resolve) {
+					return new Promise(function (resolve) {
 						const img = new Image();
-						img.onload = function() { resolve(true); };
-						img.onerror = function() { resolve(false); };
+						img.onload = function () {
+							resolve(true);
+						};
+						img.onerror = function () {
+							resolve(false);
+						};
 						img.src = src;
 					});
 				}
-				
+
 				// Запуск анимации лоадера
 				function startAnimation() {
 					if (!loaderWrapper) return;
-					
-					loaderWrapper.style.transition = 'transform 0.4s cubic-bezier(0.65, 0, 0.35, 1)';
-					loaderWrapper.style.transform = 'scale(1.1)';
-					
-					setTimeout(function() {
-						loaderWrapper.style.transition = 'transform 0.6s cubic-bezier(0.36, 1.57, 0.3, 0.98)';
-						loaderWrapper.style.transform = 'scale(1)';
-						
-						setTimeout(function() {
-							loaderWrapper.style.animation = 'bobbing 2.4s infinite ease-in-out';
+
+					loaderWrapper.style.transition =
+						"transform 0.4s cubic-bezier(0.65, 0, 0.35, 1)";
+					loaderWrapper.style.transform = "scale(1.1)";
+
+					setTimeout(function () {
+						loaderWrapper.style.transition =
+							"transform 0.6s cubic-bezier(0.36, 1.57, 0.3, 0.98)";
+						loaderWrapper.style.transform = "scale(1)";
+
+						setTimeout(function () {
+							loaderWrapper.style.animation =
+								"bobbing 2.4s infinite ease-in-out";
 						}, 600);
 					}, 400);
 				}
-				
+
 				// Функция скрытия лоадера
 				function hideLoader() {
 					if (initialLoader) {
+						initialLoader.classList.add("hide");
 
-						initialLoader.classList.add('hide');
-						
-						document.body.style.overflow = '';
+						document.body.style.overflow = "";
 
-						setTimeout(function() {
+						setTimeout(function () {
 							if (initialLoader.parentNode) {
 								initialLoader.remove();
 							}
 						}, 600);
 					}
 				}
-				
+
 				window.hideInitialLoader = hideLoader;
 			});
 		</script>
-
 	</head>
+
 	<body>
+		<svg width="0" height="0" style="position: absolute">
+			<filter id="noiseFilter">
+				<feTurbulence
+					type="fractalNoise"
+					baseFrequency="0.8"
+					numOctaves="15"
+				/>
+				<feColorMatrix
+					type="matrix"
+					values="1 0 0 0 0 
+						  0 1 0 0 0 
+						  0 0 1 0 0 
+						  0 0 0 0.3 0"
+				/>
+			</filter>
+		</svg>
 		<!-- Начальный лоадер -->
 		<div id="initial-loader">
 			<div class="initial-loader-content">
@@ -195,4 +235,5 @@
 		</div>
 		<div id="root"></div>
 	</body>
+	
 </html>

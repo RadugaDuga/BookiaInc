@@ -3,7 +3,7 @@ import styles from "./TickerSection.module.css";
 
 // Мемоизированный элемент списка для предотвращения лишних ререндеров
 const TickerItem = memo(({ item }) => {
-	return <li>{item}</li>;
+	return <li><span>{item}</span></li>;
 });
 
 const Ticker = ({ items, direction = "right" }) => {

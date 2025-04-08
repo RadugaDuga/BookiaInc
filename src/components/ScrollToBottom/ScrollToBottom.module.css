@@ -9,6 +9,7 @@
 	align-items: center;
 	height: 100vh;
 	cursor: pointer;
+	transition: 0.1s;
 }
 
 .scrollToBottom:hover {
@@ -31,7 +32,7 @@
 	justify-content: center;
 	align-items: center;
 	color: var(--primary-text-color);
-	transition: 0.2s ease-out;
+	transition: 0.1s;
 	transform: translateY(-20px);
 	opacity: 0;
 }
@@ -42,7 +43,7 @@
 	justify-content: center;
 	align-items: center;
 	color: var(--primary-text-color);
-	transition: 0.2s ease-out;
+	transition: 0.1s;
 	transform: translateY(20px) rotate(180deg);
 	opacity: 0;
 }

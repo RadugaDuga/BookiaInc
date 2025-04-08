@@ -9,3 +9,5 @@ export { default as LanguageIcon } from "./Language";
 export { default as Evraz } from "./Evraz";
 export { default as OneTwoTrip } from "./OneTwoTrip";
 export { default as TwoGis } from "./TwoGis";
+export { default as Telegram } from "./Telegram";
+export { default as QrCode } from "./QrCode";

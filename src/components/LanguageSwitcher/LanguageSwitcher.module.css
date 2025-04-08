@@ -1,6 +1,8 @@
 .languageSwitcher {
 	padding: 0;
 	margin: 0;
+	padding: 15px;
+	margin-left: -15px;
 	background-color: transparent;
 	border: none;
 	cursor: pointer;

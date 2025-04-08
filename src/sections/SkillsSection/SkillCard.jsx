@@ -50,21 +50,10 @@ function SkillCard({
 				{experienceData.projects && (
 					<div className={styles["skill-card__section"]}>
 						<h4 className={styles["skill-card__section-title"]}>
-							Проекты
+							Команда и проекты
 						</h4>
 						<p className={styles["skill-card__section-text"]}>
 							{experienceData.projects}
-						</p>
-					</div>
-				)}
-
-				{experienceData.responsibilities && (
-					<div className={styles["skill-card__section"]}>
-						<h4 className={styles["skill-card__section-title"]}>
-							Роль
-						</h4>
-						<p className={styles["skill-card__section-text"]}>
-							{experienceData.responsibilities}
 						</p>
 					</div>
 				)}
