@@ -1,93 +1,50 @@
 {
-  "common": {
-    "welcome": "Welcome",
-    "about": "About",
-    "contact": "Contact",
-    "services": "Services",
-    "menu": "Menu",
-    "close": "Close"
-  },
-  "home": {
-    "title": "Home Page",
-    "description": "Home page description"
-  },
   "preview": {
-    "title": "Bukia Georgiy \n Spartakovich",
-    "subtitle": "Creative Agency",
-    "description": "My main programming language is JavaScript. In my work, I use React together with Redux state manager",
-    "cta": "Telegram Link",
+    "title": "Georgy Bukia \n Spartakovich",
+    "description": "I've been building interfaces for almost 5 years, using modern tech stack. Have extensive commercial experience.",
+    "stack": "React - Effector - Typescript - Vite",
+    "cta": "Telegram link",
     "role": "Frontend Developer"
   },
   "story": {
-    "title": "A long time ago in a galaxy far, far away...",
-    "description": "My journey into the world of frontend development began in 2019. With the support of GeoLab, I mastered HTML and CSS, and then ventured into learning JavaScript on my own. Eventually, I stumbled upon a YouTube video titled ",
-    "videoTitle": "React: Way of the Samurai",
-    "ending": "and the rest is history."
+    "title": "Once upon a time in the distant 2019...",
+    "description": "My journey into frontend development began in 2019. While studying at university, I became interested in web development. Initially I set a simple goal - to create a basic website about my favorite Lo-Fi music theme. But at some point I discovered React and wanted to build a full-fledged SPA, and that's when things really took off"
   },
   "skills": {
-    "title": "Our Skills",
-    "web": "Web Development",
-    "mobile": "Mobile Development",
-    "design": "Design",
-    "marketing": "Marketing",
-    "description": "We use cutting-edge technologies and methodologies",
-    "experience": "My experience",
-    "experienceDescription": "These cards contain a short description of the topics I studied for each tool. I studied these tools not separately, but in conjunction with each other.",
-    "javascript": "JavaScript",
-    "jsDescription": "I chose JavaScript because it is universal, you can write anything on it. I took most of the information from learn javascript.",
-    "jsTopics": {
-      "variables": "Variables",
-      "dataTypes": "Data Types",
-      "conditionalBranching": "Conditional branching",
-      "arrowFunctions": "Arrow functions, the basics",
-      "debugging": "Debugging in the browser",
-      "arrays": "Arrays",
-      "objects": "Objects",
-      "objectMethods": "Object methods, this",
-      "promise": "Promise",
-      "generators": "Generators",
-      "typescript": "Typescript"
+    "card": {
+      "stack": "Tech Stack",
+      "teamAndProjects": "Teams and Projects",
+      "achievments": "Key Achievements"
     },
-    "react": "React",
-    "reactDescription": "Today applications are written on frameworks, so for myself I choose React.",
-    "reactTopics": {
-      "introducingJSX": "Introducing JSX",
-      "componentsAndProps": "Components and Props",
-      "stateAndLifecycles": "State and Lifecycles",
-      "conditionalRendering": "Conditional Rendering",
-      "formsListsAndKeys": "Forms Lists and Keys",
-      "context": "Context",
-      "higherOrderComponents": "Higher-Order Components",
-      "hooks": "Hooks",
-      "virtualDOM": "Virtual DOM conception"
+    "Evraz": {
+      "role": "Senior Developer",
+      "period": "March 2023 - Present",
+      "stack": "TypeScript, React 17-18, Effector, GraphQL, Websocket, Vite, Webpack, Echarts, Apexcharts, Highcharts, Charts.js",
+      "projects": "Working in a team of 12 on production digitalization projects. Mostly MVP projects: functionality is implemented quickly, then refactored and maintained if economically viable.",
+      "achievements": "Delivered 8 projects from idea to working product. One of them - an exhaust system monitoring system at a sintering plant - won 1st place for economic efficiency in 2024, reducing equipment downtime by 7.2%/year.\n\nMigrated system from polling to WebSocket: RPS decreased from ≈2,400 to 5/sec, traffic from ≈4.8 Gbit/s to 0.2 Gbit/s, server response from ≈6.1 sec to <120 ms.\n\nAs Core team member, developed UI kit to replace Ant, created 27+ components (buttons, calendars, tables, forms).\n\nRewrote major project using FSD architecture to simplify adding new features.\n\nIn 7-person team worked on replacing Power BI and SAP, created charts and graphs, used GraphQL with caching for dashboards. Implemented WebWorker for bundling websocket messages, reducing browser load and improving responsiveness"
     },
-    "redux": "Redux",
-    "reduxDescription": "In large applications, developers use state managers. Today one of the most popular is Redux, so I choose it.",
-    "reduxTopics": {
-      "actions": "Actions",
-      "reducers": "Reducers",
-      "store": "Store",
-      "dataFlow": "Data flow",
-      "dispatch": "Dispatch",
-      "reduxThunk": "Redux thunk",
-      "reduxForm": "Redux Form",
-      "reduxToolkit": "Redux Toolkit"
+    "OneTwoTrip": {
+      "role": "Lead Developer",
+      "period": "March 2021 - February 2023",
+      "stack": "TypeScript, React, Redux, Redux-Saga, TanStack Query, Webpack, React Virtualized, Styled Components",
+      "projects": "Worked on \"Voyager\" project in 20+ person team.\n\nDomain - developing and improving UI for online travel booking platform with 500,000+ monthly users.",
+      "achievements": "Increased TypeScript adoption in codebase, simplifying feature development and preventing many errors.\n\nImplemented CSS tokens concept with designers, making color palette updates and cross-team collaboration easier.\n\nWorked with bank partner to implement 3DS 2.0 protocols for payment processing.\n\nEnsured successful PCI DSS audit compliance using OWASP Top 10 knowledge. Developed Backend for Frontend in Node.js to aggregate data from multiple endpoints into single request."
     },
-    "reduxSaga": "Redux-Saga",
-    "sagaDescription": "Saga makes application side effects easier to manage, more efficient to execute, easy to test, and better at handling failures.",
-    "sagaTopics": {
-      "generator": "Generator",
-      "watchersAndWorkers": "Watchers and Workers",
-      "effectCreators": "Effect Creators",
-      "effectCombinators": "Effect combinators",
-      "helpers": "Helpers"
-    }
+    "TwoGis": {
+      "role": "Lead Developer",
+      "period": "June 2020 - March 2021",
+      "stack": "TypeScript, React, Redux, Redux-Saga, TanStack Query, Webpack, React Virtualized, Styled Components",
+      "projects": "Worked in 5-person team on Otello project - hotel booking platform, developing frontend part of service.",
+      "achievements": "Created UI components using React with internal design system, improved shared UI-Kit for development convenience.\n\nIntegrated REST API with backend, connecting third-party services.\n\nCollaborated with designers and analysts to add animations and interactive elements, improving platform usability."
+    },
+    "experience": "Commercial Experience",
+    "experienceDescription": "This describes my commercial experience, excluding pet projects and freelance work. Of course this isn't everything, just key highlights.\n\nAfter graduating I started job hunting in my hometown, my first company was 2GIS where I mastered React and clean code principles while learning development processes.\n\nAfter a year I moved to Saint Petersburg and opened my resume again, joining OneTwoTrip where I learned security fundamentals while working with sensitive user payment data."
   },
   "arts": {
-    "title": "Creating 3D Scenes is My Passion",
-    "description": "I began exploring Blender and was captivated by its intuitive interface and ease of use. That is how modeling became my favorite hobby.",
-    "viewAll": "View All",
-    "viewProject": "View Project",
+    "title": "Creating 3D scenes in Blender - my hobby",
+    "description": "I started learning Blender and was fascinated by its intuitive interface and ease of use. So 3D modeling became my favorite hobby.",
+    "viewAll": "View all",
+    "viewProject": "View project",
     "categories": {
       "all": "All",
       "web": "Web",
@@ -96,19 +53,6 @@
     }
   },
   "contacts": {
-    "title": "Contact Us",
-    "address": "Address",
-    "email": "Email",
-    "phone": "Phone",
-    "message": "Message",
-    "send": "Send",
-    "success": "Message sent successfully",
-    "error": "An error occurred while sending"
-  },
-  "ticker": {
-    "skills": "Skills",
-    "experience": "Experience",
-    "projects": "Projects",
-    "clients": "Clients"
+    "title": "I'm a frontender, but my friends call me Gosha"
   }
 }

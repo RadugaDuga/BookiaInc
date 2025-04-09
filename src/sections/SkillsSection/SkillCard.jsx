@@ -1,12 +1,10 @@
 import styles from "./SkillSection.module.css";
 import { PropTypes } from "prop-types";
 import StackElements from "../../components/StackElements/StackElements";
-function SkillCard({
-	skill,
-	imgSrc,
-	textColor,
-	experienceData,
-}) {
+import { useTranslation } from "react-i18next";
+function SkillCard({ skill, imgSrc, textColor, experienceData }) {
+	const { t } = useTranslation();
+
 	return (
 		<div
 			className={styles["skill-card"]}
@@ -39,7 +37,7 @@ function SkillCard({
 				{experienceData.stack && (
 					<div className={styles["skill-card__section"]}>
 						<h4 className={styles["skill-card__section-title"]}>
-							Стек
+							{t("skills.card.stack")}
 						</h4>
 						<p className={styles["skill-card__section-text"]}>
 							<StackElements string={experienceData.stack} />
@@ -50,7 +48,7 @@ function SkillCard({
 				{experienceData.projects && (
 					<div className={styles["skill-card__section"]}>
 						<h4 className={styles["skill-card__section-title"]}>
-							Команда и проекты
+							{t("skills.card.teamAndProjects")}
 						</h4>
 						<p className={styles["skill-card__section-text"]}>
 							{experienceData.projects}
@@ -61,7 +59,7 @@ function SkillCard({
 				{experienceData.achievements && (
 					<div className={styles["skill-card__section"]}>
 						<h4 className={styles["skill-card__section-title"]}>
-							Основные достижения
+							{t("skills.card.achievments")}
 						</h4>
 						<p className={styles["skill-card__section-text"]}>
 							{experienceData.achievements}
