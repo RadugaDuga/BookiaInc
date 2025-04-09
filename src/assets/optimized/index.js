@@ -9,4 +9,3 @@ export { default as Youtube } from "./youtube.png";
 export { default as AnimatedMaskot } from "./animated-maskot.mp4";
 export { default as Maskot } from "./maskot.webp";
 export { default as MaskotArt } from "./maskot-art.webp";
-export { default as Bookia } from "./bookia.svg";

@@ -6,13 +6,12 @@
 	color: var(--primary-text-color);
 	background: transparent;
 	overflow: visible;
-	font-size: var(--font-size-m);
 	font-weight: 1000;
-	font-size: 1.125rem;
+	font-size: var(--font-size-m);
 	text-decoration: none;
 	cursor: pointer; /* Добавляем курсор для интерактивности */
 	letter-spacing: 0.5px;
-	transition: 0.1s;
+	transition: transform 0.2s;
 }
 
 .button::before {
@@ -58,7 +57,7 @@
 	text-underline-offset: 4px;
 	text-decoration-thickness: 3px;
 	color: white;
-	transform: scale(1.05);
+	transform: scale(1.1);
 	border-radius: 16px;
 }
 .button:active {

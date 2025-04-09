@@ -1,10 +1,6 @@
 import { useTranslation } from "react-i18next";
-import {
-	DiscordIcon,
-	GmailIcon,
-	LinkedInIcon,
-} from "../../assets/icons";
-import { Bookia, PixelAvatar } from "../../assets/optimized";
+import { DiscordIcon, GmailIcon, LinkedInIcon, Logo } from "../../assets/icons";
+import { PixelAvatar } from "../../assets/optimized";
 import styles from "./ContactsSection.module.css";
 
 export default function ContactsSection() {
@@ -62,14 +58,12 @@ export default function ContactsSection() {
 
 				<footer className={styles.footer}>
 					<div className={styles.brand}>
-						<img
-							src={Bookia}
-							alt="BookiaInc Logo"
-							className={styles.logo}
-						/>
-						<div className={styles.copyright}>
-							<span>Bookia.Inc</span>
-							<div>© 2025. All rights reserved.</div>
+						<div className={styles.brand__wrapper}>
+							<Logo />
+							<div className={styles.copyright}>
+								<span>Bookia.Inc</span>
+								<div>© 2025. All rights reserved.</div>
+							</div>
 						</div>
 					</div>
 

@@ -47,6 +47,7 @@
 	flex: 1;
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 }
 
 .text_wrapper {
@@ -86,4 +87,10 @@
 	background: url("../../assets/optimized/youtube.svg");
 	background-size: cover;
 	opacity: 0.8;
+}
+
+@media screen and (max-width: 1920px) {
+	.image{
+		width: 80%;
+	}
 }

@@ -4,7 +4,7 @@
 	--font-size-s: 1rem; /* 16px */
 	--font-size-m: 1.125rem; /* 18px */
 	--font-size-l: 1.25rem; /* 20px */
-	--font-size-xl: 2.5rem; /* 40px */
+	--font-size-xl: 2.8125rem; /* 40px */
 	--font-size-xxl: 3.75rem; /* 60px */
 }
 
@@ -24,7 +24,7 @@
 	--primary-text-color: rgb(31, 52, 70);
 	--primary-text-color-inverted: rgb(255, 255, 255);
 	--secondary-text-color: rgba(31, 52, 70, 0.853);
-	--primary-background-color: #ebf5ff;
+	--primary-background-color: #eef2f6;
 	--primary-background-color-inverted: #020202;
 	--secondary-background-color: #ffffff;
 	--secondary-background-color-inverted: #252638;
@@ -56,4 +56,16 @@ body::after {
 	pointer-events: none; /* Клики проходят сквозь шум */
 	z-index: 1000;
 	mix-blend-mode: overlay; /* Режим наложения (можно заменить на 'soft-light' или 'screen') */
+}
+
+@media screen and (width <= 1920px) {
+	html {
+		font-size: 14px !important;
+	}
+}
+
+@media screen and (width <= 1360px) {
+	html {
+		font-size: 12px !important;
+	}
 }

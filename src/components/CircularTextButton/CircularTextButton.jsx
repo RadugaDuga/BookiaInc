@@ -2,7 +2,6 @@ import { useRef, useCallback } from "react";
 import { gsap } from "gsap";
 import { PropTypes } from "prop-types";
 import styles from "./CircularTextButton.module.css"; // Импортируем модуль CSS
-import { Telegram } from "../../assets/icons";
 
 function CircularTextButton({
 	text,

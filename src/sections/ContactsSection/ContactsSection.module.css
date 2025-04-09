@@ -54,12 +54,26 @@
 	gap: 15px;
 }
 
-.logo {
-	width: 120px;
+.brand__wrapper {
+	display: flex;
+	height: max-content;
+	align-items: center;
+	grid-auto-flow: 15px;
+	gap: 15px;
+}
+
+.brand svg {
+	width: 50px;
+	height: 50px;
+}
+
+.brand svg * {
+	fill: var(--primary-text-color);
 }
 
 .copyright {
 	color: var(--secondary-text-color);
+	height: max-content;
 }
 
 .subtitle {
@@ -93,4 +107,10 @@
 .list a {
 	text-decoration: none;
 	color: inherit;
+}
+
+@media screen and (max-width: 1920px) {
+	.avatarWrapper {
+		flex: 0 1 280px;
+	}
 }

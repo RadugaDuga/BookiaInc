@@ -54,11 +54,4 @@ html {
 
 * {
 	box-sizing: border-box;
-	transition: background 0.3s ease-in;
-}
-
-@media screen and (width <= 1920px) {
-	html {
-		font-size: 14px !important;
-	}
 }
