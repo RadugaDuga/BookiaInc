@@ -53,6 +53,8 @@
     }
   },
   "contacts": {
-    "title": "I'm a frontender, but my friends call me Gosha"
+    "title": "I'm a frontender, but my friends call me Gosha",
+    "contacts": "Contacts",
+    "usedLibraries": "Used libraries"
   }
 }

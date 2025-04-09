@@ -26,19 +26,18 @@ export default function ContactsSection() {
 	const libraries = [
 		{
 			name: "GSAP 3",
-			link: "https://greensock.com/gsap/",
 		},
 		{
-			name: "Swiper.js",
-			link: "https://swiperjs.com/",
+			name: "React Js",
 		},
 		{
 			name: "Rellax.js",
-			link: "https://dixonandmoe.com/rellax/",
 		},
 		{
-			name: "jQuery",
-			link: "https://jquery.com/",
+			name: "Locomotive",
+		},
+		{
+			name: "Swiper",
 		},
 	];
 
@@ -68,7 +67,9 @@ export default function ContactsSection() {
 					</div>
 
 					<div className={styles.contacts}>
-						<h2 className={styles.subtitle}>Contacts</h2>
+						<h2 className={styles.subtitle}>
+							{t("contacts.contacts")}
+						</h2>
 						<ul className={styles.list}>
 							{contacts.map((contact, index) => (
 								<li key={index}>
@@ -86,17 +87,13 @@ export default function ContactsSection() {
 					</div>
 
 					<div className={styles.libraries}>
-						<h2 className={styles.subtitle}>Used Libraries</h2>
+						<h2 className={styles.subtitle}>
+							{t("contacts.usedLibraries")}
+						</h2>
 						<ul className={styles.list}>
 							{libraries.map((library, index) => (
 								<li key={index}>
-									<a
-										href={library.link}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{library.name}
-									</a>
+									<p>{library.name}</p>
 								</li>
 							))}
 						</ul>
