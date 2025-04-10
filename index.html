@@ -34,6 +34,10 @@
 				justify-content: center;
 				align-items: center;
 				width: 150px;
+				padding: 45px;
+				border-radius: 10px;
+				box-sizing: content-box;
+				background-color: var(--secondary-background-color);
 			}
 			.initial-loader-wrapper {
 				position: relative;
@@ -54,8 +58,7 @@
 				height: 100%;
 				z-index: 2;
 				clip-path: inset(0 0 0 0);
-				animation: revealColor 1s cubic-bezier(0.65, 0, 0.35, 1)
-					forwards;
+				animation: revealColor .8s steps(5) forwards;
 				animation-delay: 0.5s;
 			}
 			.initial-grayscale-image {
@@ -72,7 +75,7 @@
 					clip-path: inset(0 0 0 0);
 				}
 				100% {
-					clip-path: inset(0 100% 0 0);
+					clip-path: inset(0 0 0 100%);
 				}
 			}
 			#initial-loader.hide {
@@ -235,5 +238,4 @@
 		</div>
 		<div id="root"></div>
 	</body>
-	
 </html>
