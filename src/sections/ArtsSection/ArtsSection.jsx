@@ -21,11 +21,11 @@ import {
 	Safe,
 	University,
 } from "../../assets/optimized";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 export default function ArtsSection() {
 	const { t } = useTranslation();
-	
+
 	return (
 		<section className={styles.container} id="arts-section">
 			<Swiper
@@ -65,15 +65,10 @@ export default function ArtsSection() {
 					<img src={University} alt="University" />
 				</SwiperSlide>
 			</Swiper>
-			<div className={styles.content}>
-				<div className={styles.text}>
-					<h1 className={styles.title}>
-						{t('arts.title')}
-					</h1>
-					<p className={styles.subtitle}>
-						{t('arts.description')}
-					</p>
-				</div>
+
+			<div className={styles.text}>
+				<h1 className={styles.title}>{t("arts.title")}</h1>
+				<p className={styles.subtitle}>{t("arts.description")}</p>
 			</div>
 		</section>
 	);

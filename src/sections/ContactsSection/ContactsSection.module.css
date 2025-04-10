@@ -39,7 +39,7 @@
 .title {
 	flex-basis: 300px;
 	flex-grow: 2;
-	font-size: var(--font-size-xxl);
+	font-size: var(--font-size-xl);
 	font-weight: 600;
 }
 

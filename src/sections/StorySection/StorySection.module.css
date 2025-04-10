@@ -39,8 +39,7 @@
 }
 
 .image {
-	flex: 1;
-	min-width: 280px;
+	flex: 1 1 300px;
 	aspect-ratio: 3/2;
 	background: url(../../assets/optimized/youtube.png);
 	background-size: contain;
@@ -89,6 +88,12 @@
 
 @media screen and (max-width: 1920px) {
 	.image {
-		max-width: 300px;
+		flex: 1 1 250px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.image {
+		flex: .3 1 250px;
 	}
 }

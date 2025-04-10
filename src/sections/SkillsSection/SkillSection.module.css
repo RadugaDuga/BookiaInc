@@ -274,13 +274,6 @@
 	.skills-section__column-2 {
 		max-width: 550px;
 	}
-
-	:root {
-		--cardLeftPadding: 60px;
-		--cardRightPadding: 55px;
-		--cardTopPadding: 55px;
-		--cardBottomPadding: 55px;
-	}
 }
 
 @media screen and (max-width: 1024px) {
