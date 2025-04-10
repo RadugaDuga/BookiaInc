@@ -1,7 +1,7 @@
 .stock_ticker_right,
 .stock_ticker_left {
 	user-select: none;
-	--gap: 40px;
+	--gap: 55px;
 	display: flex;
 	gap: var(--gap);
 	color: var(--primary-text-color);
@@ -143,6 +143,13 @@
 	}
 	100% {
 		background-position: 0% 50%;
+	}
+}
+
+@media screen and (max-width: 1920px) {
+	.stock_ticker_right,
+	.stock_ticker_left {
+		--gap: 40px;
 	}
 }
 

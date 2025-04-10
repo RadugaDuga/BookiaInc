@@ -28,7 +28,7 @@
 	align-items: center;
 	justify-content: center;
 	column-gap: 60px;
-	row-gap: 40px;
+	row-gap: 50px;
 	max-width: 1200px;
 }
 
@@ -95,5 +95,10 @@
 @media screen and (max-width: 1024px) {
 	.image {
 		flex: 0.5 1 250px;
+	}
+}
+@media screen and (max-width: 800px) {
+	.image {
+		flex: 1 1 250px;
 	}
 }
