@@ -46,15 +46,17 @@ video {
 	position: relative;
 }
 .qrCode {
-	position: relative;
-	margin-top: -5px;
-	height: 75px;
+	display: flex;
+	margin-top: -4px;
 	transition: 0.1s;
+	height: 75px;
 	border-radius: 5px;
 }
 
 .qrCode__wrapper:hover .qrCode {
 	position: absolute;
+	top: 0;
+	left: 0;
 	height: 150px;
 	aspect-ratio: 1/1;
 	background-color: var(--secondary-background-color);
