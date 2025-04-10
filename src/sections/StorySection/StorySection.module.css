@@ -6,7 +6,7 @@
 	color: var(--primary-text-color);
 	background: var(--primary-background-color);
 	height: 100vh;
-	overflow: hidden;
+	padding: 0 7vw;
 }
 
 .content p {
@@ -23,14 +23,13 @@
 
 .content {
 	display: flex;
-	gap: 60px;
+	flex-wrap: wrap;
 	flex-direction: row;
-	justify-content: center;
 	align-items: center;
-	backdrop-filter: blur(5px);
-	max-width: 1255px;
-	box-sizing: content-box;
-	padding: 0 7vw;
+	justify-content: center;
+	column-gap: 60px;
+	row-gap: 40px;
+	max-width: 1200px;
 }
 
 .title {
@@ -40,18 +39,17 @@
 }
 
 .image {
-	width: 100%;
-}
-
-.image_wrapper {
 	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+	min-width: 280px;
+	aspect-ratio: 3/2;
+	background: url(../../assets/optimized/youtube.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
-.text_wrapper {
-	flex: 2;
+.text {
+	flex: 2 1 550px;
 }
 
 .youtubeS {
@@ -90,7 +88,7 @@
 }
 
 @media screen and (max-width: 1920px) {
-	.image{
-		width: 80%;
+	.image {
+		max-width: 300px;
 	}
 }

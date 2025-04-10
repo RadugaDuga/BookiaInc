@@ -1,10 +1,7 @@
 import Ticker from "../../components/Ticker";
 import styles from "./TickerSection.module.css";
-import { useTranslation } from 'react-i18next';
 
 const TickerSection = () => {
-	const { t } = useTranslation();
-	
 	const items = [
 		"Effector",
 		"Redux",
@@ -18,6 +15,7 @@ const TickerSection = () => {
 		"Javascript",
 		"Jinja",
 		"RabbitMQ",
+		"Zog",
 	];
 
 	const items2 = [
@@ -53,11 +51,12 @@ const TickerSection = () => {
 	];
 
 	return (
-		<>
+		<div className={styles.ticker__wrapper}>
 			<Ticker items={items} direction="right" />
 			<Ticker items={items2} direction="left" />
 			<Ticker items={items3} direction="right" />
-		</>
+			<Ticker items={items3} direction="left" />
+		</div>
 	);
 };
 

@@ -202,17 +202,20 @@
 	color: var(--primary-text-color);
 	margin-top: 10px;
 	margin-bottom: 20px;
+	width: max-content;
+	padding: 0px 10px;
+	border-left: 2px solid var(--secondary-text-color);
 }
 
 .skill-card__role {
-	color: var(--primary-text-color);
+	color: var(--secondary-text-color);
 	font-size: var(--font-size-l);
 	font-weight: 700;
 	margin-bottom: 5px;
 }
 
 .skill-card__period {
-	color: var(--primary-text-color);
+	color: var(--secondary-text-color);
 	font-weight: 700;
 }
 
@@ -279,13 +282,16 @@
 		--cardBottomPadding: 55px;
 	}
 }
+
 @media screen and (max-width: 1024px) {
-
-
 	:root {
-		--cardLeftPadding: 60px;
-		--cardRightPadding: 55px;
-		--cardTopPadding: 55px;
-		--cardBottomPadding: 55px;
+		--cardLeftPadding: 50px;
+		--cardRightPadding: 45px;
+		--cardTopPadding: 45px;
+		--cardBottomPadding: 45px;
+	}
+
+	.skills-section {
+		padding: 200px 0;
 	}
 }

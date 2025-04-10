@@ -1,5 +1,4 @@
 .themeSwitcher {
-	width: 62px;
 	height: 62px;
 	border: none;
 	padding: 15px;
@@ -9,11 +8,17 @@
 	background-color: transparent;
 	color: var(--primary-text-color);
 	cursor: pointer;
+	height: 70px;
+	aspect-ratio: 1/1;
 }
 
 .themeSwitcher svg {
 	width: 35px;
 	height: 35px;
+}
+.themeSwitcher:hover {
+	background-color: var(--secondary-background-color);
+	border-radius: 5px;
 }
 
 @media screen and (max-width: 1024px) {

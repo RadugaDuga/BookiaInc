@@ -10,7 +10,7 @@
 
 .body-dark {
 	--primary-text-color: white;
-	--primary-text-color-inverted: rgb(0, 0, 0);
+	--primary-text-color-inverted: rgb(31, 52, 70);
 	--secondary-text-color: rgba(255, 255, 255, 0.838);
 	--primary-background-color: #171822;
 	--primary-background-color-inverted: #ffffff;
@@ -66,6 +66,6 @@ body::after {
 
 @media screen and (width <= 1360px) {
 	html {
-		font-size: 12px !important;
+		font-size: 14px !important;
 	}
 }

@@ -42,6 +42,9 @@ video {
 	gap: 35px;
 }
 
+.qrCode__wrapper {
+	position: relative;
+}
 .qrCode {
 	position: relative;
 	margin-top: -5px;
@@ -50,8 +53,10 @@ video {
 	border-radius: 5px;
 }
 
-.qrCode:hover {
+.qrCode__wrapper:hover .qrCode {
+	position: absolute;
 	height: 150px;
+	aspect-ratio: 1/1;
 	background-color: var(--secondary-background-color);
 	padding: 15px;
 	border-radius: 15px;
@@ -164,10 +169,7 @@ video {
 		position: relative;
 		z-index: 2;
 		background: rgba(6, 6, 10, 0.815);
-	}
-
-	.text_container * {
-		color: white;
+		backdrop-filter: blur(5px);
 	}
 }
 
@@ -204,5 +206,19 @@ video {
 	}
 	100% {
 		background-position: 0% 50%;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.wrapper {
+		--primary-text-color: white;
+		--primary-text-color-inverted: rgb(31, 52, 70);
+		--secondary-text-color: rgba(255, 255, 255, 0.838);
+		--primary-background-color: #171822;
+		--primary-background-color-inverted: #ffffff;
+		--secondary-background-color: #252638;
+		--card-dots-color: #50527a;
+		--card-shadow-color: rgba(0, 0, 0, 0.141);
+		--border-color: #3b3d5b;
 	}
 }

@@ -14,7 +14,7 @@ export default function ContactsSection() {
 		{
 			icon: <GmailIcon />,
 			link: "mailto: giorg.ibukia@geolab.edu.ge",
-			text: "giorg.ibukia@geolab.edu.ge",
+			text: "@bookiainc",
 		},
 		{
 			icon: <DiscordIcon />,

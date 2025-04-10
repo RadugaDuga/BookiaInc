@@ -57,8 +57,10 @@ function PreviewSection() {
 						>
 							<CircularTextButton text={t("preview.cta")} />
 						</span>
-						<span className={styles.qrCode}>
-							<QrCode />
+						<span className={styles.qrCode__wrapper}>
+							<span className={styles.qrCode}>
+								<QrCode />
+							</span>
 						</span>
 					</div>
 				</div>

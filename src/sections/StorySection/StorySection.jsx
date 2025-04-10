@@ -2,7 +2,7 @@ import styles from "./StorySection.module.css";
 import { Youtube } from "../../assets/optimized";
 import useParticleAnimation from "../../hooks/UseParticles/useParticles";
 import { useRef } from "react";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 function StorySection() {
 	const { t } = useTranslation();
@@ -36,16 +36,11 @@ function StorySection() {
 			{/* Партиклы */}
 
 			<div className={styles.content}>
-				<div className={styles.image_wrapper}>
-					<img src={Youtube} alt="Youtube logo" className={styles.image} />
-				</div>
-				<div className={styles.text_wrapper}>
-					<h1 className={styles.title}>
-						{t('story.title')}
-					</h1>
-					<p>
-						{t('story.description')}
-					</p>
+				<div className={styles.image}></div>
+
+				<div className={styles.text}>
+					<h1 className={styles.title}>{t("story.title")}</h1>
+					<p>{t("story.description")}</p>
 				</div>
 			</div>
 		</section>

@@ -49,3 +49,9 @@
 }
 
 /* Удаляем старые стили для .arrow, так как теперь используем компонент Arrow */
+
+@media screen and (max-width: 1024px) {
+	.scrollToBottom {
+		display: none;
+	}
+}

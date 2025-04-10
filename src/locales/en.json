@@ -17,21 +17,21 @@
       "achievments": "Key Achievements"
     },
     "Evraz": {
-      "role": "Senior Developer",
+      "role": "Software engineer",
       "period": "March 2023 - Present",
       "stack": "TypeScript, React 17-18, Effector, GraphQL, Websocket, Vite, Webpack, Echarts, Apexcharts, Highcharts, Charts.js",
       "projects": "Working in a team of 12 on production digitalization projects. Mostly MVP projects: functionality is implemented quickly, then refactored and maintained if economically viable.",
       "achievements": "Delivered 8 projects from idea to working product. One of them - an exhaust system monitoring system at a sintering plant - won 1st place for economic efficiency in 2024, reducing equipment downtime by 7.2%/year.\n\nMigrated system from polling to WebSocket: RPS decreased from ≈2,400 to 5/sec, traffic from ≈4.8 Gbit/s to 0.2 Gbit/s, server response from ≈6.1 sec to <120 ms.\n\nAs Core team member, developed UI kit to replace Ant, created 27+ components (buttons, calendars, tables, forms).\n\nRewrote major project using FSD architecture to simplify adding new features.\n\nIn 7-person team worked on replacing Power BI and SAP, created charts and graphs, used GraphQL with caching for dashboards. Implemented WebWorker for bundling websocket messages, reducing browser load and improving responsiveness"
     },
     "OneTwoTrip": {
-      "role": "Lead Developer",
+      "role": "Software engineer",
       "period": "March 2021 - February 2023",
       "stack": "TypeScript, React, Redux, Redux-Saga, TanStack Query, Webpack, React Virtualized, Styled Components",
       "projects": "Worked on \"Voyager\" project in 20+ person team.\n\nDomain - developing and improving UI for online travel booking platform with 500,000+ monthly users.",
       "achievements": "Increased TypeScript adoption in codebase, simplifying feature development and preventing many errors.\n\nImplemented CSS tokens concept with designers, making color palette updates and cross-team collaboration easier.\n\nWorked with bank partner to implement 3DS 2.0 protocols for payment processing.\n\nEnsured successful PCI DSS audit compliance using OWASP Top 10 knowledge. Developed Backend for Frontend in Node.js to aggregate data from multiple endpoints into single request."
     },
     "TwoGis": {
-      "role": "Lead Developer",
+      "role": "Software engineer",
       "period": "June 2020 - March 2021",
       "stack": "TypeScript, React, Redux, Redux-Saga, TanStack Query, Webpack, React Virtualized, Styled Components",
       "projects": "Worked in 5-person team on Otello project - hotel booking platform, developing frontend part of service.",

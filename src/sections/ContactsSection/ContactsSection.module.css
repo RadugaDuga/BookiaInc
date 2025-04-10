@@ -48,6 +48,7 @@
 	justify-content: space-between;
 	padding: 40px 0;
 	white-space: pre-wrap;
+	gap: 20px;
 }
 
 .brand {
@@ -112,6 +113,6 @@
 
 @media screen and (max-width: 1920px) {
 	.avatarWrapper {
-		flex: 0 1 280px;
+		flex: 0 1 370px;
 	}
 }

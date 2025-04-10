@@ -7,9 +7,16 @@
 	border: none;
 	cursor: pointer;
 	fill: var(--primary-text-color);
+	height: 70px;
+	aspect-ratio: 1/1;
 }
 
 .languageSwitcher svg {
 	height: 35px;
 	width: 35px;
+}
+
+.languageSwitcher:hover {
+	background-color: var(--secondary-background-color);
+	border-radius: 5px;
 }
