@@ -113,6 +113,6 @@
 
 @media screen and (max-width: 1920px) {
 	.avatarWrapper {
-		flex: 0 1 370px;
+		flex: 1 1 370px;
 	}
 }

@@ -157,7 +157,7 @@
 	.stock_ticker_left ul li {
 		background-color: var(--secondary-background-color);
 		text-align: center;
-		padding: 15px 30px;
+		padding: 20px 20px;
 		flex: 1;
 		white-space: nowrap;
 		border: 1px solid var(--border-color);
