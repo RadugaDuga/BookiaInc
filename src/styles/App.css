@@ -60,12 +60,6 @@ body::after {
 
 @media screen and (width <= 1920px) {
 	html {
-		font-size: 14px !important;
-	}
-}
-
-@media screen and (width <= 1360px) {
-	html {
-		font-size: 14px !important;
+		font-size: 13px !important;
 	}
 }
