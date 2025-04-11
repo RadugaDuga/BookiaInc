@@ -113,6 +113,11 @@
 
 @media screen and (max-width: 1920px) {
 	.avatarWrapper {
-		flex: 1 1 370px;
+		flex: 1 1 150px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.avatarWrapper {
+		flex: 1 1 250px;
 	}
 }
