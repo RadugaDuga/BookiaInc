@@ -1,50 +1,50 @@
 {
   "preview": {
-    "title": "Georgy Bukia \n Spartakovich",
-    "description": "I've been building interfaces for almost 5 years, using modern tech stack. Have extensive commercial experience.",
+    "title": "Bukia Georgiy \n Spartakovich ",
+    "description": "I've been building interfaces for almost 5 years now, using a modern tech stack. I have extensive commercial experience.",
     "stack": "React - Effector - Typescript - Vite",
     "cta": "Telegram link",
     "role": "Frontend Developer"
   },
   "story": {
-    "title": "Once upon a time in the distant 2019...",
-    "description": "My journey into frontend development began in 2019. While studying at university, I became interested in web development. Initially I set a simple goal - to create a basic website about my favorite Lo-Fi music theme. But at some point I discovered React and wanted to build a full-fledged SPA, and that's when things really took off"
+    "title": "A long time ago in 2019...",
+    "description": "My journey into frontend development started in 2019. While studying at university, I became interested in web development.\n\nInitially, my goal was to build a simple website about my favorite topic — Lo-Fi music.\n\nBut at some point, I discovered React and wanted to build a full-fledged SPA — and that’s when everything took off."
   },
   "skills": {
     "card": {
       "stack": "Tech Stack",
-      "teamAndProjects": "Teams and Projects",
+      "teamAndProjects": "Teams & Projects",
       "achievments": "Key Achievements"
     },
     "Evraz": {
-      "role": "Software engineer",
+      "role": "Frontend Developer",
       "period": "March 2023 - Present",
-      "stack": "TypeScript, React 17-18, Effector, GraphQL, Websocket, Vite, Webpack, Echarts, Apexcharts, Highcharts, Charts.js",
-      "projects": "Working in a team of 12 on production digitalization projects. Mostly MVP projects: functionality is implemented quickly, then refactored and maintained if economically viable.",
-      "achievements": "Delivered 8 projects from idea to working product. One of them - an exhaust system monitoring system at a sintering plant - won 1st place for economic efficiency in 2024, reducing equipment downtime by 7.2%/year.\n\nMigrated system from polling to WebSocket: RPS decreased from ≈2,400 to 5/sec, traffic from ≈4.8 Gbit/s to 0.2 Gbit/s, server response from ≈6.1 sec to <120 ms.\n\nAs Core team member, developed UI kit to replace Ant, created 27+ components (buttons, calendars, tables, forms).\n\nRewrote major project using FSD architecture to simplify adding new features.\n\nIn 7-person team worked on replacing Power BI and SAP, created charts and graphs, used GraphQL with caching for dashboards. Implemented WebWorker for bundling websocket messages, reducing browser load and improving responsiveness"
+      "stack": "TypeScript, React, Effector, Apollo + GraphQL, Websocket, Vite, Webpack, Storybook, Yup",
+      "projects": "Working in a 12-person team on digitalization projects for industrial production.\n\nMostly MVPs: features are quickly implemented and, if economically successful, the projects are refactored and supported long-term.",
+      "achievements": "Released 8 projects. One — an exhaust control system for a sinter plant — became #1 in economic efficiency, reducing downtime by 7.2% annually.\n\nMigrated system from polling to WebSocket: RPS dropped from ≈2,400 to 5/sec, traffic — from ≈4.8 Gbps to 0.2 Gbps, server response time — from ≈6.1 sec to <120 ms.\n\nAs a Core team member, developed a UI-kit to replace Ant Design. Created 27+ components (buttons, calendars, tables, forms).\n\nRefactored several projects using FSD architecture to accelerate development and make onboarding easier.\n\nIn a 7-person team, built a project to replace Power BI and SAP: created charts (Echarts, Apexcharts, Highcharts, Charts.js) and dashboards using GraphQL for efficient caching."
     },
     "OneTwoTrip": {
-      "role": "Software engineer",
+      "role": "Frontend Developer",
       "period": "March 2021 - February 2023",
-      "stack": "TypeScript, React, Redux, Redux-Saga, TanStack Query, Webpack, React Virtualized, Styled Components",
-      "projects": "Worked on \"Voyager\" project in 20+ person team.\n\nDomain - developing and improving UI for online travel booking platform with 500,000+ monthly users.",
-      "achievements": "Increased TypeScript adoption in codebase, simplifying feature development and preventing many errors.\n\nImplemented CSS tokens concept with designers, making color palette updates and cross-team collaboration easier.\n\nWorked with bank partner to implement 3DS 2.0 protocols for payment processing.\n\nEnsured successful PCI DSS audit compliance using OWASP Top 10 knowledge. Developed Backend for Frontend in Node.js to aggregate data from multiple endpoints into single request."
+      "stack": "React, TypeScript, React Query, Webpack, React Virtualized, Styled Components, NextJs, Jest, i18next",
+      "projects": "Worked on hotel search and recommendation features at OneTwoTrip.\n\nDomain area — developing and improving UI for the travel booking platform.\n\n500,000+ users/month, team of 20+ people working in Kanban.",
+      "achievements": "Increased TypeScript usage in the codebase, simplifying feature development and reducing bugs.\n\nCollaborated with designers to introduce CSS tokens, making color palette updates easier and improving cross-team collaboration.\n\nWorked with a partner bank to implement and maintain 3DS 2.0 payment protocols.\n\nEnsured successful PCI DSS audit by applying OWASP Top 10 principles.\n\nDeveloped a Node.js Backend for Frontend to aggregate data from multiple endpoints into a single request."
     },
     "TwoGis": {
-      "role": "Software engineer",
+      "role": "Frontend Developer",
       "period": "June 2020 - March 2021",
-      "stack": "TypeScript, React, Redux, Redux-Saga, TanStack Query, Webpack, React Virtualized, Styled Components",
-      "projects": "Worked in 5-person team on Otello project - hotel booking platform, developing frontend part of service.",
-      "achievements": "Created UI components using React with internal design system, improved shared UI-Kit for development convenience.\n\nIntegrated REST API with backend, connecting third-party services.\n\nCollaborated with designers and analysts to add animations and interactive elements, improving platform usability."
+      "stack": "JavaScript, React, Redux, Redux-Thunk, Webpack, Jest, React Hook Form",
+      "projects": "Worked in a 5-person team on Otello — an online hotel booking platform, developing the frontend of the service.",
+      "achievements": "Created UI components using React and internal design system; contributed to the shared UI-kit to streamline development.\n\nIntegrated REST APIs and connected third-party services to support key features.\n\nCollaborated with designers and analysts to add animations and interactive elements that improved user experience."
     },
     "experience": "Commercial Experience",
-    "experienceDescription": "This describes my commercial experience, excluding pet projects and freelance work. Of course this isn't everything, just key highlights.\n\nAfter graduating I started job hunting in my hometown, my first company was 2GIS where I mastered React and clean code principles while learning development processes.\n\nAfter a year I moved to Saint Petersburg and opened my resume again, joining OneTwoTrip where I learned security fundamentals while working with sensitive user payment data."
+    "experienceDescription": "This section describes my commercial experience, excluding pet projects and freelance work.\n\nOf course, it's not everything — just a brief summary.\n\nAfter graduating from university, I started job hunting in my hometown. My first company was 2GIS, where I honed my React skills, learned to write clean code, and got familiar with development processes.\n\nA year later, I moved to Saint Petersburg and reopened my resume. My second company was OneTwoTrip, where I deepened my understanding of security practices by working in a team handling sensitive user card data and more."
   },
   "arts": {
-    "title": "Creating 3D scenes in Blender - my hobby",
-    "description": "I started learning Blender and was fascinated by its intuitive interface and ease of use. So 3D modeling became my favorite hobby.",
-    "viewAll": "View all",
-    "viewProject": "View project",
+    "title": "Creating 3D scenes in Blender is my hobby",
+    "description": "I started learning Blender and was impressed by its intuitive interface and ease of use.\n\nThat’s how 3D modeling became my favorite hobby.",
+    "viewAll": "View All",
+    "viewProject": "View Project",
     "categories": {
       "all": "All",
       "web": "Web",
@@ -53,8 +53,8 @@
     }
   },
   "contacts": {
-    "title": "I'm a frontend-dev, but my friends call me Gosha",
+    "title": "I'm a frontender, but my friends call me Gosha",
     "contacts": "Contacts",
-    "usedLibraries": "Used libraries"
+    "usedLibraries": "Libraries Used"
   }
 }
