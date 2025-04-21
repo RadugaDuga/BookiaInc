@@ -73,7 +73,7 @@
 	border: 30px solid rgba(0, 0, 0, 0);
 	border-top: 30px solid var(--primary-background-color);
 	border-left: 30px solid var(--primary-background-color);
-	left: -3px;
+	left: -1px;
 	top: -2px;
 	z-index: 2;
 }
@@ -86,7 +86,7 @@
 	transform: rotate(-45deg);
 	width: 82px;
 	background-color: var(--border-color);
-	height: 1px;
+	height: 1.2px;
 	z-index: 2;
 }
 
