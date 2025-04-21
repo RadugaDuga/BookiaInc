@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import './locales/i18n';
+import "./locales/i18n";
 
 import App from "./App";
 

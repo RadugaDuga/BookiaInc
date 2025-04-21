@@ -53,15 +53,6 @@
 	display: none;
 }
 
-@media screen and (max-width: 1024px) {
-	.skills-section__desktop {
-		display: none;
-	}
-	.skills-section__mobile {
-		display: flex;
-	}
-}
-
 /* Основные стили карточки */
 .skill-card {
 	flex: 1;
@@ -283,8 +274,13 @@
 		--cardTopPadding: 45px;
 		--cardBottomPadding: 45px;
 	}
-
 	.skills-section {
 		padding: 200px 0;
+	}
+	.skills-section__desktop {
+		display: none;
+	}
+	.skills-section__mobile {
+		display: flex;
 	}
 }

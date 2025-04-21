@@ -58,7 +58,7 @@
 				height: 100%;
 				z-index: 2;
 				clip-path: inset(0 0 0 0);
-				animation: revealColor .8s steps(5) forwards;
+				animation: revealColor 0.8s steps(5) forwards;
 				animation-delay: 0.5s;
 			}
 			.initial-grayscale-image {
@@ -99,6 +99,13 @@
 		<script type="module" src="./src/main.jsx" async></script>
 
 		<script>
+			// 1. Aвтоматическое восстановление скролла выключено
+			if ("scrollRestoration" in history) {
+				history.scrollRestoration = "manual";
+			}
+		</script>
+
+		<script>
 			document.addEventListener("DOMContentLoaded", function () {
 				// Блокируем прокрутку страницы
 				document.body.style.overflow = "hidden";
@@ -130,14 +137,6 @@
 					const remainingTime = Math.max(
 						0,
 						minLoadTime - timeElapsed
-					);
-
-					console.log(
-						"Время загрузки: " +
-							timeElapsed +
-							"мс, ожидание: " +
-							remainingTime +
-							"мс"
 					);
 
 					setTimeout(hideLoader, remainingTime);
