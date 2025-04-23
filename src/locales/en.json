@@ -18,7 +18,7 @@
     },
     "Evraz": {
       "role": "Frontend Developer",
-      "period": "March 2023 - Present",
+      "period": "May 2023 - Present",
       "stack": "TypeScript, React, Effector, Apollo + GraphQL, Websocket, Vite, Webpack, Storybook, Yup",
       "projects": "Working in a 12-person team on digitalization projects for industrial production.\n\nMostly MVPs: features are quickly implemented and, if economically successful, the projects are refactored and supported long-term.",
       "achievements": "Released 8 projects. One — an exhaust control system for a sinter plant — became #1 in economic efficiency, reducing downtime by 7.2% annually.\n\nMigrated system from polling to WebSocket: RPS dropped from ≈2,400 to 5/sec, traffic — from ≈4.8 Gbps to 0.2 Gbps, server response time — from ≈6.1 sec to <120 ms.\n\nAs a Core team member, developed a UI-kit to replace Ant Design. Created 27+ components (buttons, calendars, tables, forms).\n\nRefactored several projects using FSD architecture to accelerate development and make onboarding easier.\n\nIn a 7-person team, built a project to replace Power BI and SAP: created charts (Echarts, Apexcharts, Highcharts, Charts.js) and dashboards using GraphQL for efficient caching."
@@ -32,7 +32,7 @@
     },
     "TwoGis": {
       "role": "Frontend Developer",
-      "period": "June 2020 - March 2021",
+      "period": "August 2020 - February 2021",
       "stack": "JavaScript, React, Redux, Redux-Thunk, Webpack, Jest, React Hook Form",
       "projects": "Worked in a 5-person team on Otello — an online hotel booking platform, developing the frontend of the service.",
       "achievements": "Created UI components using React and internal design system; contributed to the shared UI-kit to streamline development.\n\nIntegrated REST APIs and connected third-party services to support key features.\n\nCollaborated with designers and analysts to add animations and interactive elements that improved user experience."
