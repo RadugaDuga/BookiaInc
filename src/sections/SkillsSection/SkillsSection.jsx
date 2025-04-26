@@ -2,6 +2,9 @@ import { Evraz, OneTwoTrip, TwoGis } from "../../assets/icons";
 import SkillCard from "./SkillCard";
 import styles from "./SkillSection.module.css";
 import { useTranslation } from "react-i18next";
+import { memo } from "react";
+
+const MemoizedSkillCard = memo(SkillCard);
 
 function SkillsSection() {
 	const { t } = useTranslation();
@@ -28,7 +31,7 @@ function SkillsSection() {
 						</p>
 					</div>
 
-					<SkillCard
+						<MemoizedSkillCard
 						skill="OneTwoTrip!"
 						experienceData={{
 							role: t("skills.OneTwoTrip.role"),
@@ -47,7 +50,7 @@ function SkillsSection() {
 				<div
 					className={`${styles["skills-section__column-2"]} ${styles["skills-section__desktop"]}`}
 				>
-					<SkillCard
+						<MemoizedSkillCard
 						skill="EvrazTech"
 						experienceData={{
 							role: t("skills.Evraz.role"),
@@ -61,9 +64,9 @@ function SkillsSection() {
 						}}
 						imgSrc={<Evraz />}
 						textColor={"#EF7622"}
-					/>
+						/>
 
-					<SkillCard
+						<MemoizedSkillCard
 						skill="2GIS"
 						experienceData={{
 							role: t("skills.TwoGis.role"),
@@ -98,7 +101,7 @@ function SkillsSection() {
 							{t("skills.experienceDescription")}
 						</p>
 					</div>
-					<SkillCard
+						<MemoizedSkillCard
 						skill="EvrazTech"
 						experienceData={{
 							role: t("skills.Evraz.role"),
@@ -117,7 +120,7 @@ function SkillsSection() {
 				<div
 					className={`${styles["skills-section__column-2"]} ${styles["skills-section__mobile"]}`}
 				>
-					<SkillCard
+						<MemoizedSkillCard
 						skill="OneTwoTrip!"
 						experienceData={{
 							role: t("skills.OneTwoTrip.role"),
@@ -132,7 +135,7 @@ function SkillsSection() {
 						imgSrc={<OneTwoTrip />}
 						textColor={"#92C4FF"}
 					/>
-					<SkillCard
+						<MemoizedSkillCard
 						skill="2GIS"
 						experienceData={{
 							role: t("skills.TwoGis.role"),

@@ -119,7 +119,7 @@ video {
 	align-items: flex-start;
 	flex-direction: column;
 	margin: auto 0;
-	gap: 2.5rem;
+	gap: 3rem;
 }
 
 .text {
@@ -147,32 +147,6 @@ video {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-}
-
-@media screen and (max-width: 1024px) {
-	.wrapper {
-		flex-direction: column;
-		height: 100vh;
-		padding: 0;
-		position: relative;
-		align-items: flex-end;
-	}
-
-	.video_container {
-		position: absolute;
-		top: 0;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		z-index: 1;
-	}
-
-	.text_container {
-		position: relative;
-		z-index: 2;
-		background: rgba(6, 6, 10, 0.815);
-		backdrop-filter: blur(5px);
-	}
 }
 
 @keyframes gradientAnimation {
@@ -212,6 +186,30 @@ video {
 }
 
 @media screen and (max-width: 1024px) {
+	.wrapper {
+		flex-direction: column;
+		height: 100vh;
+		padding: 0;
+		position: relative;
+		align-items: flex-end;
+	}
+
+	.video_container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	.text_container {
+		position: relative;
+		z-index: 2;
+		background: rgba(6, 6, 10, 0.815);
+		backdrop-filter: blur(5px);
+	}
+
 	.wrapper {
 		--primary-text-color: white;
 		--primary-text-color-inverted: rgb(31, 52, 70);

@@ -5,7 +5,7 @@ import styles from "./CircularTextButton.module.css"; // Импортируем 
 
 function CircularTextButton({
 	text,
-	href = "https://t.me/GeorgiBukia",
+	href = "https://t.me/DevBukia",
 	target = "_blank",
 }) {
 	const buttonRef = useRef(null);

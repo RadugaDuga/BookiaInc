@@ -75,6 +75,8 @@ function PreviewSection() {
 					src={AnimatedMaskot}
 					muted
 					className={styles.video}
+					aria-label="Animated mascot"
+					role="presentation"
 				></video>
 			</div>
 		</section>
