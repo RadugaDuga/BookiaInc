@@ -38,7 +38,7 @@ video {
 	position: relative;
 	display: flex;
 	height: 68px;
-	gap: 3rem;
+	gap: 3.4rem;
 }
 
 .button__span {
@@ -61,6 +61,7 @@ video {
 	left: 0;
 	height: 170px;
 	aspect-ratio: 1/1;
+
 	border-radius: 15px;
 	z-index: 2;
 	cursor: none;
@@ -119,7 +120,7 @@ video {
 	align-items: flex-start;
 	flex-direction: column;
 	margin: auto 0;
-	gap: 3rem;
+	gap: 3.4rem;
 }
 
 .text {
