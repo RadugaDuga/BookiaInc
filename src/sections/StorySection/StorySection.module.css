@@ -4,7 +4,6 @@
 	align-items: center;
 	justify-content: center;
 	color: var(--primary-text-color);
-	background: var(--primary-background-color);
 	height: 100vh;
 	padding: 0 7vw;
 }

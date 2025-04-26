@@ -43,7 +43,7 @@ export default function ContactsSection() {
 
 	return (
 		<section className={styles.section} id="contacts-section">
-			<div className={styles.wrapper} data-scroll data-scroll-speed="-5">
+			<div className={styles.wrapper} data-scroll data-scroll-speed="-4">
 				<header className={styles.header}>
 					<div className={styles.avatarWrapper}>
 						<img

@@ -4,10 +4,29 @@ import styles from "./ThemeSwitcher.module.css";
 const ThemeSwitcher = () => {
 	const { theme, toggleTheme } = useTheme();
 
+	const handleClick = (event) => {
+		const button = event.currentTarget;
+		const ripple = document.createElement('div');
+		const diameter = Math.max(window.innerWidth, window.innerHeight);
+		const radius = diameter / 2;
+
+		ripple.style.width = ripple.style.height = `${diameter}px`;
+		ripple.style.left = `${event.clientX - radius}px`;
+		ripple.style.top = `${event.clientY - radius}px`;
+		ripple.className = styles.ripple;
+
+		document.body.appendChild(ripple);
+		toggleTheme();
+
+		ripple.addEventListener('animationend', () => {
+			ripple.remove();
+		});
+	};
+
 	return (
 		<button
 			title="Сменить тему"
-			onClick={toggleTheme}
+			onClick={handleClick}
 			className={styles.themeSwitcher}
 		>
 			{theme === "light" ? (

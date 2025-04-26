@@ -17,6 +17,11 @@ function PreviewSection() {
 			videoRef.current.play();
 		}
 	};
+	const handleMouseLeave = () => {
+		if (videoRef.current) {
+			videoRef.current.pause();
+		}
+	};
 
 	useEffect(() => {
 		videoRef.current.play();
@@ -54,6 +59,7 @@ function PreviewSection() {
 							onMouseLeave={() => {
 								setIsHovered(false);
 							}}
+							className={styles.button__span}
 						>
 							<CircularTextButton text={t("preview.cta")} />
 						</span>
@@ -69,6 +75,7 @@ function PreviewSection() {
 			<div
 				className={styles.video_container}
 				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
 			>
 				<video
 					ref={videoRef}

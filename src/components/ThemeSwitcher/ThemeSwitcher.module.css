@@ -10,6 +10,8 @@
 	cursor: pointer;
 	height: 70px;
 	aspect-ratio: 1/1;
+	position: relative;
+	overflow: hidden;
 }
 
 .themeSwitcher svg {
@@ -19,6 +21,22 @@
 .themeSwitcher:hover {
 	background-color: var(--secondary-background-color);
 	border-radius: 5px;
+}
+
+.ripple {
+	position: fixed;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: rippleEffect 1s linear;
+	background-color: var(--secondary-background-color);
+	z-index: -1;
+}
+
+@keyframes rippleEffect {
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
 }
 
 @media screen and (max-width: 1024px) {
