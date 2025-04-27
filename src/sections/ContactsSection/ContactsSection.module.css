@@ -50,26 +50,60 @@
 	gap: 20px;
 }
 
-.brand {
-	display: flex;
-	gap: 15px;
-}
-
 .brand__wrapper {
 	display: flex;
 	height: max-content;
 	align-items: center;
 	grid-auto-flow: 15px;
+	font-weight: 700;
+	color: var(--primary-text-color);
+	gap: 15px;
+	cursor: pointer;
+}
+
+.brand {
+	display: flex;
 	gap: 15px;
 }
 
 .brand svg {
 	width: 50px;
 	height: 50px;
+	transition: transform 0.2s ease-in-out;
+	--light-color: rgb(59, 197, 77);
+}
+.brand svg path {
+	fill: var(--primary-text-color);
+}
+.brand svg rect {
+	stroke: var(--primary-text-color);
 }
 
-.brand svg * {
-	fill: var(--primary-text-color);
+.brand svg {
+	width: 50px;
+	height: 50px;
+	transition: transform 0.2s ease-in-out;
+	--light-color: rgb(59, 197, 77);
+}
+
+.brand__wrapper:hover path {
+	fill: rgb(69, 138, 78);
+}
+.brand__wrapper:hover path:nth-child(2) {
+	fill: var(--light-color);
+}
+.brand__wrapper:hover path:nth-child(3) {
+	fill: var(--light-color);
+}
+.brand__wrapper:hover path:nth-child(4) {
+	fill: var(--light-color);
+}
+.brand__wrapper:hover path:nth-child(5) {
+	fill: var(--light-color);
+}
+
+.brand__wrapper:hover rect {
+	stroke: rgb(69, 138, 78);
 }
 
 .copyright {
