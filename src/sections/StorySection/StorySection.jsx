@@ -10,8 +10,8 @@ function StorySection() {
 	const particles = useParticles({
 		containerRef,
 		count: 18,
-		minSize: 23,
-		maxSize: 30,
+		minSize: 30,
+		maxSize: 35,
 		minX: 5,
 		maxX: 95,
 		minY: 105,

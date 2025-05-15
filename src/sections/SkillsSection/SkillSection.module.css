@@ -62,6 +62,14 @@
 	z-index: 999;
 }
 
+.skill-card:hover {
+	background: color-mix(
+		in srgb,
+		var(--secondary-background-color) 100%,
+		transparent 0%
+	);
+}
+
 .skill-card::before {
 	content: "";
 	position: absolute;
@@ -84,44 +92,21 @@
 	height: 1.2px;
 	z-index: 2;
 }
-
-/* Добавляем новые псевдоэлементы для градиента */
-/* .skill-card__gradient-before,
-.skill-card__gradient-after {
+/* 
+.skill-card__gradient-before {
 	content: "";
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	border: 4px solid rgb(173, 173, 255);
 	z-index: -1;
-}
-
-.skill-card__gradient-before {
-	background-image: linear-gradient(
-		-135deg,
-		color-mix(in srgb, var(--textColor) 4%, transparent),
-		var(--secondary-background-color) 60%
-	);
-	opacity: 1;
-	transition: opacity 0.2s ease;
-}
-
-.skill-card__gradient-after {
-	background-image: linear-gradient(
-		-135deg,
-		color-mix(in srgb, var(--textColor) 12%, transparent),
-		var(--secondary-background-color) 60%
-	);
 	opacity: 0;
-	transition: opacity 0.2s ease;
+	transition: opacity 0.3s;
 } */
 
 .skill-card:hover .skill-card__gradient-before {
-	opacity: 0;
-}
-
-.skill-card:hover .skill-card__gradient-after {
 	opacity: 1;
 }
 
@@ -236,7 +221,7 @@
 	font-size: var(--font-size-l);
 	font-weight: 700;
 	padding-bottom: 3px;
-	margin-bottom: 5px;
+	margin-bottom: 20px;
 	width: fit-content;
 }
 

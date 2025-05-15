@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 // Константы для opacity партиклов story section
 export const STORY_PARTICLE_OPACITY_MIN = 0.35;
-export const STORY_PARTICLE_OPACITY_MAX = 0;
+export const STORY_PARTICLE_OPACITY_MAX = 0.05;
 export const STORY_PARTICLE_DEFAULT_SPEED = 220; // скорость дефолтной анимации партиклов
 
 /**
@@ -18,7 +18,6 @@ export const STORY_PARTICLE_DEFAULT_SPEED = 220; // скорость дефол�
  * @param {number} options.maxX - Максимальный X (% от ширины контейнера)
  * @param {number} options.minY - Минимальный Y (% от высоты контейнера)
  * @param {number} options.maxY - Максимальный Y (% от высоты контейнера)
- * @param {function} [options.getExtra] - Функция для добавления кастомных параметров
  * @returns {Array} Массив объектов с параметрами партиклов (с refs)
  */
 export default function useParticles({
@@ -30,7 +29,6 @@ export default function useParticles({
 	maxX = 100,
 	minY = 110,
 	maxY = 150,
-	getExtra,
 }) {
 	const memoizedParams = useRef([]);
 	const isActive = useRef(false);
@@ -53,7 +51,6 @@ export default function useParticles({
 			const rotateZ = -150 + 350 * base + Math.random() * 30 - 15;
 			const initialRotate = Math.random() * 360;
 			const delay = base * 2 + Math.random() * 0.7;
-			const extra = getExtra ? getExtra({ i, base, size }) : {};
 			return {
 				ref,
 				size,
@@ -63,10 +60,9 @@ export default function useParticles({
 				rotateZ,
 				initialRotate,
 				delay,
-				...extra,
 			};
 		});
-	}, [particleRefs, count, minSize, maxSize, minX, maxX, minY, maxY, getExtra]);
+	}, [particleRefs, count, minSize, maxSize, minX, maxX, minY, maxY]);
 
 	// Мемоизация параметров для анимации
 	if (memoizedParams.current.length !== particles.length) {
@@ -128,24 +124,25 @@ export default function useParticles({
 						},
 					});
 
+					// Новый ease: в начале очень быстро, затем плавно (power4.out)
 					tl.to(particle, {
 						y: -5,
 						rotateZ: rotateZ,
 						opacity: STORY_PARTICLE_OPACITY_MAX,
 						duration: duration,
-						ease: normalEase,
+						ease: "linear", // быстрое ускорение, затем плавно
 					}, 0)
 						.to(particle, {
 							width: initialWidth * scaleK,
 							height: initialHeight * scaleK,
 							duration: duration * 0.5,
-							ease: normalEase,
+							ease: "linear",
 						}, 0)
 						.to(particle, {
 							width: initialWidth,
 							height: initialHeight,
 							duration: duration * 0.5,
-							ease: normalEase,
+							ease: "linear",
 						}, duration * 0.5);
 
 					timelines.push(tl);
