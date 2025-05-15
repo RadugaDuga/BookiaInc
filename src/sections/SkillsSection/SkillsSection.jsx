@@ -1,10 +1,13 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { Evraz, OneTwoTrip, TwoGis } from "../../assets/icons";
 import SkillCard from "./SkillCard";
 import styles from "./SkillSection.module.css";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import useParticles from "../../hooks/UseParticles/useParticles";
+import EvrazSvg from "../../assets/optimized/Evraz.svg";
+import OneTwoTripSvg from "../../assets/optimized/OneTwoTrip.svg";
+import TwoGisSvg from "../../assets/optimized/TwoGis.svg";
 
 const MemoizedSkillCard = memo(SkillCard);
 
@@ -24,9 +27,9 @@ function SkillsSection() {
 	});
 
 	const svgBackgrounds = [
-		`url("/src/assets/optimized/Evraz.svg")`,
-		`url("/src/assets/optimized/OneTwoTrip.svg")`,
-		`url("/src/assets/optimized/TwoGis.svg")`,
+		`url(${EvrazSvg})`,
+		`url(${OneTwoTripSvg})`,
+		`url(${TwoGisSvg})`,
 	];
 
 	return (
