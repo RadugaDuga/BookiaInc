@@ -14,7 +14,7 @@ function SkillsSection() {
 	const containerRef = useRef(null);
 	const particles = useParticles({
 		containerRef,
-		count: 14,
+		count: 22,
 		minSize: 23,
 		maxSize: 30,
 		minX: 8,
