@@ -1,16 +1,56 @@
+import React, { useRef } from "react";
 import { Evraz, OneTwoTrip, TwoGis } from "../../assets/icons";
 import SkillCard from "./SkillCard";
 import styles from "./SkillSection.module.css";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
+import useParticles from "../../hooks/UseParticles/useParticles";
 
 const MemoizedSkillCard = memo(SkillCard);
 
 function SkillsSection() {
 	const { t } = useTranslation();
 
+	const containerRef = useRef(null);
+	const particles = useParticles({
+		containerRef,
+		count: 14,
+		minSize: 23,
+		maxSize: 30,
+		minX: 8,
+		maxX: 92,
+		minY: 110,
+		maxY: 200,
+	});
+
+	const svgBackgrounds = [
+		`url("/src/assets/optimized/Evraz.svg")`,
+		`url("/src/assets/optimized/OneTwoTrip.svg")`,
+		`url("/src/assets/optimized/TwoGis.svg")`,
+	];
+
 	return (
-		<section className={styles["skills-section"]} id="skills-section">
+		<section
+			className={styles["skills-section"]}
+			id="skills-section"
+			ref={containerRef}
+		>
+			{particles.map((p, i) => (
+				<div
+					key={i}
+					className={styles.youtubeS}
+					ref={p.ref}
+					style={{
+						width: p.size,
+						height: p.size,
+						transform: `rotate(${p.initialRotate}deg)`,
+						background: svgBackgrounds[i % svgBackgrounds.length],
+						backgroundSize: "contain",
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "center",
+					}}
+				/>
+			))}
 			<div className={styles["skills-section__content"]}>
 				<div
 					className={`${styles["skills-section__column-1"]} ${styles["skills-section__desktop"]}`}
@@ -31,7 +71,7 @@ function SkillsSection() {
 						</p>
 					</div>
 
-						<MemoizedSkillCard
+					<MemoizedSkillCard
 						skill="OneTwoTrip!"
 						experienceData={{
 							role: t("skills.OneTwoTrip.role"),
@@ -50,7 +90,7 @@ function SkillsSection() {
 				<div
 					className={`${styles["skills-section__column-2"]} ${styles["skills-section__desktop"]}`}
 				>
-						<MemoizedSkillCard
+					<MemoizedSkillCard
 						skill="EvrazTech"
 						experienceData={{
 							role: t("skills.Evraz.role"),
@@ -64,9 +104,9 @@ function SkillsSection() {
 						}}
 						imgSrc={<Evraz />}
 						textColor={"#EF7622"}
-						/>
+					/>
 
-						<MemoizedSkillCard
+					<MemoizedSkillCard
 						skill="2GIS"
 						experienceData={{
 							role: t("skills.TwoGis.role"),
@@ -101,7 +141,7 @@ function SkillsSection() {
 							{t("skills.experienceDescription")}
 						</p>
 					</div>
-						<MemoizedSkillCard
+					<MemoizedSkillCard
 						skill="EvrazTech"
 						experienceData={{
 							role: t("skills.Evraz.role"),
@@ -120,7 +160,7 @@ function SkillsSection() {
 				<div
 					className={`${styles["skills-section__column-2"]} ${styles["skills-section__mobile"]}`}
 				>
-						<MemoizedSkillCard
+					<MemoizedSkillCard
 						skill="OneTwoTrip!"
 						experienceData={{
 							role: t("skills.OneTwoTrip.role"),
@@ -135,7 +175,7 @@ function SkillsSection() {
 						imgSrc={<OneTwoTrip />}
 						textColor={"#92C4FF"}
 					/>
-						<MemoizedSkillCard
+					<MemoizedSkillCard
 						skill="2GIS"
 						experienceData={{
 							role: t("skills.TwoGis.role"),

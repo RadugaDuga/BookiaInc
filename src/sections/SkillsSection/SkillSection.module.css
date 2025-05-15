@@ -8,10 +8,12 @@
 }
 
 .skills-section {
+	position: relative;
 	padding: 400px 0;
 	display: flex;
 	align-items: center;
 	white-space: pre-wrap;
+	overflow: hidden;
 }
 
 .skills-section__content {
@@ -34,15 +36,6 @@
 	gap: 55px;
 }
 
-.skills-section__column-1 .skill-card:first-child {
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-top: 0;
-	box-shadow: none;
-	background: 0 0;
-	height: max-content;
-}
-
 /* Управление отображением мобильной/десктопной версии */
 .skills-section__desktop {
 	display: flex;
@@ -55,15 +48,18 @@
 /* Основные стили карточки */
 .skill-card {
 	flex: 1;
-	position: relative;
 	box-sizing: border-box;
-	background-color: var(--secondary-background-color);
+	background: color-mix(
+		in srgb,
+		var(--secondary-background-color) 100%,
+		transparent 80%
+	); /* оригинальный цвет без прозрачности */
 	color: var(--primary-text-color);
 	transition: border-color 0.5s ease, transform 0.1s;
 	border: 1px solid var(--border-color);
 	--text-color: var(--textColor, var(--primary-text-color));
 	position: relative;
-	z-index: 1;
+	z-index: 999;
 }
 
 .skill-card::before {
@@ -90,7 +86,7 @@
 }
 
 /* Добавляем новые псевдоэлементы для градиента */
-.skill-card__gradient-before,
+/* .skill-card__gradient-before,
 .skill-card__gradient-after {
 	content: "";
 	position: absolute;
@@ -119,7 +115,7 @@
 	);
 	opacity: 0;
 	transition: opacity 0.2s ease;
-}
+} */
 
 .skill-card:hover .skill-card__gradient-before {
 	opacity: 0;
@@ -133,6 +129,12 @@
 .skill-card--intro {
 	border: none;
 	color: var(--secondary-text-color);
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	box-shadow: none;
+	background: 0 0;
+	height: max-content;
 }
 
 .skill-card--intro::after {
@@ -282,4 +284,17 @@
 	.skills-section__mobile {
 		display: flex;
 	}
+}
+
+.youtubeS {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	transform: rotateZ(30deg);
+	background: url("../../assets/optimized/Evraz.svg");
+	background-size: cover;
+	opacity: 0.4;
+	z-index: -1;
 }

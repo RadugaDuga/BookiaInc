@@ -55,7 +55,7 @@ const TickerSection = () => {
 			<Ticker items={items} direction="right" />
 			<Ticker items={items2} direction="left" />
 			<Ticker items={items3} direction="right" />
-			<Ticker items={items3} direction="left" />
+			<Ticker items={items} direction="left" />
 		</div>
 	);
 };

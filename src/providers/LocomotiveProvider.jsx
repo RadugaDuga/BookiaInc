@@ -106,7 +106,7 @@ const LocomotiveProvider = ({ children }) => {
 		<LocomotiveScrollProvider
 			options={{
 				smooth: true,
-				lerp: 0.07,
+				lerp: 0.04,
 				getDirection: true,
 				smoothMobile: false,
 				scrollFromAnywhere: false,

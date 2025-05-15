@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import SideBar from "../SideBar/SideBar";
 import StackElements from "../../components/StackElements/StackElements";
 import { QrCode } from "../../assets/icons";
+import WithFadeIn from "../../components/WithFadeIn";
 
 function PreviewSection() {
 	const { t } = useTranslation();
@@ -31,44 +32,53 @@ function PreviewSection() {
 		<section className={styles.wrapper} id="preview-section">
 			<div className={styles.text_container}>
 				<SideBar />
-				<div className={styles.content}>
-					<h1
-						className={
-							isHovered ? styles.titleHovered : styles.title
-						}
-					>
-						{t("preview.title")}
-					</h1>
 
-					<span className={styles.author_link}>
-						<img src={Avatar} alt="Avatar" />
-						{t("preview.role")}
-					</span>
-
-					<div className={styles.text}>
-						{t("preview.description")}
-
-						<StackElements string="React, Effector, Typescript, Vite" />
-					</div>
-
-					<div className={styles.buttonAndQr}>
-						<span
-							onMouseEnter={() => {
-								setIsHovered(true);
-							}}
-							onMouseLeave={() => {
-								setIsHovered(false);
-							}}
-							className={styles.button__span}
+				<div className={styles.content} style={{ minHeight: 1 }}>
+					<WithFadeIn>
+						<h1
+							className={
+								isHovered ? styles.titleHovered : styles.title
+							}
 						>
-							<CircularTextButton text={t("preview.cta")} />
+							{t("preview.title")}
+						</h1>
+					</WithFadeIn>
+
+					<WithFadeIn>
+						<span className={styles.author_link}>
+							<img src={Avatar} alt="Avatar" />
+							{t("preview.role")}
 						</span>
-						<span className={styles.qrCode__wrapper}>
-							<span className={styles.qrCode}>
-								<QrCode />
+					</WithFadeIn>
+
+					<WithFadeIn>
+						<div className={styles.text}>
+							{t("preview.description")}
+
+							<StackElements string="React, Effector, Typescript, Vite" />
+						</div>
+					</WithFadeIn>
+
+					<WithFadeIn>
+						<div className={styles.buttonAndQr}>
+							<span
+								onMouseEnter={() => {
+									setIsHovered(true);
+								}}
+								onMouseLeave={() => {
+									setIsHovered(false);
+								}}
+								className={styles.button__span}
+							>
+								<CircularTextButton text={t("preview.cta")} />
 							</span>
-						</span>
-					</div>
+							<span className={styles.qrCode__wrapper}>
+								<span className={styles.qrCode}>
+									<QrCode />
+								</span>
+							</span>
+						</div>
+					</WithFadeIn>
 				</div>
 			</div>
 
@@ -77,14 +87,16 @@ function PreviewSection() {
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>
-				<video
-					ref={videoRef}
-					src={AnimatedMaskot}
-					muted
-					className={styles.video}
-					aria-label="Animated mascot"
-					role="presentation"
-				></video>
+				<WithFadeIn direction="right" thresholdEnter={0.2}>
+					<video
+						ref={videoRef}
+						src={AnimatedMaskot}
+						muted
+						className={styles.video}
+						aria-label="Animated mascot"
+						role="presentation"
+					></video>
+				</WithFadeIn>
 			</div>
 		</section>
 	);

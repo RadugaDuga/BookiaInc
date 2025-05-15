@@ -50,8 +50,8 @@ export default function Logo(props) {
 				height="826"
 				rx="35"
 				stroke="black"
-				stroke-width="46"
-				stroke-dasharray="497 13"
+				strokeWidth="46"
+				strokeDasharray="497 13"
 			/>
 		</svg>
 	);
