@@ -74,9 +74,9 @@ export default function ArtsSection() {
 				<h1 className={styles.title}>
 					<WithFadeIn>{t("arts.title")}</WithFadeIn>
 				</h1>
-				<p className={styles.subtitle}>
+				<h2 className={styles.subtitle}>
 					<WithFadeIn>{t("arts.description")}</WithFadeIn>
-				</p>
+				</h2>
 			</div>
 		</section>
 	);
