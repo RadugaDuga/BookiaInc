@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LanguageIcon } from "../../assets/icons";
 import styles from "./AudioSwitcher.module.css";
 import lofiMusic from "../../assets/music/lofi.mp3";
@@ -49,6 +49,12 @@ const AudioSwitcher = () => {
 	const audioRef = useRef(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 
+	useEffect(() => {
+		if (audioRef.current) {
+			audioRef.current.volume = 0.2;
+		}
+	}, []);
+
 	const handleClick = () => {
 		const audio = audioRef.current;
 		if (!audio) return;
@@ -77,5 +83,7 @@ const AudioSwitcher = () => {
 		</button>
 	);
 };
+
+// Установить громкость 20% при первом рендере
 
 export default AudioSwitcher;

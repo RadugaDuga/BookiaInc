@@ -34,7 +34,7 @@
 }
 
 body {
-	transition: background-color 1s ease, color 0.1s ease;
+	transition: background-color 2s ease-out, color 0.1s ease;
 	background: var(--primary-background-color);
 	font-smooth: antialiased;
 	letter-spacing: 0.2px;

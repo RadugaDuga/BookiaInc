@@ -6,7 +6,7 @@ const ThemeSwitcher = () => {
 
 	const handleClick = (event) => {
 		const button = event.currentTarget;
-		const ripple = document.createElement('div');
+		const ripple = document.createElement("div");
 		const diameter = Math.max(window.innerWidth, window.innerHeight);
 		const radius = diameter / 2;
 
@@ -16,11 +16,12 @@ const ThemeSwitcher = () => {
 		ripple.className = styles.ripple;
 
 		document.body.appendChild(ripple);
-		toggleTheme();
 
-		ripple.addEventListener('animationend', () => {
+		ripple.addEventListener("animationend", () => {
 			ripple.remove();
 		});
+
+		toggleTheme();
 	};
 
 	return (

@@ -26,20 +26,13 @@
 	position: fixed;
 	border-radius: 50%;
 	transform: scale(0);
-	animation: rippleEffect 1s linear;
-	background-color: var(--secondary-background-color);
+	animation: rippleEffect 2s ease-out;
+	background-color: var(--primary-background-color);
 	z-index: -1;
 }
 
 @keyframes rippleEffect {
 	to {
 		transform: scale(4);
-		opacity: 0;
-	}
-}
-
-@media screen and (max-width: 1024px) {
-	.themeSwitcher {
-		color: white !important;
 	}
 }
