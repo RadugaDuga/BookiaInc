@@ -59,7 +59,6 @@
 	left: 50%;
 	width: 106%;
 	height: 114%;
-	border-radius: 8px;
 	z-index: -1;
 	opacity: 0;
 	transition: opacity 0.3s ease;
@@ -73,10 +72,10 @@
 		rgb(67, 255, 152),
 		rgb(255, 84, 84)
 	);
-	filter: blur(22px);
+	filter: blur(30px);
 	transform: translate(-50%, -50%);
 	background-size: 300% 300%;
-	animation: gradient-shift 4s ease infinite;
+	animation: gradient-shift 3s ease infinite;
 }
 
 .stock_ticker_right ul li:hover::before,

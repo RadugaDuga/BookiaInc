@@ -18,9 +18,7 @@ function SkillCard({ skill, imgSrc, textColor, experienceData }) {
 					<div className={styles["skill-card__description"]}>
 						<h1 className={styles["skill-card__title"]}>{skill}</h1>
 						<div className={styles["skill-card__role-period"]}>
-							<h3 className={styles["skill-card__role"]}>
-								{experienceData.role}
-							</h3>
+						                                                                 
 							<span className={styles["skill-card__period"]}>
 								{experienceData.period}
 							</span>

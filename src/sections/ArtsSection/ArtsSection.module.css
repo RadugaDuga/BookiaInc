@@ -5,6 +5,7 @@
 	flex-wrap: wrap;
 	color: var(--primary-text-color);
 	background-color: var(--secondary-background-color);
+	padding: 35px 0;
 }
 
 .text {

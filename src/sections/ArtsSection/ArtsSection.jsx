@@ -17,11 +17,14 @@ import {
 	Cafe,
 	Extrasense,
 	Foodtruck,
-	MaskotArt,
 	Safe,
 	University,
 } from "../../assets/optimized";
+
+import { MaskotArt } from "../../assets/fullsize";
+
 import { useTranslation } from "react-i18next";
+import WithFadeIn from "../../components/WithFadeIn";
 
 export default function ArtsSection() {
 	const { t } = useTranslation();
@@ -39,7 +42,7 @@ export default function ArtsSection() {
 					Autoplay,
 				]}
 				loop
-				autoplay
+				autoplay={{ delay: 10000 }}
 				spaceBetween={0}
 				slidesPerView={1}
 				scrollbar={false}
@@ -47,14 +50,15 @@ export default function ArtsSection() {
 				onSwiper={() => {}}
 			>
 				<SwiperSlide>
+					<img src={MaskotArt} alt="MaskotArt" />
+				</SwiperSlide>
+				<SwiperSlide>
 					<img src={Foodtruck} alt="Foodtruck" />
 				</SwiperSlide>
 				<SwiperSlide>
 					<img src={Extrasense} alt="Extrasense" />
 				</SwiperSlide>
-				<SwiperSlide>
-					<img src={MaskotArt} alt="MaskotArt" />
-				</SwiperSlide>
+
 				<SwiperSlide>
 					<img src={Safe} alt="Safe" />
 				</SwiperSlide>
@@ -67,8 +71,12 @@ export default function ArtsSection() {
 			</Swiper>
 
 			<div className={styles.text}>
-				<h1 className={styles.title}>{t("arts.title")}</h1>
-				<p className={styles.subtitle}>{t("arts.description")}</p>
+				<h1 className={styles.title}>
+					<WithFadeIn>{t("arts.title")}</WithFadeIn>
+				</h1>
+				<p className={styles.subtitle}>
+					<WithFadeIn>{t("arts.description")}</WithFadeIn>
+				</p>
 			</div>
 		</section>
 	);

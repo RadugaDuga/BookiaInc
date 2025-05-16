@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 
 // Константы для opacity партиклов story section
 export const STORY_PARTICLE_OPACITY_MIN = 0.35;
-export const STORY_PARTICLE_OPACITY_MAX = 0.05;
+export const STORY_PARTICLE_OPACITY_MAX = 0;
 export const STORY_PARTICLE_DEFAULT_SPEED = 220; // скорость дефолтной анимации партиклов
 
 /**
@@ -118,32 +118,23 @@ export default function useParticles({
 							gsap.set(particle, {
 								y: newStartY,
 								opacity: 1,
-								width: initialWidth,
-								height: initialHeight,
+								// width: initialWidth, // width и height не трогаем
+								// height: initialHeight,
 							});
 						},
 					});
 
-					// Новый ease: в начале очень быстро, затем плавно (power4.out)
 					tl.to(particle, {
 						y: -5,
 						rotateZ: rotateZ,
-						opacity: STORY_PARTICLE_OPACITY_MAX,
 						duration: duration,
-						ease: "linear", // быстрое ускорение, затем плавно
+						ease: "linear",
 					}, 0)
 						.to(particle, {
-							width: initialWidth * scaleK,
-							height: initialHeight * scaleK,
-							duration: duration * 0.5,
-							ease: "linear",
-						}, 0)
-						.to(particle, {
-							width: initialWidth,
-							height: initialHeight,
-							duration: duration * 0.5,
-							ease: "linear",
-						}, duration * 0.5);
+							opacity: STORY_PARTICLE_OPACITY_MAX,
+							duration: duration * 0.3, // opacity меняется только в конце пути
+							ease: "power1.in",
+						}, duration * 0.7);
 
 					timelines.push(tl);
 				}

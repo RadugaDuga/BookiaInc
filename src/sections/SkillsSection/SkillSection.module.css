@@ -62,12 +62,8 @@
 	z-index: 999;
 }
 
-.skill-card:hover {
-	background: color-mix(
-		in srgb,
-		var(--secondary-background-color) 100%,
-		transparent 0%
-	);
+.skill-card:not(.skill-card--intro):hover {
+	backdrop-filter: blur(4px);
 }
 
 .skill-card::before {
@@ -282,4 +278,8 @@
 	background-size: cover;
 	opacity: 0.4;
 	z-index: -1;
+}
+
+.youtubeS:hover {
+	filter: blur(5px);
 }

@@ -8,6 +8,7 @@ export const WithFadeIn = ({
 	duration = 3,
 	once = false,
 	className = "",
+	offset = 70,
 }) => {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { amount: thresholdEnter, once: false });
@@ -20,7 +21,6 @@ export const WithFadeIn = ({
 
 	const show = once ? hasBeenVisible : isInView;
 
-	const offset = 70;
 	const base = { opacity: 0 };
 
 	const variants = {
@@ -49,8 +49,8 @@ export const WithFadeIn = ({
 				duration,
 				opacity: { ease: [0, 0, 0, 1] },
 				type: "spring",
-				stiffness: 400,
-				damping: 30,
+				stiffness: 600,
+				damping: 60,
 				mass: 2.2,
 			}}
 		>

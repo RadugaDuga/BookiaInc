@@ -1,4 +1,4 @@
-.languageSwitcher {
+.audioSwitcher {
 	border: none;
 	padding: 15px;
 	font-size: var(--font-size-m);
@@ -13,13 +13,15 @@
 	overflow: hidden;
 }
 
-.languageSwitcher svg {
-	fill: var(--primary-text-color);
-	height: 35px;
+.audioSwitcher svg {
 	width: 35px;
+	height: 35px;
+}
+.audioSwitcher svg path {
+	fill: var(--primary-text-color);
 }
 
-.languageSwitcher:hover {
+.audioSwitcher:hover {
 	background-color: var(--secondary-background-color);
 	border-radius: 5px;
 }

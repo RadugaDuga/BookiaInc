@@ -10,8 +10,8 @@ function StorySection() {
 	const particles = useParticles({
 		containerRef,
 		count: 18,
-		minSize: 30,
-		maxSize: 35,
+		minSize: 25,
+		maxSize: 45,
 		minX: 5,
 		maxX: 95,
 		minY: 105,
@@ -47,9 +47,7 @@ function StoryContent() {
 	return (
 		<div className={styles.content}>
 			<div className={styles.image_container}>
-				<WithFadeIn>
-					<div className={styles.image}></div>
-				</WithFadeIn>
+				<div className={styles.image}></div>
 			</div>
 			<div className={styles.text}>
 				<WithFadeIn>

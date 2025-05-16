@@ -87,16 +87,14 @@ function PreviewSection() {
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>
-				<WithFadeIn direction="right" thresholdEnter={0.2}>
-					<video
-						ref={videoRef}
-						src={AnimatedMaskot}
-						muted
-						className={styles.video}
-						aria-label="Animated mascot"
-						role="presentation"
-					></video>
-				</WithFadeIn>
+				<video
+					ref={videoRef}
+					src={AnimatedMaskot}
+					muted
+					className={styles.video}
+					aria-label="Animated mascot"
+					role="presentation"
+				></video>
 			</div>
 		</section>
 	);

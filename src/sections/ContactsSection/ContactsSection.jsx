@@ -2,8 +2,24 @@ import { useTranslation } from "react-i18next";
 import { DiscordIcon, GmailIcon, LinkedInIcon, Logo } from "../../assets/icons";
 import { PixelAvatar } from "../../assets/optimized";
 import styles from "./ContactsSection.module.css";
+import WithFadeIn from "../../components/WithFadeIn";
+import useParticles from "../../hooks/UseParticles/useParticles";
+import { useRef } from "react";
 
 export default function ContactsSection() {
+	const containerRef = useRef(null);
+
+	const particles = useParticles({
+		containerRef,
+		count: 18,
+		minSize: 30,
+		maxSize: 40,
+		minX: 5,
+		maxX: 95,
+		minY: 105,
+		maxY: 200,
+	});
+
 	const { t } = useTranslation();
 	const contacts = [
 		{
@@ -42,17 +58,37 @@ export default function ContactsSection() {
 	];
 
 	return (
-		<section className={styles.section} id="contacts-section">
+		<section
+			className={styles.section}
+			id="contacts-section"
+			ref={containerRef}
+		>
+			{particles.map((p, i) => (
+				<div
+					key={i}
+					className={styles.youtubeS}
+					ref={p.ref}
+					style={{
+						width: p.size,
+						height: p.size,
+						transform: `rotate(${p.initialRotate}deg)`,
+					}}
+				/>
+			))}
 			<div className={styles.wrapper} data-scroll data-scroll-speed="-4">
 				<header className={styles.header}>
 					<div className={styles.avatarWrapper}>
-						<img
-							src={PixelAvatar}
-							alt="Pixel Avatar"
-							className={styles.avatar}
-						/>
+						<WithFadeIn offset={5} direction="right">
+							<img
+								src={PixelAvatar}
+								alt="Pixel Avatar"
+								className={styles.avatar}
+							/>
+						</WithFadeIn>
 					</div>
-					<h1 className={styles.title}>{t("contacts.title")}</h1>
+					<h1 className={styles.title}>
+						<WithFadeIn>{t("contacts.title")}</WithFadeIn>
+					</h1>
 				</header>
 
 				<footer className={styles.footer}>
