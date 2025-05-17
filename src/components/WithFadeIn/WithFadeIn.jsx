@@ -3,10 +3,10 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 
 export const WithFadeIn = ({
 	children,
-	thresholdEnter = 0.5,
+	thresholdEnter = 0.8,
 	direction = "left",
 	duration = 3,
-	once = false,
+	once = true,
 	className = "",
 	offset = 100,
 }) => {
@@ -14,12 +14,23 @@ export const WithFadeIn = ({
 	const isInView = useInView(ref, { amount: thresholdEnter, once: false });
 
 	const [hasBeenVisible, setHasBeenVisible] = useState(false);
+	const [loaderActive, setLoaderActive] = useState(true);
+
+	useEffect(() => {
+		const handleLoaderHide = () => setLoaderActive(false);
+		window.addEventListener("initial-loader-hide", handleLoaderHide);
+		// Если лоадера уже нет (например, переход без лоадера)
+		if (!document.getElementById("initial-loader")) setLoaderActive(false);
+		return () => {
+			window.removeEventListener("initial-loader-hide", handleLoaderHide);
+		};
+	}, []);
 
 	useEffect(() => {
 		if (isInView) setHasBeenVisible(true);
 	}, [isInView]);
 
-	const show = once ? hasBeenVisible : isInView;
+	const show = !loaderActive && (once ? hasBeenVisible : isInView);
 
 	const base = { opacity: 0 };
 
@@ -49,7 +60,7 @@ export const WithFadeIn = ({
 				duration,
 				opacity: { ease: [0, 0, 0, 1] },
 				type: "spring",
-				stiffness: 600,
+				stiffness: 200,
 				damping: 60,
 				mass: 2.2,
 			}}
