@@ -25,7 +25,10 @@ function PreviewSection() {
 	};
 
 	useEffect(() => {
-		videoRef.current.play();
+		if (videoRef.current) {
+			videoRef.current.play();
+			videoRef.current.playbackRate = 2;
+		}
 	}, []);
 
 	return (

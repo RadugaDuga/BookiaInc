@@ -42,7 +42,6 @@ export default function ArtsSection() {
 					Autoplay,
 				]}
 				loop
-				autoplay={{ delay: 10000 }}
 				spaceBetween={0}
 				slidesPerView={1}
 				scrollbar={false}

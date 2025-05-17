@@ -11,7 +11,7 @@
 	text-decoration: none;
 	cursor: pointer; /* Добавляем курсор для интерактивности */
 	letter-spacing: 0.5px;
-	transition: transform 0.2s;
+	transition: background 0.2s, box-shadow 0.2s, transform 0.2s, border-radius 0.2s;
 }
 
 .button::before {
@@ -50,9 +50,10 @@
 		rgb(67, 255, 152),
 		rgb(255, 84, 84)
 	);
+	
+	box-shadow: inset 0px 0px 0px 3px white;
 	background-size: 800% 800%;
 	animation: gradientAnimation 10s ease infinite;
-	box-shadow: none;
 	text-decoration: underline;
 	text-underline-offset: 4px;
 	text-decoration-thickness: 3px;
@@ -164,47 +165,46 @@
 @keyframes gradientAnimationBack {
 	0% {
 		background-position: 0% 50%;
-		opacity: 1;
+		opacity: .2;
 	}
 	10% {
 		background-position: 30% 20%;
-		opacity: 0.5;
+		opacity: .3;
 	}
 	20% {
 		background-position: 70% 80%;
-		opacity: 1;
+		opacity: .1;
 	}
 	30% {
 		background-position: 50% 40%;
-		opacity: 0.2;
+		opacity: 0.35;
 	}
 	40% {
 		background-position: 90% 60%;
-		opacity: 1;
+		opacity: .4;
 	}
 	50% {
 		background-position: 100% 50%;
-		opacity: 0.8;
+		opacity: .3;
 	}
 	60% {
 		background-position: 20% 30%;
-		opacity: 1;
+		opacity: .7;
 	}
 	70% {
 		background-position: 80% 70%;
-		opacity: 0.9;
+		opacity: 0.6;
 	}
 	80% {
 		background-position: 40% 90%;
-		opacity: 1;
+		opacity: .5;
 	}
 	90% {
 		background-position: 60% 10%;
-		opacity: 0.85;
+		opacity: 0.2;
 	}
 	100% {
 		background-position: 0% 50%;
-		opacity: 1;
+		opacity: .1;
 	}
 }
-

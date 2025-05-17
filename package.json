@@ -12,7 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.1",
     "framer-motion": "^12.11.0",
-    "gsap": "^3.12.5",
+    "gsap": "^3.13.0",
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.0.4",
     "locomotive-scroll": "^4.1.4",
