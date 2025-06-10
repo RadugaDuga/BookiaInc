@@ -5,6 +5,7 @@ import {
 } from "react-locomotive-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useMediaQuery } from "react-responsive";
 import PropTypes from "prop-types";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,11 +21,14 @@ const debounce = (func, delay) => {
 	};
 };
 
+
+
 const SkewAnimation = () => {
 	const { scroll } = useLocomotiveScroll(); // Получаем доступ к экземпляру скролла
+	const isMobile = useMediaQuery({ maxWidth: 750 }); // Проверяем мобильное устройство
 
 	useEffect(() => {
-		if (!scroll) return; // Проверяем, что экземпляр скролла доступен
+		if (!scroll || isMobile) return; // Отключаем skew эффект на мобильных устройствах
 
 		// Настраиваем ScrollTrigger с использованием scrollerProxy
 		ScrollTrigger.scrollerProxy(scroll.el, {
@@ -89,18 +93,27 @@ const SkewAnimation = () => {
 
 		scroll.on("scroll", ScrollTrigger.update);
 		ScrollTrigger.addEventListener("refresh", () => scroll.update());
-
 		return () => {
 			skewAnimation.kill();
 			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 		};
-	}, [scroll]);
+	}, [scroll, isMobile]);
 
 	return null;
 };
 
 const LocomotiveProvider = ({ children }) => {
 	const containerRef = useRef(null);
+	const isMobile = useMediaQuery({ maxWidth: 750 }); // Проверяем мобильное устройство
+
+	// На мобильных устройствах возвращаем обычный div без locomotive scroll
+	if (isMobile) {
+		return (
+			<main id="loco-mobile" ref={containerRef}>
+				{children}
+			</main>
+		);
+	}
 
 	return (
 		<LocomotiveScrollProvider

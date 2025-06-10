@@ -1,16 +1,30 @@
 import "reset-css";
 import "./styles/locomotive.css";
 import "./styles/App.css";
+import { useMediaQuery } from "react-responsive";
+import { useEffect } from "react";
+
+// Desktop секции
 import PreviewSection from "./sections/PreviewSection";
 import StorySection from "./sections/StorySection";
 import SkillsSection from "./sections/SkillsSection";
 import ArtsSection from "./sections/ArtsSection";
 import ContactsSection from "./sections/ContactsSection";
 import NewTicker from "./sections/TickerSection";
+
+// Mobile секции
+import { PreviewSectionMobile } from "./mobileSections/PreviewSectionMobile";
+import { StorySectionMobile } from "./mobileSections/StorySectionMobile";
+import { SkillsSectionMobile } from "./mobileSections/SkillsSectionMobile";
+import { ArtsSectionMobile } from "./mobileSections/ArtsSectionMobile";
+import ContactsSectionMobile from "./mobileSections/ContactsSectionMobile";
+import { TickerSectionMobile as NewTickerMobile } from "./mobileSections/TickerSectionMobile";
+
 import ScrollToBottom from "./components/ScrollToBottom";
-import { useEffect } from "react";
 
 function App() {
+	const isMobile = useMediaQuery({ maxWidth: 750 }); // Проверяем мобильное устройство
+
 	// Пасхалка :D
 	useEffect(() => {
 		console.log(
@@ -19,6 +33,21 @@ function App() {
 		);
 	}, []);
 
+	if (isMobile) {
+		// Мобильная версия
+		return (
+			<div className="section">
+				<PreviewSectionMobile />
+				<StorySectionMobile />
+				<NewTickerMobile />
+				<SkillsSectionMobile />
+				<ArtsSectionMobile />
+				<ContactsSectionMobile />
+			</div>
+		);
+	}
+
+	// Десктопная версия
 	return (
 		<div className="section">
 			<PreviewSection />

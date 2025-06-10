@@ -1,0 +1,176 @@
+.section {
+	padding: 0 7vw;
+	overflow: hidden;
+	position: relative;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	color: var(--primary-text-color);
+	position: relative;
+	z-index: 999;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 70px;
+	padding: 40px 0;
+	flex-wrap: wrap;
+}
+
+.avatarWrapper {
+	flex: 1 1 180px;
+	position: relative;
+	aspect-ratio: 1/1;
+	transition: 0.2s;
+}
+
+.avatar {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.title {
+	flex-basis: 300px;
+	flex-grow: 2;
+	font-size: var(--font-size-xl);
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 0;
+	white-space: pre-wrap;
+	gap: 20px;
+}
+
+.brand__wrapper {
+	display: flex;
+	height: max-content;
+	align-items: center;
+	grid-auto-flow: 15px;
+	font-weight: 700;
+	color: var(--primary-text-color);
+	gap: 15px;
+	cursor: pointer;
+}
+
+.brand {
+	display: flex;
+	gap: 15px;
+}
+
+.brand svg {
+	width: 50px;
+	height: 50px;
+	transition: transform 0.2s ease-in-out;
+	--light-color: rgb(59, 197, 77);
+}
+.brand svg path {
+	fill: var(--primary-text-color);
+}
+.brand svg rect {
+	stroke: var(--primary-text-color);
+}
+
+.brand svg {
+	width: 50px;
+	height: 50px;
+	transition: transform 0.2s ease-in-out;
+	--light-color: rgb(59, 197, 77);
+}
+
+.brand__wrapper:hover path {
+	fill: rgb(69, 138, 78);
+}
+.brand__wrapper:hover path:nth-child(2) {
+	fill: var(--light-color);
+}
+.brand__wrapper:hover path:nth-child(3) {
+	fill: var(--light-color);
+}
+.brand__wrapper:hover path:nth-child(4) {
+	fill: var(--light-color);
+}
+.brand__wrapper:hover path:nth-child(5) {
+	fill: var(--light-color);
+}
+
+.brand__wrapper:hover rect {
+	stroke: rgb(69, 138, 78);
+}
+
+.copyright {
+	color: var(--secondary-text-color);
+	height: max-content;
+}
+
+.subtitle {
+	font-size: var(--font-size-l);
+	font-weight: 600;
+	margin-bottom: 1em;
+}
+
+.list {
+	list-style: none;
+	padding: 0;
+}
+
+.list li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 0.5em;
+	color: var(--secondary-text-color);
+}
+
+.list li svg {
+	fill: currentColor;
+	width: 20px;
+}
+
+.list li:hover {
+	color: var(--primary-text-color);
+}
+
+.list a {
+	text-decoration: none;
+	color: inherit;
+}
+
+@media screen and (max-width: 1920px) {
+	.avatarWrapper {
+		flex: 1 1 150px;
+	}
+}
+@media screen and (max-width: 1024px) {
+	.avatarWrapper {
+		flex: 1 1 250px;
+	}
+}
+
+.youtubeS {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 20px;
+	height: 20px;
+	transform: rotateZ(30deg);
+	background: url("../../assets/optimized/Bookiainc.svg");
+	background-size: cover;
+	opacity: 0.4;
+}
+
+.youtubeS:hover {
+	filter: blur(5px);
+}

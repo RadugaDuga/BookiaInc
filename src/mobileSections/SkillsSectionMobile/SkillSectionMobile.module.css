@@ -60,6 +60,9 @@
 	--text-color: var(--textColor, var(--primary-text-color));
 	position: relative;
 	z-index: 999;
+}
+
+.skill-card:not(.skill-card--intro):hover {
 	backdrop-filter: blur(4px);
 }
 
