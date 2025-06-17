@@ -1,88 +1,97 @@
 /* Основные стили секции */
 
 :root {
-	--cardLeftPadding: 70px;
-	--cardRightPadding: 65px;
-	--cardTopPadding: 65px;
-	--cardBottomPadding: 65px;
+    --cardLeftPadding: 70px;
+    --cardRightPadding: 65px;
+    --cardTopPadding: 65px;
+    --cardBottomPadding: 65px;
 }
 
 .skills-section {
-	position: relative;
-	padding: 400px 0;
-	display: flex;
-	align-items: center;
-	white-space: pre-wrap;
-	overflow: hidden;
+    position: relative;
+    padding: 400px 0;
+    display: flex;
+    align-items: center;
+    white-space: pre-wrap;
+    overflow: hidden;
 }
 
 .skills-section__content {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	gap: 55px;
-	padding: 0 7vw;
-	width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 55px;
+    padding: 0 7vw;
+    width: 100%;
 }
 
 /* Колонки секции */
 .skills-section__column-1,
 .skills-section__column-2 {
-	flex: 1 1 350px;
-	max-width: 600px;
-	display: flex;
-	flex-direction: column;
-	gap: 55px;
+    flex: 1 1 350px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
 }
 
 /* Управление отображением мобильной/десктопной версии */
 .skills-section__desktop {
-	display: flex;
+    display: flex;
 }
 
 .skills-section__mobile {
-	display: none;
+    display: none;
 }
 
 /* Основные стили карточки */
 .skill-card {
-	flex: 1;
-	box-sizing: border-box;
-	background: color-mix(
-		in srgb,
-		var(--secondary-background-color) 100%,
-		transparent 20%
-	); /* оригинальный цвет без прозрачности */
-	color: var(--primary-text-color);
-	transition: border-color 0.5s ease, transform 0.1s;
-	border: 1px solid var(--border-color);
-	--text-color: var(--textColor, var(--primary-text-color));
-	position: relative;
-	z-index: 999;
+    flex: 1;
+    box-sizing: border-box;
+    background: color-mix(
+        in srgb,
+        var(--secondary-background-color) 100%,
+        transparent 20%
+    ); /* оригинальный цвет без прозрачности */
+    color: var(--primary-text-color);
+    transition: border-color 0.5s ease, transform 0.1s;
+    border: 1px solid var(--border-color);
+    --text-color: var(--textColor, var(--primary-text-color));
+    position: relative;
+    z-index: 999;
+    transition: 0.2s;
+}
+
+.skill-card:hover:not(.skill-card--intro) {
+    background: color-mix(
+        in srgb,
+        var(--secondary-background-color) 100%,
+        transparent 0%
+    ); /* оригинальный цвет без прозрачности */
 }
 
 .skill-card::before {
-	content: "";
-	position: absolute;
-	border: 30px solid rgba(0, 0, 0, 0);
-	border-top: 30px solid var(--primary-background-color);
-	border-left: 30px solid var(--primary-background-color);
-	left: -1px;
-	top: -2px;
-	z-index: 2;
+    content: "";
+    position: absolute;
+    border: 30px solid rgba(0, 0, 0, 0);
+    border-top: 30px solid var(--primary-background-color);
+    border-left: 30px solid var(--primary-background-color);
+    left: -1px;
+    top: -2px;
+    z-index: 2;
 }
 
 .skill-card::after {
-	content: "";
-	position: absolute;
-	top: 28px;
-	left: -12px;
-	transform: rotate(-45deg);
-	width: 82px;
-	background-color: var(--border-color);
-	height: 1.2px;
-	z-index: 2;
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: -12px;
+    transform: rotate(-45deg);
+    width: 82px;
+    background-color: var(--border-color);
+    height: 1.2px;
+    z-index: 2;
 }
 /* 
 .skill-card__gradient-before {
@@ -99,183 +108,183 @@
 } */
 
 .skill-card:hover .skill-card__gradient-before {
-	opacity: 1;
+    opacity: 1;
 }
 
 /* Вступительная карточка */
 .skill-card--intro {
-	border: none;
-	color: var(--secondary-text-color);
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-top: 0;
-	box-shadow: none;
-	background: 0 0;
-	height: max-content;
+    border: none;
+    color: var(--secondary-text-color);
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    box-shadow: none;
+    background: 0 0;
+    height: max-content;
 }
 
 .skill-card--intro::after {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 /* Заголовок и основной текст карточки */
 .skill-card__title {
-	font-size: var(--font-size-xl);
-	margin-bottom: 20px;
-	font-weight: 900;
-	color: var(--primary-text-color);
+    font-size: var(--font-size-xl);
+    margin-bottom: 20px;
+    font-weight: 900;
+    color: var(--primary-text-color);
 }
 .skill-card__title--main {
-	font-size: var(--font-size-xl);
-	margin-bottom: 40px;
-	font-weight: 900;
-	color: var(--primary-text-color);
-	padding-left: var(--cardLeftPadding);
-	padding-right: var(--cardRightPadding);
+    font-size: var(--font-size-xl);
+    margin-bottom: 40px;
+    font-weight: 900;
+    color: var(--primary-text-color);
+    padding-left: var(--cardLeftPadding);
+    padding-right: var(--cardRightPadding);
 }
 
 .skill-card__text {
-	font-size: var(--font-size-m);
-	line-height: 1.4;
-	margin-bottom: 20px;
-	padding: 0px var(--cardRightPadding) 0px var(--cardLeftPadding);
+    font-size: var(--font-size-m);
+    line-height: 1.4;
+    margin-bottom: 20px;
+    padding: 0px var(--cardRightPadding) 0px var(--cardLeftPadding);
 }
 
 /* Шапка карточки с описанием и изображением */
 .skill-card__header {
-	display: flex;
-	gap: 20px;
-	padding-top: var(--cardTopPadding);
-	padding-left: var(--cardLeftPadding);
-	padding-right: var(--cardRightPadding);
+    display: flex;
+    gap: 20px;
+    padding-top: var(--cardTopPadding);
+    padding-left: var(--cardLeftPadding);
+    padding-right: var(--cardRightPadding);
 }
 
 .skill-card__description {
-	flex: 1.8;
+    flex: 1.8;
 }
 
 .skill-card__image {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skill-card__image svg {
-	width: 60px !important;
-	height: 60px !important;
+    width: 60px !important;
+    height: 60px !important;
 }
 
 /* Информация о роли и периоде */
 .skill-card__role-period {
-	color: var(--primary-text-color);
-	margin-top: 10px;
-	margin-bottom: 20px;
-	width: max-content;
-	padding: 0px 10px;
-	border-left: 2px solid var(--secondary-text-color);
+    color: var(--primary-text-color);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: max-content;
+    padding: 0px 10px;
+    border-left: 2px solid var(--secondary-text-color);
 }
 
 .skill-card__role {
-	color: var(--secondary-text-color);
-	font-size: var(--font-size-l);
-	font-weight: 700;
-	margin-bottom: 5px;
+    color: var(--secondary-text-color);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    margin-bottom: 5px;
 }
 
 .skill-card__period {
-	color: var(--secondary-text-color);
-	font-weight: 700;
+    color: var(--secondary-text-color);
+    font-weight: 700;
 }
 
 /* Секции с опытом */
 .skill-card__experience-content {
-	margin-top: 20px;
+    margin-top: 20px;
 }
 
 .skill-card__section {
-	margin-bottom: 30px;
-	padding-bottom: 30px;
-	border-bottom: 1px solid var(--border-color);
-	padding-left: var(--cardLeftPadding);
-	padding-right: var(--cardRightPadding);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--border-color);
+    padding-left: var(--cardLeftPadding);
+    padding-right: var(--cardRightPadding);
 }
 
 .skill-card__section:last-child {
-	border: none;
-	margin-bottom: 0;
-	padding-bottom: var(--cardBottomPadding);
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: var(--cardBottomPadding);
 }
 
 .skill-card__section-title {
-	position: relative;
-	color: var(--primary-text-color);
-	font-size: var(--font-size-l);
-	font-weight: 700;
-	padding-bottom: 3px;
-	margin-bottom: 20px;
-	width: fit-content;
+    position: relative;
+    color: var(--primary-text-color);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    padding-bottom: 3px;
+    margin-bottom: 20px;
+    width: fit-content;
 }
 
 .skill-card__section-title::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	right: 100%;
-	width: 8px;
-	aspect-ratio: 1/1;
-	top: 50%;
-	transform: translateY(-60%);
-	margin-right: 10px;
-	background-color: var(--primary-text-color);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 100%;
+    width: 8px;
+    aspect-ratio: 1/1;
+    top: 50%;
+    transform: translateY(-60%);
+    margin-right: 10px;
+    background-color: var(--primary-text-color);
 }
 
 .skill-card__section-text {
-	font-size: var(--font-size-m);
-	line-height: 1.4;
-	font-weight: 500;
-	color: var(--secondary-text-color);
-	white-space: pre-wrap;
+    font-size: var(--font-size-m);
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--secondary-text-color);
+    white-space: pre-wrap;
 }
 
 @media screen and (max-width: 1920px) {
-	.skills-section__column-1,
-	.skills-section__column-2 {
-		max-width: 550px;
-	}
+    .skills-section__column-1,
+    .skills-section__column-2 {
+        max-width: 550px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
-	:root {
-		--cardLeftPadding: 50px;
-		--cardRightPadding: 45px;
-		--cardTopPadding: 45px;
-		--cardBottomPadding: 45px;
-	}
-	.skills-section {
-		padding: 200px 0;
-	}
-	.skills-section__desktop {
-		display: none;
-	}
-	.skills-section__mobile {
-		display: flex;
-	}
+    :root {
+        --cardLeftPadding: 50px;
+        --cardRightPadding: 45px;
+        --cardTopPadding: 45px;
+        --cardBottomPadding: 45px;
+    }
+    .skills-section {
+        padding: 200px 0;
+    }
+    .skills-section__desktop {
+        display: none;
+    }
+    .skills-section__mobile {
+        display: flex;
+    }
 }
 
 .youtubeS {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 20px;
-	height: 20px;
-	transform: rotateZ(30deg);
-	background: url("../../assets/optimized/Evraz.svg");
-	background-size: cover;
-	opacity: 0.4;
-	z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    transform: rotateZ(30deg);
+    background: url("../../assets/optimized/Evraz.svg");
+    background-size: cover;
+    opacity: 0.4;
+    z-index: -1;
 }
 
 .youtubeS:hover {
-	filter: blur(5px);
+    filter: blur(5px);
 }
