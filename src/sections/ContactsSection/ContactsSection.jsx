@@ -21,7 +21,7 @@ export default function ContactsSection() {
 
     const particles = useParticles({
         containerRef,
-        count: 18,
+        count: 14,
         minSize: 30,
         maxSize: 40,
         minX: 5,

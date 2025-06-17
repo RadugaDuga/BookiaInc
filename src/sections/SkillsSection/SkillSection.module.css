@@ -52,7 +52,7 @@
 	background: color-mix(
 		in srgb,
 		var(--secondary-background-color) 100%,
-		transparent 80%
+		transparent 20%
 	); /* оригинальный цвет без прозрачности */
 	color: var(--primary-text-color);
 	transition: border-color 0.5s ease, transform 0.1s;
@@ -60,7 +60,6 @@
 	--text-color: var(--textColor, var(--primary-text-color));
 	position: relative;
 	z-index: 999;
-	backdrop-filter: blur(4px);
 }
 
 .skill-card::before {
