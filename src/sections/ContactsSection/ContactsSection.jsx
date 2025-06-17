@@ -4,138 +4,149 @@ import { PixelAvatar } from "../../assets/optimized";
 import styles from "./ContactsSection.module.css";
 import WithFadeIn from "../../components/WithFadeIn";
 import useParticles from "../../hooks/UseParticles/useParticles";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function ContactsSection() {
-	const containerRef = useRef(null);
+    const containerRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(true);
 
-	const particles = useParticles({
-		containerRef,
-		count: 18,
-		minSize: 30,
-		maxSize: 40,
-		minX: 5,
-		maxX: 95,
-		minY: 105,
-		maxY: 200,
-	});
+    useEffect(() => {
+        const observer = new window.IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.1 }
+        );
+        if (containerRef.current) observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, []);
 
-	const { t } = useTranslation();
-	const contacts = [
-		{
-			icon: <LinkedInIcon />,
-			link: "https://www.linkedin.com/in/georgi-bukia/",
-			text: "Georgi B.",
-		},
-		{
-			icon: <GmailIcon />,
-			link: "mailto: giorg.ibukia@geolab.edu.ge",
-			text: "@bookiainc",
-		},
-		{
-			icon: <DiscordIcon />,
-			link: "https://discord.gg/XS6Xydpz",
-			text: "Klarence B.",
-		},
-	];
+    const particles = useParticles({
+        containerRef,
+        count: 18,
+        minSize: 30,
+        maxSize: 40,
+        minX: 5,
+        maxX: 95,
+        minY: 105,
+        maxY: 200,
+        active: isVisible,
+    });
 
-	const libraries = [
-		{
-			name: "GSAP 3",
-		},
-		{
-			name: "React Js",
-		},
-		{
-			name: "Rellax.js",
-		},
-		{
-			name: "Locomotive",
-		},
-		{
-			name: "Swiper",
-		},
-	];
+    const { t } = useTranslation();
+    const contacts = [
+        {
+            icon: <LinkedInIcon />,
+            link: "https://www.linkedin.com/in/georgi-bukia/",
+            text: "Georgi B.",
+        },
+        {
+            icon: <GmailIcon />,
+            link: "mailto: giorg.ibukia@geolab.edu.ge",
+            text: "@bookiainc",
+        },
+        {
+            icon: <DiscordIcon />,
+            link: "https://discord.gg/XS6Xydpz",
+            text: "Klarence B.",
+        },
+    ];
 
-	return (
-		<section
-			className={styles.section}
-			id="contacts-section"
-			ref={containerRef}
-		>
-			{particles.map((p, i) => (
-				<div
-					key={i}
-					className={styles.youtubeS}
-					ref={p.ref}
-					style={{
-						width: p.size,
-						height: p.size,
-						transform: `rotate(${p.initialRotate}deg)`,
-					}}
-				/>
-			))}
-			<div className={styles.wrapper} data-scroll data-scroll-speed="-4">
-				<header className={styles.header}>
-					<div className={styles.avatarWrapper}>
-						<WithFadeIn offset={5} direction="right">
-							<img
-								src={PixelAvatar}
-								alt="Pixel Avatar"
-								className={styles.avatar}
-							/>
-						</WithFadeIn>
-					</div>
-					<h1 className={styles.title}>
-						<WithFadeIn>{t("contacts.title")}</WithFadeIn>
-					</h1>
-				</header>
+    const libraries = [
+        {
+            name: "GSAP 3",
+        },
+        {
+            name: "React Js",
+        },
+        {
+            name: "Rellax.js",
+        },
+        {
+            name: "Locomotive",
+        },
+        {
+            name: "Swiper",
+        },
+    ];
 
-				<footer className={styles.footer}>
-					<div className={styles.brand}>
-						<div className={styles.brand__wrapper}>
-							<Logo />
-							<div className={styles.copyright}>
-								<span>Bookia.Inc</span>
-								<div>© 2025. All rights reserved.</div>
-							</div>
-						</div>
-					</div>
+    return (
+        <section
+            className={styles.section}
+            id="contacts-section"
+            ref={containerRef}
+        >
+            {particles.map((p, i) => (
+                <div
+                    key={i}
+                    className={styles.youtubeS}
+                    ref={p.ref}
+                    style={{
+                        width: p.size,
+                        height: p.size,
+                        transform: `rotate(${p.initialRotate}deg)`,
+                    }}
+                />
+            ))}
+            <div className={styles.wrapper} data-scroll data-scroll-speed="-4">
+                <header className={styles.header}>
+                    <div className={styles.avatarWrapper}>
+                        <WithFadeIn offset={5} direction="right">
+                            <img
+                                src={PixelAvatar}
+                                alt="Pixel Avatar"
+                                className={styles.avatar}
+                            />
+                        </WithFadeIn>
+                    </div>
+                    <h1 className={styles.title}>
+                        <WithFadeIn>{t("contacts.title")}</WithFadeIn>
+                    </h1>
+                </header>
 
-					<div className={styles.contacts}>
-						<h2 className={styles.subtitle}>
-							{t("contacts.contacts")}
-						</h2>
-						<ul className={styles.list}>
-							{contacts.map((contact, index) => (
-								<li key={index}>
-									{contact.icon}
-									<a
-										href={contact.link}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										{contact.text}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
+                <footer className={styles.footer}>
+                    <div className={styles.brand}>
+                        <div className={styles.brand__wrapper}>
+                            <Logo />
+                            <div className={styles.copyright}>
+                                <span>Bookia.Inc</span>
+                                <div>© 2025. All rights reserved.</div>
+                            </div>
+                        </div>
+                    </div>
 
-					<div className={styles.libraries}>
-						<h2 className={styles.subtitle}>
-							{t("contacts.usedLibraries")}
-						</h2>
-						<ul className={styles.list}>
-							{libraries.map((library, index) => (
-								<li key={index}>
-									<p>{library.name}</p>
-								</li>
-							))}
-						</ul>
-					</div>
-				</footer>
-			</div>
-		</section>
-	);
+                    <div className={styles.contacts}>
+                        <h2 className={styles.subtitle}>
+                            {t("contacts.contacts")}
+                        </h2>
+                        <ul className={styles.list}>
+                            {contacts.map((contact, index) => (
+                                <li key={index}>
+                                    {contact.icon}
+                                    <a
+                                        href={contact.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {contact.text}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className={styles.libraries}>
+                        <h2 className={styles.subtitle}>
+                            {t("contacts.usedLibraries")}
+                        </h2>
+                        <ul className={styles.list}>
+                            {libraries.map((library, index) => (
+                                <li key={index}>
+                                    <p>{library.name}</p>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    );
 }
