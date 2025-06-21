@@ -28,9 +28,9 @@ function SkillsSection() {
 
     const particles = useParticles({
         containerRef,
-        count: 15,
-        minSize: 28,
-        maxSize: 33,
+        count: 18,
+        minSize: 40,
+        maxSize: 50,
         minX: 8,
         maxX: 92,
         minY: 110,

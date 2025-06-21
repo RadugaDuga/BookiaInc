@@ -93,23 +93,6 @@
     height: 1.2px;
     z-index: 2;
 }
-/* 
-.skill-card__gradient-before {
-	content: "";
-	position: absolute;
-	top: -10px;
-	left: -10px;
-	right: -10px;
-	bottom: -10px;
-	border: 4px solid rgb(173, 173, 255);
-	z-index: -1;
-	opacity: 0;
-	transition: opacity 0.3s;
-} */
-
-.skill-card:hover .skill-card__gradient-before {
-    opacity: 1;
-}
 
 /* Вступительная карточка */
 .skill-card--intro {
@@ -278,7 +261,6 @@
     left: 0;
     width: 20px;
     height: 20px;
-    transform: rotateZ(30deg);
     background: url("../../assets/optimized/Evraz.svg");
     background-size: cover;
     opacity: 0.4;

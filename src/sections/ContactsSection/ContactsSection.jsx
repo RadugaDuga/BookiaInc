@@ -22,8 +22,8 @@ export default function ContactsSection() {
     const particles = useParticles({
         containerRef,
         count: 14,
-        minSize: 30,
-        maxSize: 40,
+        minSize: 40,
+        maxSize: 50,
         minX: 5,
         maxX: 95,
         minY: 105,
@@ -86,7 +86,7 @@ export default function ContactsSection() {
                     }}
                 />
             ))}
-            <div className={styles.wrapper} data-scroll data-scroll-speed="-4">
+            <div className={styles.wrapper} data-scroll data-scroll-speed="-5">
                 <header className={styles.header}>
                     <div className={styles.avatarWrapper}>
                         <WithFadeIn offset={5} direction="right">

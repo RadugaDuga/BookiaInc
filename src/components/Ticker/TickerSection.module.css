@@ -25,7 +25,7 @@
 	align-items: center;
 	gap: var(--gap);
 	transform: translateX(calc(-100% - var(--gap)));
-	animation: scroll-right 40s linear infinite;
+	animation: scroll-right 60s linear infinite;
 }
 
 .stock_ticker_left ul {
@@ -36,7 +36,7 @@
 	justify-content: space-around;
 	align-items: center;
 	gap: var(--gap);
-	animation: scroll-left 40s linear infinite;
+	animation: scroll-left 60s linear infinite;
 }
 
 .stock_ticker_right ul li,

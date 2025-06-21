@@ -3,9 +3,12 @@ import React from "react";
 import { gsap } from "gsap";
 
 // Константы для opacity партиклов story section
-export const STORY_PARTICLE_OPACITY_MIN = 0.35;
+export const STORY_PARTICLE_OPACITY_MIN = 0.2;
 export const STORY_PARTICLE_OPACITY_MAX = 0;
-export const STORY_PARTICLE_DEFAULT_SPEED = 220; // скорость дефолтной анимации партиклов
+
+// Константа для диапазона скорости партиклов
+const PARTICLE_SPEED_MIN = 40;
+const PARTICLE_SPEED_MAX = 70;
 
 /**
  * Универсальный хук для генерации и анимации партиклов.
@@ -49,7 +52,7 @@ export default function useParticles({
                 minSize + Math.random() * (maxSize - minSize)
             );
             const base = i / (count - 1);
-            const speed = 30 + (size - minSize) * 3;
+            const speed = PARTICLE_SPEED_MIN + Math.random() * (PARTICLE_SPEED_MAX - PARTICLE_SPEED_MIN); // скорость теперь случайная в диапазоне 30-100
             const startXPercent =
                 minX + i * step + (Math.random() - 0.5) * step * 0.3;
             const startYPercent = minY + Math.random() * (maxY - minY);
@@ -122,7 +125,7 @@ export default function useParticles({
                     });
                     const duration =
                         (startY - -5) /
-                        (speed || STORY_PARTICLE_DEFAULT_SPEED) /
+                        (speed) /
                         2;
 
                     const tl = gsap.timeline({
